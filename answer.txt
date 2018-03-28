@@ -1,0 +1,76 @@
+3. 	p-> -q
+	p->-r
+	p->x=5
+	p-> y=-3
+	p->z=0
+
+p 	q	r	y	z 
+1	1	0	-3	0
+1	0	1	-3	0
+1	1	0	-3	0
+0	0	1	-3	0
+0	1	0	-3	0
+0	0	1	-3	0
+
+
+a) -r^(pVQ)-> ans
+    1  1 1     1
+    0  1 0     0
+    1  1 1     1
+    0  0 0     0
+    1  0 1     1
+    0  0 0     0
+
+b. (-q^p)->a v ((x!=y)^r)->k   aVk
+    0 1    0  	5   -3 0   0	0     
+    1 1    1  	5   -3 1   0    1
+    0 1    0   	5   -3 0   0    0 
+    1 0    1   	5   -3 1   0    1  
+    0 0    0   	5   -3 0   0    0
+    1 0    0   	5   -3 1   0    0
+
+c. (-r^p)->a V (y!=0) -> ans
+     1 1   1      1       1
+     0 1   0      1       1
+     1 1   1      1       1
+     0 0   0      1       1
+     1 0   0      1       1
+     0 0   0      1       1  hence a tautology
+
+d -(x<z) ^ (y!=0) -> ans 
+     1      0         0
+     1      0         0
+     1      0         0
+     1      0         0
+
+e  -p^(-q^r)-> a V -(x<y)  ---> ans 
+    0   0 0    0      1          1        
+    0   1 1    0      1          1
+    0   0 0    0      1          1
+    1   1 1    1      1          1
+    1   0 0    0      1          1
+    1   1 1    1      1          1
+
+4. 
+    While the user wnats to continue
+	 Enter date of birth
+
+	if the year is between 1920 and 2017
+		print age
+
+    		Return true
+
+    	else
+		return false 
+	
+
+    End WHile
+
+
+
+     
+
+
+
+
+

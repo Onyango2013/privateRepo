@@ -1,0 +1,30 @@
+ools and software:
+-----------------------------
+1. VScode, atom, sublimetext
+2. Chrome
+3. photoshop, GIMP
+4. Flex
+5. In motion
+6. Bulma, materialize, bootstrap, skeleton
+7. Learn REST APIs
+8. React,Angular, Vue
+9. Git Version Control
+10. Saas, LESS
+11. WebPack and Babel: module loader js Compiler
+12.  Node js fr developers 
+14. Python for Backend
+16. C# and ASP.NET
+17. Firebase, postgrell, SQL server, Oracle
+18. for serverside framework: Express, Hapi js, loopback, swagger
+19. Django, Flask, WEb2Py, Pylons
+20. Ruby: Rubi on rils,Sinatra, 
+23. Digital Ocean, Heroku, Amazom Web Services
+24. Mobile apps: react native, Native Script, ionic,phonegap/cordova, Xamarin
+-TraderouteKenya
+-Toyouteams
+------------
+1 angular JS
+2. angular 2 by code volution
+3. angular 2 by kudvenkat
+4. vue js
+5. react js

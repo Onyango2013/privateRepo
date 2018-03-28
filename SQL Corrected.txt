@@ -1,0 +1,91 @@
+-- ASSIGNMENT #1 QUERIES
+
+--1. Show for each actor (id) the number of different movie categories they have appeared in
+ Select Actor.Name, count(DVDMovie.Category) as Count_of_Category from dbo.Actor INNER JOIN Casting on (Actor.ActorID = Casting.ActorID)
+ INNER JOIN DVDMovie on ( DVDMovie.DVDNo= Casting.DVDNo) Group by  Actor.Name
+
+--2. List for each actor (id) the total amount of fees they have earned from comedy and horror movies released between 2005 and 2016.
+ 
+ Select Actor.Name, sum(Casting.FeePaid) as Sum_of_fees from dbo.Actor INNER JOIN Casting on (Actor.ActorID = Casting.ActorID)
+ INNER JOIN DVDMovie on ( DVDMovie.DVDNo= Casting.DVDNo) Group by  Actor.Name
+
+--3. List the movie details for movies released in 2009 that are of either the horror or fantasy category
+  Select * from DVDMovie  Where YrOfRelease = 2009 AND (DVDMovie.Category LIKE '%Horror%' or  DVDMovie.Category LIKE '%fantasy%')
+
+--4. List the #, name and province for every member that is currently renting a DVD copy. Show each member only once. Sequence by name within province
+  Select name, province from member join DVDCopy on DVDCopyMemNo = Member.MemNo where Status like "%R%"  
+
+--5. List the details for the actors that have appear in movies released in 2009. Only show each actor once and sequence by actor name
+  Select DISTINCT Actor.ActorID , Actor.Name from dbo.Actor INNER JOIN Casting on (Actor.ActorID = Casting.ActorID)
+  INNER JOIN DVDMovie on ( DVDMovie.DVDNo= Casting.DVDNo) Where  YrOfRelease = 2009  Group by  Actor.Name 
+
+--6. List the member details for all members currently renting movies featuring Adam Sandler. Sequence by registration date (most recent first)
+  Select Member.name, member.street, member.city, member.prov, member.regDate, Member.OSFines  from dbo.Actor
+  INNER JOIN Casting on (Actor.ActorID = Casting.ActorID)  INNER JOIN DVDCopy on ( DVDCopy.DVDNo = DVDMovie.DVDNo) 
+  INNER JOIN  Member on ( member.MemNo= DVDCopy.MemNo) Where  Actor.Name like '%Adam Sandler%' AND DVDCopy.Status like '%R%'
+  Order by regDate asc
+
+--7. List the oldest date of birth for a living actor
+  Select min(Actor.DateBorn) as "Oldest Date of Birth for Living Actor" from dbo.Actor 
+
+--8. Show the count of the total number of movies that Brad Pitt has been cast in
+  Select Actor.Name, count(Casting.DVDNo)  as "# of Movies Casted in" from Actor  INNER JOIN Casting on (Actor.ActorID= Casting.ActorID) 
+  Where Actor.Name like '%Brad Pit%' Group by Actor.Name
+
+--9. List the details of any movies that had more than 5 nominations. Sequence by title within year of release within category
+  Select * from DVDMovie having count(DVDMovie.Nomins) > 5   Order by DVDMovie.yrOfRelease then by DVDMovie>Category 
+
+--10. Show for each movie category the average number of awards and nominations for movies in that category. Only show categories where the average is 4 or more.
+  Select Category, avg(DVDMovie.Nomins) + avg(DVDMovie.Awards) as Average from DVDMovie  Group by DVDMovie.Category having  count(DVDMovie.Nomins) > 5
+
+--11. List the details for the actors that have appeared in any movie with the characters "water" anywhere in the title.  Show each actor only once and sequence alphabetically by name
+  Select Actor.Name, Actor.DateBorn, Actor.DateDied, Actor.Gender from  dbo.Actor  
+  INNER JOIN Casting on  (Actor.ActorID = Casting.ActorID) INNER JOIN DVDMovie on ( Casting.DVDNo= DVDMovie.DVDNo) 
+  Where DVDMovie.Title Like '%Water%' 
+
+--12. List the details for any movie that has at least 1 copy not out on loan. Show each movie only once
+  Select * from DVDCopy  INNER JOIN DVDMovie on (DVDCopy.DVDno=DVDMovie.DVDNo)  Where DVDCopy.status Like 'R'
+
+--13. Show a count of the number of DVD copies loaned by each member where that member has at least 1 loan.  Order the output by highest count to lowest 
+  Select member.name, count(DVDMovie.title) from dbo.Actor INNER JOIN Casting on (Actor.ActorID = Casting.ActorID)
+  INNER JOIN DVDCopy on ( DVDCopy.DVDNo = DVDMovie.DVDNo) INNER JOIN  Member on ( member.MemNo= DVDCopy.MemNo) 
+  Where DVDCopy.Status like '%R%' having count(DVDMovie.title)>1
+
+--14. List member #s for the members that have more than 2 copies of a horror movie on loan
+
+  Select Member.MemNo, count(DVDMovie.title) as "Copies" from DVDCopy INNER JOIN DVDMovie on (DVDCopy.DVDno=DVDMovie.DVDNo) 
+  INNER JOIN member on (Member.MemNo=DVDcopy.MemNo) Where DVDCopy.status Like 'R' Group by Member.MemNo having count(DVDMovie.title)>2 
+
+--15. List by category the average fee paid to actors that have appeared in that category's movies
+  Select DVDMovie.category, AVG(Casting.FeePaid) from Casting INNER JOIN DVDMovie on (Casting.DVDNo= DVDmovie.DVDno) 
+  Group by DVDMovie.category
+
+--16. List the movie details for any movies in either the Comedy or the Horror category that have also had either Brad Pitt or Adam Sandler appearing in them. 
+  Select * from  Casting join Actor on (Casting.ActorID= Actor.ActorID)
+  INNER JOIN DVDMovie on (Casting.DVDNo= DVDmovie.DVDno) where DVDMovie.Category like '%Horor%' or DVDMovie.Category like '%Comedy%' and Actor.Name like '%Brad Pit%'
+  or Actor.Name like '%Adam Sandler%'
+
+--17. Show the total nominations for each movie category for movies released in 2009 where there were at least 2 released movies in the category
+  Select sum(DVDMovie.Nomins) as TotalNominations from DVDMovie where YrOfRelease=2009 
+  GROUP BY DVDMovie.Category having count(DVDMovie.title) >2
+
+--18. List the details for actors that are appearing in movies rented by members in Toronto. Only show each actor once and sequence by actor name
+  Select Actor.Name from dbo.Actor  INNER JOIN Casting on (Actor.ActorID = Casting.ActorID)
+  INNER JOIN DVDCopy on ( DVDCopy.DVDNo= Casting.DVDNo) INNER JOIN Member on ( member.MemNo= DVDCopy.MemNo)
+  Where Member.City like '%Toronto%' group by Actor.Name 
+
+--19. List the details for living actors who have appeared in a fantasy movie in 2016
+  Select Actor.Name, Actor.DateBorn, Actor.Gender from dbo.Actor
+  INNER JOIN Casting on  (Actor.ActorID = Casting.ActorID) 
+  INNER JOIN DVDMovie on ( Casting.DVDNo= DVDMovie.DVDNo)
+  Where DateDied is null  and  DVDMovie.Category like '%Fantasy%' and YrOfRelease = 2016
+
+--20(i). Write a command to add a new movie to the database  
+  Insert into DVDMovie values(122, 'The Bold And the Beautiful', 'Soap', 3.09,2009, 23, 12)
+
+--20(ii). Write a command to update that new movie's daily rate by 100%. (Use a formula expression. Don't calculate and then hard code the new rate)
+  UPDATE DVDMovie SET DailyRate=6.18 WHERE DVDNo=122
+
+--20(iii).Write a command to delete the new movie
+  DELETE FROM DVDMovie  WHERE DVDNo = 122; 
+

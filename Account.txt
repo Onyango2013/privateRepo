@@ -1,0 +1,63 @@
+developer account google-gsuit account 
+--administration
+--email
+--hosting 
+--app testing --$5 per month
+
+Github provate ccount $7 per month
+Google contact google maps $105
+Firebasse--$25 per month, 20gb per month
+	phone auth--indexing, database 100000 aimultenius connections 
+	downloaded content: 50gb---50gb downloads per day, 100000 uplods 250k uploads per day.
+	Phone auth: 10k auth per month---hosting 10gb per month free ssl --- virtual device testing 
+	test lb and performnce monitoring  ssl certifiction, google analytics... cloud messaging: sending notifications
+	Dynamic links --- links to the App,invition.. addworld for marketing
+
+Payments integration: 
+	four thirdparty gateways
+		EASYPAY equity (upto 2m)
+		Mpesa(upto 500,000)
+		cards(braintree, stripe)
+cardio to push cards. profit per bookings (20) * costs 
+		
+team: 2 UX and ui designers 2 android developer, 1 web developer 1 backend developer with understnding of Firebase
+app features
+cleaner app
+Admin panel
+household pp
+payment
+price calculation
+map and route finding (Location Services)
+Security
+cleaners and household list
+Job Panel(Cleaner request)
+Digitl wallet with escrow
+
+Most consuming fetures
+Push messages
+Control panel
+
+
+app design: 150-300 hrs
+development 500-800 hrs 
+backend development 300-500hrs
+
+1. Devices/Equipment
+
+2. Software
+
+3. Network access
+
+4.  remote repositories
+
+
+
+
+Total cost of develpment estimate $28,000-46,000
+
+
+Twillio
+Mpes Api
+Easypay
+
+

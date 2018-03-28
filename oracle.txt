@@ -1,0 +1,3 @@
+oracle: user: morgan, usrname Morgan
+
+database name: orcl; pass: admin

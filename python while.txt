@@ -1,0 +1,8 @@
+a= 0
+print("THis condition prints 40 times")
+while a <5: # first while loop code
+    print(a)
+    a = a - 1
+
+print(The Loop will go ")
+print(a)

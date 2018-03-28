@@ -1,0 +1,463 @@
+import java.io.BufferedReader;
+
+import java.io.FileNotFoundException;
+
+import java.io.FileReader;
+
+import java.io.IOException;
+
+public class totalPassengers
+
+{
+
+     //returns the number of passengers on the titanic
+
+     public static int totalPassengers(String file) throws IOException
+
+     {
+
+          BufferedReader br = new BufferedReader(new FileReader(file));
+
+          int totalPasng=0;
+
+          String onerow;
+
+          String cols[];
+
+          onerow=br.readLine();//skip header
+
+          while((onerow=br.readLine())!=null)
+
+          {
+
+              totalPasng++;
+
+          }
+
+          return totalPasng;
+
+     }
+
+     //returns the number of passengers perished on the titanic incident
+
+          public static int totalDied(String file) throws IOException
+
+          {
+
+              BufferedReader br = new BufferedReader(new FileReader(file));
+
+              int totalDied=0;
+
+              String onerow;
+
+              String cols[];
+
+              onerow=br.readLine();//skip header
+
+              int i=0;
+
+              while((onerow=br.readLine())!=null)
+
+              {
+
+                   cols=onerow.split("\t");
+
+                   /*for(int i=0;i<cols.length;i++)
+
+                   {
+
+                        System.out.print(cols[i]+"|");
+
+                   }    */       
+
+                        if(cols[1].equals("0"))
+
+                        totalDied++;
+
+                  
+
+                   i++;
+
+              }
+
+              return totalDied;
+
+          }
+
+          //returns the number of passengers survived on the titanic incident
+
+                   public static int totalSurvived(String file) throws IOException
+
+                   {
+
+                        BufferedReader br = new BufferedReader(new FileReader(file));
+
+                        int totalSurv=0;
+
+                        String onerow;
+
+                        String cols[];
+
+                        onerow=br.readLine();//skip header
+
+                        while((onerow=br.readLine())!=null)
+
+                        {
+
+                             cols=onerow.split("\t");
+
+                             if(cols[1].equals("1") )
+
+                                  totalSurv++;
+
+                        }
+
+                        return totalSurv;
+
+                   }
+
+                   //Prints the number of passengers survived on the titanic incident by class
+
+                   public static void totalSurvivedByClass(String file) throws IOException
+
+                   {
+
+                        BufferedReader br = new BufferedReader(new FileReader(file));
+
+                        int cls1Surv=0,cls2Surv=0,cls3Surv=0;
+
+                        String onerow;
+
+                        String cols[];
+
+                        onerow=br.readLine();//skip header
+
+                        while((onerow=br.readLine())!=null)
+
+                        {
+
+                             cols=onerow.split("\t");
+
+                             if(cols[1].equals("1"))
+
+                             {
+
+                                  if(cols[0].replace("\"","").equals("1"))
+
+                                  cls1Surv++;
+
+                                  else if(cols[0].replace("\"","").equals("2"))
+
+                                 cls2Surv++;
+
+                                  else if(cols[0].replace("\"","").equals("3"))
+
+                                  cls3Surv++;
+
+                             }
+
+                        }
+
+                        System.out.println("Number of passengers of 1st class survived: "+cls1Surv);
+
+                        System.out.println("Number of passengers of 2nd class survived: "+cls2Surv);
+
+                        System.out.println("Number of passengers of 3rd class survived: "+cls3Surv);
+
+                   }
+
+                   //Prints the number of passengers survived on the titanic incident by gender
+
+                   public static void totalSurvivedByGender(String file) throws IOException
+
+                   {
+
+                        BufferedReader br = new BufferedReader(new FileReader(file));
+
+                        int maleSurv=0,femaleSurv=0;
+
+                        String onerow;
+
+                        String cols[];
+
+                        onerow=br.readLine();//skip header
+
+                        while((onerow=br.readLine())!=null)
+
+                        {
+
+                             cols=onerow.split("\t");
+
+                                                         
+
+                             if(cols[1].replace(" ","").equals("1"))
+
+                             {
+
+                                       if(cols[3].replace("\"","").equals("male"))
+
+                                      maleSurv++;
+
+                                      else if(cols[3].replace("\"","").equals("female"))
+
+                                      femaleSurv++;
+
+                                 
+
+                             }
+
+                        }
+
+                        System.out.println("Number of male passengers survived: "+maleSurv);
+
+                        System.out.println("Number of female passengers survived: "+femaleSurv);
+
+                       
+
+                   }
+
+                   //Prints the list of passengers who paid $200 or more
+
+                   public static void printListPaid200(String file) throws IOException
+
+                   {
+
+                        BufferedReader br = new BufferedReader(new FileReader(file));
+
+                        int paid200=0;
+
+                        String onerow;
+
+                        String cols[];
+
+                        onerow=br.readLine();//skip header
+
+                        System.out.println("List of people paid more than $200: ");
+
+                        while((onerow=br.readLine())!=null)
+
+                        {
+
+                             cols=onerow.split("\t");    
+
+                             try
+
+                             {
+
+                                  if(Double.parseDouble(cols[5])>=200) //cols[5]=fare
+
+                                  {
+
+                                      System.out.print(cols[2]+" ");//cols[2]=name
+
+                                  }
+
+                             }
+
+                             catch(Exception e)
+
+                             {
+
+                                 
+
+                             }
+
+                        }
+
+                   }
+
+                   //Prints the list of survived children having their ages less than 10
+
+                   public static void printListChild10S(String file) throws IOException
+
+                   {
+
+                        BufferedReader br = new BufferedReader(new FileReader(file));
+
+                        int paid200=0;
+
+                        String onerow;
+
+                        String cols[];
+
+                        onerow=br.readLine();//skip header
+
+                        System.out.println("\nList of survived children having age less than 10 : ");
+
+                        while((onerow=br.readLine())!=null)
+
+                        {
+
+                             cols=onerow.split("\t");    
+
+                             try
+
+                             {
+
+                                  if(cols[1].equals("1")&&Double.parseDouble(cols[4])<10)
+
+                                  {
+
+                                      System.out.print(cols[2]+" ");
+
+                                  }
+
+                             }
+
+                             catch(Exception e)
+
+                             {
+
+                                 
+
+                             }
+
+                        }
+
+                   }
+
+                   //Prints the list of survived children having their ages less than 10
+
+                   public static void printListChild10P(String file) throws IOException
+
+                   {
+
+                        BufferedReader br = new BufferedReader(new FileReader(file));
+
+                        String onerow;
+
+                        String cols[];
+
+                        onerow=br.readLine();//skip header
+
+                        System.out.println("\nList of perished children having age less than 10 : ");
+
+                        while((onerow=br.readLine())!=null)
+
+                        {
+
+                             cols=onerow.split("\t");    
+
+                             try
+
+                             {
+
+                                  if(cols[1].equals("0")&&Double.parseDouble(cols[4])<10)
+
+                                  {
+
+                                      System.out.print(cols[2]+" ");
+
+                                  }
+
+                             }
+
+                             catch(Exception e)
+
+                             {
+
+                                 
+
+                             }
+
+                        }
+
+                   }
+
+                   //Prints The count of the number of passengers as a
+
+                   //function of the first letter of their last name.
+
+                   public static void countFirstName(String file) throws IOException
+
+                   {
+
+                        BufferedReader br = new BufferedReader(new FileReader(file));
+
+                        String alphabets="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+                        int count[]=new int[26];
+
+                        String onerow;
+
+                        String cols[];
+
+                        onerow=br.readLine();//skip header
+
+                        System.out.println("\ncounts : ");
+
+                        while((onerow=br.readLine())!=null)
+
+                        {
+
+                             cols=onerow.split("\t");    
+
+                             try
+
+                             {
+
+                                  for(int i=0;i<26;i++)
+
+                                  {
+
+                                       if(cols[2].charAt(0)==alphabets.charAt(i))
+
+                                      {
+
+                                           count[i]++;
+
+                                      }
+
+                                  }
+
+                             }
+
+                             catch(Exception e)
+
+                             {
+
+                                 
+
+                             }
+
+                        }
+
+                        for(int j=0;j<alphabets.length();j++)
+
+                        {
+
+                             System.out.print(alphabets.charAt(j)+":"+count[j]+",");
+
+                        }
+
+                   }
+
+     public static void main(String args[]) throws IOException
+
+     {   
+
+     String file="titanic.csv";
+
+     System.out.println("Total passengers: "+totalPassengers(file));
+
+     System.out.println("Total passengers perished: "+totalDied(file));
+
+     System.out.println("Total passengers survived: "+totalSurvived(file));
+
+     totalSurvivedByClass(file);
+
+     totalSurvivedByGender(file);
+
+     printListPaid200(file);
+
+     printListChild10S(file);
+
+     printListChild10P(file);
+
+     countFirstName(file);
+
+     }
+
+}
+ 
+

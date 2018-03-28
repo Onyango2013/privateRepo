@@ -1,0 +1,41 @@
+CREATE DATABASE colleges
+CREATE DATABASE college
+CREAE DATABASE college
+CREATE DATABSE college
+DROP DATABASE colleges
+CREATE TABLE college.student
+CREATE TABLE collegestudent
+CREATE TABLE college.students
+DROP TABLE college.students
+INSERT  "John Smith"  INTO college.students
+INSERT  "John Smith"  INTO college.student
+INSERT  "Jane Doe"  INTO college.student
+INSERT  "Jane Doe"  ITO college.student
+INSERT  "Jane Doe"  INTO collegestudent
+INSERT  "Justa Beeper"  INTO college.student
+INSERT  "DOPE"  INTO college.student
+INSERT  "PEACE OUT"  INTO college.student
+SELECT * FROM college.students WHERE COLUMN =  "John Smith" 
+SELECT * form college.students WHERE COLUMN =  "John Smith"
+SELECT * FROM college.students where COLUMN =  "John Smith" 
+SELECT * FROM college.students WHERE COLUMN   "John Smith" 
+SELECT * FROM collegestudents WHERE COLUMN =  "John Smith" 
+DELETE FROM college.students
+DELETE FROM college.students WHERE COLUMN =  "Justa Beeper" 
+DELETE FRoM college.students
+DELETE FROM collegestudents WHERE COLUMN   "Justa Beeper"
+SELECT * FROM college.student WHERE COLUMN =  "John Smith" 
+SELECT * FROM college.student
+SELECT * FROM collegestudent
+SELECT * FrOM college.student
+DELETE FROM college.student WHERE COLUMN =  "Justa Beeper" 
+UPDATE college.student SET COLUMN   The Martian  WHERE COLUMN =  "John Smith"
+UPDATE collegestudent SET COLUMN =  The Martian  WHERE COLUMN =  "John Smith"
+UPDATE college.student set COLUMN =  The Martian  WHERE COLUMN =  "John Smith"
+UPDATE college.student SET COLUMN   The Martian  WHERE COLUMN =  "John Smith"
+UPDATE college.student SET COLUMN =  The Martian  Where COLUMN =  "John Smith"
+UPDATE college.student SET COLUMN   The Martian  WHERE COLUMN =  "John Smith"
+UPDATE college.student SET COLUMN =  The Martian  WHERE COLUMN   "John Smith"
+UPDATE college.student SET COLUMN   The Martian  WHERE COLUMN =  "John Smith"
+UPDATE college.student SET COLUMN = The Martian  WHERE COLUMN =  "John Smith"
+SELECT * FROM college.student

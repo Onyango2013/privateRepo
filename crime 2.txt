@@ -1,0 +1,389 @@
+//import Classes
+import java.util.Scanner;
+
+public class TestCrime {
+    public static void main(String[] args){
+        try {
+            //fields
+            Long startTime, endTime, elapsedTime;
+            String userInput;
+
+            /** Create and instantiate USCrimeClass object
+             * pass command line argument to CsvToArray.getArray static method to convert csv to 2d array
+             * pass the returned array to the constructor as a parameter
+             */
+            USCrimeClass usCrimes = new USCrimeClass(CsvToArray.getArray(args[0]));
+
+
+            //set start time
+            startTime = System.nanoTime();
+
+            //setup scanner
+            Scanner stdin = new Scanner(System.in);
+
+            System.out.println("\n********** Welcome to the US Crime Statistical Application **************************");
+
+            //print menu
+            // loop while userInput is not equal to "Q" or "q"
+            while (true) {
+                //Call Menu class static method getMenu and print
+                System.out.println(Menu.getMenu());
+                //take user input
+                userInput = stdin.nextLine();
+
+                //take action based on user choice
+                switch (userInput.toLowerCase()) {
+                    case "1": System.out.println("\nyou have chosen: " + userInput + "\n");
+                        System.out.println(usCrimes.getPercentChanged("Population","1994","1995"));
+                        System.out.println(usCrimes.getPercentChanged("Population","1995","1996"));
+                        System.out.println(usCrimes.getPercentChanged("Population","1996","1997"));
+                        System.out.println(usCrimes.getPercentChanged("Population","1997","1998"));
+                        System.out.println(usCrimes.getPercentChanged("Population","1998","1999"));
+                        System.out.println(usCrimes.getPercentChanged("Population","1999","2000"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2000","2001"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2001","2002"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2002","2003"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2003","2004"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2004","2005"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2005","2006"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2006","2007"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2007","2008"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2008","2009"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2009","2010"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2010","2011"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2011","2012"));
+                        System.out.println(usCrimes.getPercentChanged("Population","2012","2013"));
+                        break;
+                    case "2": System.out.println("\nyou have chosen: " + userInput + "\n");
+                        System.out.println(usCrimes.getMinMax("Murder and nonnegligent manslaughter rate","highest"));
+                        break;
+                    case "3": System.out.println("\nyou have chosen: " + userInput + "\n");
+                        System.out.println(usCrimes.getMinMax("Murder and nonnegligent manslaughter rate","lowest"));
+                        break;
+                    case "4": System.out.println("\nyou have chosen: " + userInput + "\n");
+                        System.out.println(usCrimes.getMinMax("Robbery rate","highest"));
+                    break;
+                    case "5": System.out.println("\nyou have chosen: " + userInput + "\n");
+                        System.out.println(usCrimes.getMinMax("Robbery rate","lowest"));
+                        break;
+                    case "6": System.out.println("\nyou have chosen: " + userInput + "\n");
+                        System.out.println(usCrimes.getPercentChanged("Motor Vehicle Theft","1998","2012"));
+                        break;
+                    case "7": System.out.println("\nyou have chosen: " + userInput + "\n");
+                        System.out.println(usCrimes.getValueWhen("Population","Violent crime rate","highest"));
+                        break;
+                    case "8": System.out.println("\nyou have chosen: " + userInput + "\n");
+                        System.out.println(usCrimes.getValueWhen("Violent crime rate", "Burglary rate","highest"));
+                        break;
+                    case "9": System.out.println("\nyou have chosen: " + userInput + "\n");
+                        System.out.println(usCrimes.getAllData());
+                        break;
+                    case "q"://end time and calculate duration of run in seconds
+                        System.out.println("\nThank you for trying the US Crimes Statistics Program");
+                        endTime = System.nanoTime(); //LocalTime.now().toSecondOfDay();
+                        elapsedTime = (endTime - startTime) / 1000000000;
+                        System.out.println("\nElapsed time in seconds was: " + elapsedTime);
+                        //exit program without error
+                        System.exit(0);
+                        break;
+                    default: System.out.println("\nInvalid selection. Please choose again.");
+                        break;
+                }   //end switch
+
+            }   //end while loop
+
+        } catch (ArrayIndexOutOfBoundsException oob) {
+            System.out.println("\nThere was an issue. Please make sure you specify a file.");
+            System.exit(1);
+        } catch (Exception e) {
+            System.out.println("\nThere is something wrong and I don't know what it could be.");
+            System.exit(1);
+        }
+
+    }   //end main method
+}   //end TestCrime class
+
+
+USCrimeClass.java
+
+
+public class USCrimeClass {
+
+    // ---------- fields ----------
+    final int COLUMN = 20;
+    final int ROW = 21;
+    String crimeData2D[][] = new String[ROW][COLUMN];
+
+    // ---------- Constructors ----------
+    public USCrimeClass(String crime2darray[][]) {
+        this.crimeData2D = crime2darray;
+    }
+
+    // --------- getMinMax Method ---------
+    protected String getMinMax(String heading, String highestOrLowest) {
+        // ---------- Fields ----------
+        int rowIndex = 0;
+        int columnIndex;
+        final int YEARCOLUMNINDEX = 0;
+        //returnFields
+        String returnYear;
+        String returnValue;
+        String results = "AHHHHH";
+
+        //set columnIndex to matching heading
+        columnIndex = ArrayUtils.getHeadingIndex(this.crimeData2D, heading);
+
+        switch (highestOrLowest){
+            case "highest":
+                //based on columnIndex set rowIndex to the highest value
+                rowIndex = ArrayUtils.getMaxValueRowIndex(this.crimeData2D, columnIndex);
+                break;
+            case "lowest":
+                //based on columnIndex set rowIndex to the lowest value
+                rowIndex = ArrayUtils.getMinValueRowIndex(this.crimeData2D, columnIndex);
+                break;
+            default: System.out.println("you are dumb, high or low?");
+                break;
+        }
+
+        //based on rowIndex get the year for that row
+        returnYear = crimeData2D[rowIndex][YEARCOLUMNINDEX];
+        returnValue = crimeData2D[rowIndex][columnIndex];
+
+        results = "The " + highestOrLowest + " " + heading + " was at " + returnValue + " in " + returnYear + ".";
+        return results;
+    }   //end getMinMax method
+
+
+    // --------- percentageChange method ----------
+    public String getPercentChanged(String heading, String yearOne, String yearTwo) {
+        // ---------- Fields ----------
+        int firstRowIndex;
+        int columnIndex;
+        int secondRowIndex;
+        String returnValue;
+
+        //search for the first year's row
+        firstRowIndex = ArrayUtils.getYearIndex(this.crimeData2D, yearOne);
+        //search for the second year's row
+        secondRowIndex = ArrayUtils.getYearIndex(this.crimeData2D, yearTwo);
+        //search for heading value and set column
+        columnIndex = ArrayUtils.getHeadingIndex(this.crimeData2D, heading);
+
+        //Calculations
+        double firstStat = Double.parseDouble(crimeData2D[firstRowIndex][columnIndex]);
+        double secondStat = Double.parseDouble(crimeData2D[secondRowIndex][columnIndex]);
+        double difference = ((secondStat - firstStat) / firstStat) * 100;
+
+        returnValue ="The percentage change for " + heading + " from " + yearOne + " to " + yearTwo + " was " +
+                difference + "%.";
+        return returnValue;
+    }   //end perChange method
+
+
+    // --------- getValueWhen method ----------
+    public String getValueWhen(String firstHeading, String secondHeading, String highestOrLowest) {
+        // ---------- Fields ----------
+        int rowIndex = 0;
+        int firstColumnIndex;
+        int secondColumnIndex;
+        final int YEARCOLUMNINDEX = 0;
+        //returnFields
+        String returnYear;
+        String returnValue;
+        String results = "AHHHH";
+
+
+        //search for first heading value and set firstColumnIndex
+        firstColumnIndex = ArrayUtils.getHeadingIndex(this.crimeData2D, firstHeading);
+
+        //search for first heading value and set secondColumnIndex
+        secondColumnIndex = ArrayUtils.getHeadingIndex(this.crimeData2D, secondHeading);
+
+        //determine min/max value in secondColumnIndex and return rowIndex
+        switch (highestOrLowest){
+            case "highest":
+                //based on columnIndex set rowIndex to the highest value
+                rowIndex = ArrayUtils.getMaxValueRowIndex(this.crimeData2D, secondColumnIndex);
+                break;
+            case "lowest":
+                //based on columnIndex set rowIndex to the lowest value
+                rowIndex = ArrayUtils.getMinValueRowIndex(this.crimeData2D, secondColumnIndex);
+                break;
+            default: System.out.println("you are dumb, high or low?");
+                break;
+        }
+
+        //sets up return values
+        returnValue = crimeData2D[rowIndex][firstColumnIndex];
+        returnYear = crimeData2D[rowIndex][YEARCOLUMNINDEX];
+        results = "The " + firstHeading + " was at " + returnValue + " when " + secondHeading +
+                " was at it's " + highestOrLowest + " in " + returnYear + ".";
+
+        return results;
+    }   //end getValueWhen method
+
+    //Additional Methods go here
+
+    //This section prints the 2d array -- for verification
+    public StringBuilder getAllData() {
+        //This section prints the 2d array -- for verification
+        //sets the row
+        StringBuilder allData = new StringBuilder("********** US Crime Statistical Data **********\n");
+        for (int i = 0; i < ROW; i++) {
+            //sets the columns
+            for (int j = 0; j < COLUMN; j++) {
+                allData.append(crimeData2D[i][j] + "\t");
+            }
+            allData.append("\n");
+        }
+
+        return allData;
+    }   //end getAllData method
+
+
+}   //end USCrimeClass
+
+
+ArrayUtils.java
+
+public class ArrayUtils {
+
+    // ----------- fields ----------
+    private static final int YEARCOLUMNINDEX = 0;
+    private static final int HEADINGROWINDEX = 0;
+
+
+    //getHeadingIndex - column
+    public static int getHeadingIndex(String[][] array, String heading){
+        int columnIndex = 0;
+
+        for (int i = 1; i < 20; i++){
+            if (array[HEADINGROWINDEX][i].equals(heading)){
+                columnIndex = i;
+            }
+        }
+        return columnIndex;
+    }   //end getHeadingIndex method
+
+    //getYearIndex - row
+    public static int getYearIndex(String[][] array, String year){
+        int rowIndex = 0;
+
+        for (int i = 1; i < 21; i++){
+            if (array[i][YEARCOLUMNINDEX].equals(year)){
+                rowIndex = i;
+            }
+        }
+        return rowIndex;
+    }   //end getHeadingIndex method
+
+    //getMaxValueRowIndex
+    public static int getMaxValueRowIndex(String[][] array, int columnIndex){
+        double maxValue = 0;
+        double value;
+        int rowIndex = 0;
+
+        for (int i = 1; i < 21; i++){
+            value = Double.parseDouble(array[i][columnIndex]);
+            if (maxValue < value) {
+                maxValue = value;
+                rowIndex = i;
+            }
+        }
+        return rowIndex;
+    }   //end getMaxValueRowIndex method
+
+    //getMinValueRowIndex
+    public static int getMinValueRowIndex(String[][] array, int columnIndex){
+        double minValue = 1000000000;
+        double value;
+        int rowIndex = 0;
+
+        for (int i = 1; i < 21; i++){
+            value = Double.parseDouble(array[i][columnIndex]);
+            if (minValue > value) {
+                minValue = value;
+                rowIndex = i;
+            }
+        }
+        return rowIndex;
+    }   //end getMinValueRowIndex method
+
+
+}   //end ArraysUtils class
+
+
+CsvToArray.java
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class CsvToArray {
+    public static String[][] getArray (String filename){
+        //fields
+        BufferedReader br = null;
+        final int COLUMN = 20;
+        final int ROW = 21;
+        String array[][] = new String[ROW][COLUMN];
+
+        //Read the CSV file
+        //Setup try/catch/finally blocks for exception handling
+        try {
+            //setup input reader
+            String currentLine;
+            br = new BufferedReader(new FileReader(filename));
+
+            //while loop to read input, provide output and count
+            int count = 0;
+            while ((currentLine = br.readLine()) != null) {
+                for (int i = count; i < ROW; i++) {
+                    array[i] = currentLine.split(",");
+                }
+                count++;
+            }
+        } catch (IOException e) {
+            //output exception stack
+            System.out.println("\nThere was an issue. Please make sure you have the correct file.");
+            System.exit(1);
+        } finally {
+            try {
+                if (br != null) {
+                    br.close();
+                }
+            } catch (IOException ex) {
+                System.out.println("\nThere was an issue.");
+                System.exit(1);
+            }
+        }
+
+        return array;
+    }
+}
+
+
+Menu.java
+
+
+public class Menu {
+    public static String getMenu() {
+        //instantiate and read menu into string variable
+        String menu = "\n" +
+                "Enter the number of the question you want answered. Enter ‘Q’ to quit the program :\n" +
+                "1. What were the percentages in population growth for each consecutive year from 1994 – 2013?\n" +
+                "2. What year was the Murder rate the highest?\n" +
+                "3. What year was the Murder rate the lowest?\n" +
+                "4. What year was the Robbery rate the highest?\n" +
+                "5. What year was the Robbery rate the lowest?\n" +
+                "6. What was the total percentage change in Motor Vehicle Theft between 1998 and 2012?\n" +
+                "7. What was the Population when the Violent crime rate was the highest?\n" +
+                "8. What was Violent crime rate when the Burglary rate was the highest?\n" +
+                "9. View a table of all statistical data.\n" +
+                "Q. Quit the program\n" +
+                "Enter your selection:" +
+                "";
+
+        return menu;
+    }   // end getMenu method
+}   // end Menu class

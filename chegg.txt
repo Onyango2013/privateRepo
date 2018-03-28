@@ -1,0 +1,148 @@
+1. First find the "k" index value
+
+    (Index up to which array is elements are in increased order ant then decreases)
+
+2. Search element can't be found in below cases
+
+    2.1)If Element is > element at k , then the element can't found in Array
+
+    2.2)Element greater than item at [k-1] and item at [k+1] , then it can't be found
+
+3. After finding "k" we can do Binary Search
+
+      3.1) Do Binary search between 0 .. k-1
+
+     3.2) If not found then Do Binary search k+1 .. n-1
+
+Programe :-
+
+----------------------------
+
+import java.util.Scanner;
+JEldah Kemto 0712 180765
+
+public class ArraySearch {
+  
+  
+   public static int binarySearch(int array[], int first, int last,int search){
+      
+        int middle = (first + last)/2;
+        int position = -1;
+        while( first <= last )
+        {
+          if ( array[middle] < search )
+            first = middle + 1;  
+          else if ( array[middle] == search )
+          {
+              position = middle;            
+              break;
+          }
+          else
+             last = middle - 1;
+  
+          middle = (first + last)/2;
+       }
+       return position;
+   }
+  
+public static int binarySearchDesc(int array[], int first, int last,int search){
+      
+        int middle = (first + last)/2;
+        int position = -1;
+        while( first <= last )
+        {
+          if ( array[middle] > search )
+            first = middle + 1;  
+          else if ( array[middle] == search )
+          {
+              position = middle;            
+              break;
+          }
+          else
+             last = middle - 1;
+  
+          middle = (first + last)/2;
+       }
+       return position;
+   }
+   public static void main(String args[]){
+       //Input Array
+       int a[] = {1,3,4,5,7,14,11,7,2,-4,-8};
+      
+       //Item to Search
+       int input;
+      
+       //Flag to check Item found
+       boolean found = false;
+       //Index up to which array is elements are in increased order ant then decreases
+       int k = -1;
+       //Read input from user
+       System.out.println("Enter input to Search.");
+       Scanner in = new Scanner(System.in);
+       input = in.nextInt();;
+      
+      
+        //Find out k
+       for (int i = 0; i < a.length; i++ ){
+           //If input is matched
+           if(a[i] == k){
+               found = true;
+               System.out.println("Given element " +input+" found in Array at " +(i+1) + "Position");
+               return;
+           }
+           //found k
+           if(a[i] > a[i+1]){
+                k = i;
+                break;
+           }
+       }
+       //If Element is > element at k , then the element can't found in Array
+       if(input > a[k]){
+           System.out.println("Given element not found in Array");
+           return;  
+       }
+       //Element greater than item at [k-1] and item at [k+1] , then it can't be found
+       if(input > a[k-1] && input > a[k+1]){
+           System.out.println("Given element not found in Array");
+           return;  
+       }
+      
+       //Do Binary search between 0..k-1
+       int pos = binarySearch(a,0,k-1,input);
+      
+       //if Item Found
+       if(pos != -1){
+           System.out.println("Given element " +input+" found in Array at " +(pos+1) + "Position");
+           return;  
+       }
+      
+       //If not found then Do Binary search k+1 .. n-1
+         pos = binarySearchDesc(a,k+1,(a.length-1),input);
+      
+       //if Item Found
+       if(pos != -1){
+           System.out.println("Given element " +input+" found in Array at " +(pos+1) + "Position");
+           return;  
+       }
+      
+       //Item is not found any way
+       System.out.println("Given element not found in Array");
+   }
+
+}
+
+Time Complexity :-
+
+----------------------------------
+
+1)Best
+
+        Element find while searching for "k"
+
+        that is O(k)
+
+2) Worst Time Complexity is
+
+     Time Complexit for finding "k" + Time Complexity of Binary Search 0..k-1 + Time Complexity of Binary Search k+1 .. n-1
+
+O(k) + O(logn)

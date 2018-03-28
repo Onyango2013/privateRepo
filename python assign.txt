@@ -1,0 +1,100 @@
+
+import tkinter
+
+class auto:
+
+    def __init__(self, parent):
+
+        # create reference to main window
+
+        self.main_window = parent
+
+        #creating frames for top and bottom
+
+        self.top_frame=tkinter.Frame(self.main_window)
+
+        self.bottom_frame=tkinter.Frame(self.main_window)
+
+        #create objects for given oil,lube,rotation,transport variables
+
+        self.oil=tkinter.IntVar()
+
+        self.lube=tkinter.IntVar()
+
+        self.rad=tkinter.IntVar()
+
+        self.trans=tkinter.IntVar()
+
+        self.inspect=tkinter.IntVar()
+
+        self.muff=tkinter.IntVar()
+
+        self.tire=tkinter.IntVar()
+
+    #create checkbutton widgets
+
+self.oilb=tkinter.Checkbutton(self.top_frame, text="Oil Change- $26.00" ,variable=self.oil, onvalue=26)
+
+self.lubeb=tkinter.Checkbutton(self.top_frame,text= "Lube Job- $18.00",variable=self.lube, onvalue=18)
+
+    self.radb=tkinter.Checkbutton(self.top_frame, text= "Radiator Flush- $30.00" , variable=self.rad, onvalue=30)
+
+self.transb=tkinter.Checkbutton(self.top_frame,text= "Transmission Flush- $80.00", variable=self.trans, onvalue=80)
+
+self.inspectb=tkinter.Checkbutton(self.top_frame,text= "Inspection- $15.00",variable=self.inspect, onvalue=15)
+
+self.muffb=tkinter.Checkbutton(self.top_frame,text= "Muffler Replacement- $100.00",
+
+           variable=self.muff, onvalue=100)
+
+        self.tireb=tkinter.Checkbutton(self.top_frame, text= "Tire Rotation- $20.00", variable=self.tire, onvalue=20)
+
+#create charge and quit buttons
+
+self.display_button=tkinter.Button(self.bottom_frame,text= "Display Charges", command=self.display_charge)
+
+self.quit_button=tkinter.Button(self.bottom_frame,text="Quit", command=self.main_window.destroy)
+
+self.total_l = tkinter.Label(self.bottom_frame, text="$0.00")
+
+self.top_frame.pack()
+
+self.bottom_frame.pack()
+
+#pack the check buttons
+
+        self.oilb.pack()
+
+        self.lubeb.pack()
+
+        self.radb.pack()
+
+        self.transb.pack()
+
+        self.inspectb.pack()
+
+        self.muffb.pack()
+
+        self.tireb.pack()
+
+      #pack the buttons
+
+        self.display_button.pack(side='left')
+
+        self.quit_button.pack(side='left')
+
+        self.total_l.pack(side='left')
+
+        def display_charge(self):
+
+        self.total_l.config(text="${}.00".format(sum(map(tkinter.IntVar.get,
+
+        [self.oil, self.lube, self.rad, self.trans, self.inspect, self.muff,
+
+        self.tire]))))
+
+root=tkinter.Tk()
+
+mygui=auto(root)
+
+root.mainloop()

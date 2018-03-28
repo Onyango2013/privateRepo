@@ -1,0 +1,21 @@
+
+
+Scenario:
+Assume you are a manager at a medium-sized brick-and-mortar organization based in the Middle East and are looking to enter the global market. You have been asked to assess the company’s current business model and come up with a recommendation for scaling it up with IT security in mind.
+
+Directions:
+Write a paper that includes the following:
+
+    A description of the following business models: brick-and-mortar, e-business and e-commerce
+    For each model, discuss best practices you would employ to keep your customers’ personal data safe.
+    Recommend the model that is best suited for global expansion, explaining your reasoning.
+
+Keep in mind, we are most interested in your explanation of the steps you would take to identify a suitable model in accordance with security goals. Use diagrams, where appropriate.
+
+Deliverables:
+
+    Your paper should be 2-3 pages in length, not including the title and reference pages.
+    You must include a minimum of two (2) credible sources and information from the module to support your writing.
+    Your paper must follow APA style guidelines, as appropriate.
+    You are strongly encouraged to submit all assignments to the Turnitin Originality and must be less than 20%.
+

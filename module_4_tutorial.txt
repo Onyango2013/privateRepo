@@ -1,0 +1,45 @@
+### Before we can work with ArcGIS we need to import the arcpy module
+### it's really easy
+
+import arcpy
+
+### We can also go ahead and set a workspace and turn overwriting on
+
+arcpy.env.workspace = "C:" ### specify a folder to put your work in here.
+
+### you generally won't need to include the full path to objects placed
+### in the workspace, Python will look here for them.
+
+arcpy.env.overwriteOutput = True
+
+### Let's say we are working with a shapefile called Cities.shp
+
+### Define the object we are working with
+cities = "Cities.shp" ### Notice I don't use the whole path if the file is in the workspace
+
+### Finds city names and coordinates
+with arcpy.da.UpdateCursor(cities, ["NAME", "X_CO", "Y_CO" "SHAPE@X", "SHAPE@Y"]) as cursor:
+    for row in cursor:
+        NAME = row[0]
+        x = row[4]
+        y = row[5]
+
+
+### Here we have opened an update cursor to find data inside cities
+### This lets us read and write data to this file
+### "NAME", "X_CO", and "Y_CO" are names of a fields containing city names
+### and blank fields.        
+### SHAPE@X and SHAPE@Y are commands to retrieve the X and Y data for each city
+### We have then saved the data to a variable
+### Let's populate the X_CO and Y_CO fields with X Y data.
+
+        row[1] = x
+        row[2] = y
+        cursor.updateRow(row)
+
+
+### Always remember to delete cursors when you are finished with them
+del cursor
+
+### There are multipe types of cursors, familiarize yourself with them
+### to be sure you use the best one for each situation.

@@ -1,0 +1,96 @@
+  https://1and1.com
+----------------------------
+
+fakename email: http://www.fakemailgenerator.com/inbox/armyspy.com/margaretwcombs/message-138122113/
+
+   Title*
+    Mr
+    First name*
+    George
+    Last name*
+    Momaima
+    Company Name*
+    George Gitonto Ent
+    Address*
+    Bangamoyo Road 135
+    Address 2
+    City*
+    Nairobi
+    State/Province*
+    Nairobi Municipality
+    ZIP*
+    40300
+    Country
+    KENYA
+    E-mail*
+    getonto@yahoo.com
+    Phone Number* (if additional info is needed)
+    +254 704223370
+    PIN: 7018
+
+fakeemail:margaretwcombs@armyspy.com
+
+changing emails
+
+Prerequisites:
+----------------
+You are logged in to the 1&1 Control Panel.
+The Domain Overview is displayed.
+
+1. Select a domain.
+2. Click Domain Settings > Edit Contacts.
+3. Click Registrant Contact.
+4. Edit the e-mail address of the Registrant Contact.
+5. Click Save.
+A message with the subject 'Changes to the contact data – Please confirm' will be sent to the new e-mail address.
+6. Log in to the e-mail account provided.
+7. Display the message with the subject 'Changes to the contact data – Please confirm'.
+8. Follow the message instructions.
+
+
+Home-Assignment domain details 
+---------------------------------
+Domain Name: HOME-ASSIGNMENT.COM
+Registrar WHOIS Server: whois.1and1.com
+Updated Date: 2018-02-24T07:45:58.000Z
+Creation Date: 2018-02-24T07:45:55.000Z
+Registrar Registration Expiration Date: 2019-02-24T07:45:55.000Z
+Registrar: 1&1 Internet SE
+Registrar Abuse Contact Email: abuse@1and1.com
+Registrar Abuse Contact Phone: +1.6105601459
+Domain Status: clientTransferProhibited
+Registrant Name: Oneandone Private Registration
+Registrant Organization: 1&1 Internet Inc
+Registrant Street: 701 Lee Road Suite 300
+Registrant Street: ATTN
+Registrant City: Chesterbrook
+Registrant State/Province: PA
+Registrant Postal Code: 19087
+Registrant Country: US
+Registrant Phone: +1.8772064254
+Registrant Email: privacy@1and1.com
+Admin Name: Oneandone Private Registration
+Admin Organization: 1&1 Internet Inc
+Admin Street: 701 Lee Road Suite 300
+Admin Street: ATTN
+Admin City: Chesterbrook
+Admin State/Province: PA
+Admin Postal Code: 19087
+Admin Country: US
+Admin Phone: +1.8772064254
+Admin Email: privacy@1and1.com
+Tech Name: Oneandone Private Registration
+Tech Organization: 1&1 Internet Inc
+Tech Street: 701 Lee Road Suite 300
+Tech Street: ATTN
+Tech City: Chesterbrook
+Tech State/Province: PA
+Tech Postal Code: 19087
+Tech Country: US
+Tech Phone: +1.8772064254
+Tech Email: privacy@1and1.com
+Nameserver: NS1039.UI-DNS.BIZ
+Nameserver: NS1081.UI-DNS.ORG
+Nameserver: NS1043.UI-DNS.COM
+Nameserver: NS1029.UI-DNS.DE
+>>> Last update of WHOIS database: 2018-02-24T07:52:06.000Z

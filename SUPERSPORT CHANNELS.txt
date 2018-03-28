@@ -1,0 +1,141 @@
+M-Net Stars
+	 105
+M-Net Action
+	 106
+Mzansi Magic
+	 107
+Universal Channel
+	 108
+Turner Classic Movies
+	 109
+M-Net Series
+	 110
+MagicWorld 	 112
+Sony Entertainment
+	 113
+AfricaMagic 	 114
+AfricaMagic +
+	 115
+Studio Universal
+	 119
+VUZU 	 123
+Zone Reality
+	 125
+Sony Max
+	 126
+
+FREE TO AIR
+SABC 1 	131
+SABC 2 	132
+SABC 3 	133
+e.tv 	134
+Soweto TV 	150
+
+LIFESTYLE AND CULTURE
+
+BBC Lifestyle 	180
+The Home Channel 	182
+Style Network 	183
+Fashion TV 	184
+Food Network 	185
+Discovery TLC 	186
+
+SPORT
+
+SuperSport Blitz 	200
+SuperSport 3 	203
+SuperSport 4 	204
+ESPN 	230
+TellyTrack 	232
+
+DOCUMENTARY
+
+Discovery World 	250
+Discovery ID 	252
+National Geographic 	260
+Animal Planet 	264
+Ignition 	265
+
+CHILDREN
+
+Cartoon Network 	301
+Disney Channel XD 	304
+Koowee 	307
+KidsCo 	308
+Disney Junior 	309
+Mindset Learn 	319
+
+MUSIC
+
+Channel O 	320
+MTV base 	322
+TRACE Urban 	325
+AFRO Music English 	326
+One Gospel 	331
+
+RELIGION
+
+Trinity broadcast 	341
+Rhema network 	343
+Islam Channel 	347
+
+NEWS AND COMMERCE
+
+BBC World News 	400
+CNN International 	401
+eNews Channel 	403
+Al Jazeera 	406
+NDTV 24x7 	407
+Parliamentary Service 	408
+CNBC Africa 	410
+Summit TV 	412
+
+
+INTERACTIVE
+
+Weather 24 	415
+
+RADIO
+
+BBC World Radio 1 	150
+BBC World Radio 2 	151
+BBC World Radio 3 	152
+Voice of America 	153
+World Radio Network 	154
+Trans World Radio 	155
+Talk Radio 702 	156
+Classic FM 	157
+Jacaranda FM 	158
+YFM 	159
+Chinese Radio 	160
+Kaya FM 	161
+Radio Nederland 	163
+Radio Nederland 2 	164
+Channel Islam 	165
+Radio France 	166
+Radio Wave 	167
+Radio Energy 	168
+148.5 AM Radio 	169
+Radio Veritas 	170
+Radio Flanders Int 	171
+TransAfrica Radio 	172
+Link FM 	175
+Radio Kosmo 	176
+Jozi FM 	178
+94.7 Highveld Stereo 	179
+94.5KM 	180
+Radio Pulpit 	182
+NNR 	183
+
+DMX
+
+Adult 	101
+70's Hits 	104
+80's Hits 	105
+Love Songs 	108
+Classic Rock 	119
+Rock n' Roll 	121
+Gospel 	128
+African Rhythms 	129
+Smooth Jazz 	131
+Contemporary 	135

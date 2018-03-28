@@ -1,0 +1,1461 @@
+Laravel TIIPS 
+----------------------------
+https://speakerdeck.com/willroth/50-laravel-tricks-in-50-minutes
+https://www.reddit.com/r/laravel/comments/3to60i/50_laravel_tricks/
+
+ToC
+A. Eloquent
+1. Automatic Model Validation
+2. Prevent Uploading
+3. Conditional Relationships
+4. Expressive "where" syntax
+5. Query Builder: having raw
+6. Simple Date filtering
+7. Save options
+8. Multilanguage Support *
+9. Retreive random rows
+10. UUID Model Primary Keys
+11. Ordered relationships
+12. Simple incrementing and Decrementing
+13. Lists with Mutations
+14. Appending mutated properties
+15. Filter only rows with Child rows
+16. Return relations on model save
+B. Blade
+17. Dynamic With
+18. First/Last Array Element
+C. Collections
+19. Arrays as Collections
+20. Collection Filters
+21. find()
+22. where()
+23. implode()
+24. where() & list()
+25. Order belongsToMany by pivot table value
+26. Sorting with closures
+27. Keying arrays
+28. Grouped Collections
+29. Collection Unions
+30. Collection Look-aheads
+D. Routing
+31. Nested Route groups
+32. Catch-all view route
+33. Internal dispatch
+E. Testing
+34. Environment Variables
+35. Run tests automatically
+F. Miscellaneous
+36. Share cookies between domains
+37. Easy model and migration stubs
+38. Add Spark to an existing project
+39. Customize the default error page
+40. Conditional service providers
+41. Change a column name in a migration
+42. Checking if a view exists
+43. Extending the Application
+44. Simple cache microservice
+45. Using the bleeding-edge version of Laravel
+46. Capture queries
+47. Authorization without models
+48. Efficient file transfers with Streams
+49. Avoiding overflowing log files
+50. Pipelines
+
+ELOQUENT
+---------------------------
+1. Automatic Model Validation
+----------------------------
+class Post extends Eloquent
+{
+	public staic $autoValidates = true;
+
+	protected static $rules = [];
+
+	protected static function boot()
+	{
+		parent::boot();
+
+		// or static::creating, or static::updating
+		static::saving(function($model)
+		{
+			if ($model::$autoValidates) {
+				return $model->validate();
+			}
+		});
+	}
+
+	public function validate()
+	{
+
+	}
+}
+2. Prevent updating
+class Post extends Eloquent
+{
+	protected static function boot()
+	{
+		parent::boot();
+
+		static::updating(function($model)
+		{
+			return false;
+		});
+	}
+}
+3. Conditional Relationships
+class myModel extends Model
+{
+	public function category()
+	{
+		return $this->belongsTo('myCategoryModel', 'categories_id')
+			->where('users_id', Auth::user()->id);
+	}
+}
+4. Expressive "Where" Syntax
+$products = Product::where('category', '=', 3)->get();
+
+$products = Product::where('category', 3)->get();
+
+$products = Product::whereCategory(3)->get();
+
+
+5. Query Builder: Having Raw
+SELECT *, COUNT(*) FROM products GROUP BY category_id HAVING count(*) > 1;
+
+DB::table('products')
+	->select('*', DB::raw('COUNT(*) as products_count'))
+	->groupBy('category_id')
+	->having('products_count', '>', 1)
+	->get();
+
+
+6. Simple Date Filtering
+----------------------------------------
+
+$q->whereDate('created_at', date('Y-m-d'));
+
+$q->whereDay('created_at', date('d'));
+
+$q->whereMonth('created_at', date('m'));
+
+$q->whereYear('created_at', date('Y'));
+
+---------------
+7. Save Options
+-----------------------
+// src/Illuminate/Database/Eloquent/Model.php
+public function save(array $options = [])
+
+// src/Illuminate/Database/Eloquent/Model.php
+protected function performUpdate(Builder $query, array $options=[])
+{
+	if ($this->timestamps && array_get($options, 'timestamps', true))
+	{
+		$this->updateTimestamps();
+	}
+}
+
+$product = Product::find($id);
+$product->updated_at = '2015-01-01 00:00:00';
+$product->save(['timestamps'=>false]);
+
+
+8. Multilanguage Support
+---------------------------
+// TODO
+9. Retrieve Random Rows
+---------------------------
+$questions = Question::orderByRaw('RAND()')->take(10)->get();
+
+10. UUID Model Primary Key
+---------------------------
+
+use Ramsey\Uuid\Uuid;
+
+trait UUIDModel
+{
+	public $incrementing = false;
+
+	protected static function boot()
+	{
+		//override parent boot
+		
+		parent::boot();
+
+		static::creating(function ($model)
+		{
+			$key = $model->getKeyName();
+
+			if (empty($model->{$key})) {
+				$model->{$key} = (string) $model->generateNewUuid();
+			}
+		});
+	}
+
+	public function generateNewUuid()
+	{
+		return Uuid::uuid4();
+	}
+}
+11. Ordered Relationships
+------------------------------
+class Category extends Model
+{
+	public function products()
+	{
+		return $this->hasMany('App\Product')->orderBy('name');
+	}
+}
+
+12. Simple Incrementing & Decrementing
+----------------------------------------
+
+$customer = Customer::find($customer_id);
+
+$loyalty_points = $customer->loyalty_points + 50;
+
+$customer->update(['loyalty_points' => $loyalty_points]);
+
+// adds one loyalty point
+
+Customer::find($customer_id)->increment('loyalty_points', 50);
+
+// subtracts one loyalty point
+Customer::find($customer_id)->decrement('loyalty_points', 50);
+
+13. Lists with Mutations
+-------------------------
+$employees = Employee::where('branch_id', 9)->lists('name', 'id');
+
+return view('customers.create', compact('employees'));
+
+{!! Form::select('employee_id', $employees, '') !!}
+
+
+public function getFullNameAttribute()
+{
+	return $this->name . ' ' . $this->surname;
+}
+
+[2015-07-19 21:47:19] local.ERROR: exception 'PDOException'...Column not found:...'full_name'
+
+$employees = Employee::where('branch_id', 9)->get()->lists('full_name', 'id');
+
+
+14. Appending Mutated Properties
+
+-------------------------------
+function getFullNameAttribute() 
+{
+	return $this->first_name . ' ' . $this->last_name;
+}
+
+class User extends Model
+{
+	protected $appends = ['full_name'];
+}
+
+15. Filter only rows with child rows
+------------------------------------
+class Category extends Model
+{
+	public function products()
+	{
+		return $this->hasMany('App\Product');
+	}
+}
+
+public function getIndex()
+{
+	$categories = Category::with('products')->has('products')->get();
+
+	return view('categories.index', compact('categories'));
+}
+16. Return relations on model save
+--------------------------------------
+public function store()
+{
+	$post = new Post;
+	$post->fill(Input::all());
+	$post->user_id = Auth::user()->user_id;
+
+	$post->user;
+
+	return $post->save();
+}
+
+BLADE 
+17. Dynamic With
+------------------------
+// eloquent
+Post::whereSlug('slug')->get();
+
+// instead of
+View::make('posts.index')->with('posts', $posts);
+
+// do this
+
+View::make('posts.index')->withPosts($posts);
+
+18. First/Last Array Element
+// hide all but the first item
+@foreach ($menu as $item)
+	<div @if ($item != reset($menu)) class="hidden" @endif>
+		<h2>{{ $item->title }}</h2>
+	</div>
+@endforeach
+
+// apply CSS to last item only
+@foreach ($menu as $item)
+	<div @if ($item == end($menu)) class="no_margin" @endif>
+		<h2>{{ $item->title }}</h2>
+	</div>
+@endforeach
+Collections
+19. Arrays as Collections
+$devs = [
+	['name' => 'Anouar Abdessalam', 'email' => 'dtekind@gmail.com'],
+	['name' => 'Bilal Ararou', 'email' => 'have@noIdea.com'],
+];
+
+$devs = new \Illuminate\Support\Collection($devs);
+20. Collection Filters
+Keeps the item only if the closure returns true
+
+$customers = Customer::all();
+
+$us_customers = $customers->filter(function($customer)
+{
+	return $customer->country == 'United States';
+});
+21. find()
+// returns a single row as a collection
+$collection = Person::find([1]);
+
+// returns multiple rows as a collection
+$collection = Person::find([1, 2, 3]);
+22. where()
+$collection = Person::all();
+
+$programmers = $collection->where('type', 'programmer');
+23. implode()
+$collection = Person::all();
+
+$names = $collection->implode('first_name', ',');
+24. where() & list()
+// returns a collection of first names
+$collection = Person::all()->where('type', 'engineer')->lists('first_name');
+
+// returns all meta records for user 1
+$collection = WP_Meta::whereUserId(1)->get();
+
+// returns first name meta values
+$first_name = $collection->where('meta_key', 'first_name')->lists('value')[0];
+25. Order belongsToMany by Pivot Table value
+class Link extends Model
+{
+	public function users()
+	{
+		return $this->belongsToMany('Phpleaks\User')->withTimestamps();
+	}
+}
+
+@if ($link->users->count() > 0)
+	<strong>Recently Favorited By</strong>
+	@foreach ($link->users()->orderBy('link_user.created_at', 'desc')->take(15)->get() as $user)
+		...
+	@endforeach
+@endif
+26. Sorting with closures
+$sorted = $collection->sortBy(function($product, $key)
+{
+	return array_search($product['name'], [1=>'Bookcase', 2=>'Desk', 3=>'Chair']);
+});
+27. Keying arrays
+Defines the 'key' for an array-as-collection (for use with e.g. ->contains)
+
+$library = $books->keyBy('title');
+28. Grouped Collections
+$collection = Person::all();
+
+$grouped = $collection->groupBy('type');
+29. Collection Unions
+// the point is to actually combine results from different models
+$collection = new Collection;
+
+$all = $collection->merge($programmers)->merge($critics)->merge($engineers);
+30. Collection Lookaheads
+$collection = collect([1=>11, 5=>13, 12=>14, 21=>15])->getCachingIterator();
+
+foreach ($collection as $key=>$value)
+{
+	dump ($collection->current() . ':' . $collection->getInnerIterator()->current());
+}
+Routing
+31. Nested Route Groups
+Route::group(['prefix'=> => 'account', 'as' => 'account.'], function()
+{
+	Route::get('login', ['as' => 'login', 'uses' => AccountController::Class.'@getLogin']);
+});
+
+<a href="{{ route('account.login') }}">Login</a>
+32. Catch-all View Route
+// app/Http/routes.php
+Route::group(['middleware' => 'auth'], function()
+{
+	Route::get('{view}', function($view)
+	{
+		try {
+			return view($view);
+		} catch (\Exception $e) {
+			abort(404);
+		}
+	})->where('view', '.*');
+});
+33. Internal Dispatch
+// api controller
+public funciton show(Car $car)
+{
+	if (Input::has('fields')) {
+		// do something
+	}
+}
+
+// internal request to api - fields are lost
+$request = Request::create('/api/cars/' . $id . '?fields=id,color', 'GET');
+$response = json_decode(Route::dispatch($request)->getContent());
+
+// internal request to api - with fields
+$originalInput = Request::input();
+$request = Request::create('/api/cars' . $id . '?fields=id,color', 'GET');
+Request::replace($request->input());
+$response = json_decode(Route::dispatch($request)->getContent());
+Request::replace($originalInput);
+Testing
+34. Environmental Variables
+// phpunit.xml
+<php
+	<env name="APP_ENV" value="testing" />
+</php>
+
+// .env.test - add to .gitignore
+TWILIO_ACCOUNT_SID=blank
+
+// within createApplication() method of TestCase.php
+if (file_exists(dirname(__DIR__) . '/.env.test')) {
+	Dotenv::load(dirname(__DIR__), '.env.test');
+}
+35. Run tests automatically
+// gulpfile.js
+var elixir = require('laravel-elixir');
+
+mix.phpUnit();
+
+$ gulp tdd
+Miscellaneous
+36. Share Cookies Between Domains
+// app/Http/Middleware/EncryptCookies.php
+protected $except = [
+	'shared_cookie',
+];
+
+Cookie::queue('shared_cookie', 'my_shared_value', 10080, null, '.example.com');
+37. Easy Model & Migration Stubs
+$ artisan make:model Books -m
+38. Add Spark to an Existing Project
+Notes: Do not run spark:install, backup /resources/views/home.blade.php before running
+
+$ composer require genealabs/laravel-sparkinstaller --dev
+
+$ php artisan spark:upgrade
+
+$ php artisan vendor:publish --tag=spark-full
+// config/app.php
+Laravel\Spark\Providers\SparkServiceProvider::class,
+GeneaLabs\LaravelSparkInstaller\Providers\LaravelSparkInstallerServiceProvider::class,
+39. Customize the Default Error Page
+<?php namespace App\Exceptions;
+
+use Exception;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\Debug\ExceptionHandler as SymfonyDisplayer;
+
+class Handler extends ExceptionHandler
+{
+	protected function convertExceptionToResponse(Exception $e)
+	{
+		$debug = config('app.debug', false);
+		
+		return $debug
+			? (new SymfonyDisplayer($debug))->createResponse($e)
+			: response()->view('errors.default', ['exception' => $e], 500);
+	}
+}
+40. Conditional Service Providers
+// app/Providers/AppServiceProvider.php
+public function register()
+{
+	$this->app->bind(
+		\Illuminate\Contracts\Auth\Registrar::class,
+		\App\Services\Registrar::class
+	);
+
+	if ($this->app->environment('production')) {
+		$this->app->register(\App\Providers\ProductionErrorHandlerServiceProvider::class);
+	}
+	else {
+		$this->app->register(\App\Providers\VerboseErrorHandlerServiceProvider::class);
+	}
+}
+41. Change a Column Name in Migration
+$ composer require doctrine/dbal
+
+public function up()
+{
+	Schema::table('users', function ($table)
+	{
+		$table->string('name', 50)->change();
+	});
+}
+42. Checking if a View Exists
+if (view()->exists("emails.{$template}")) {
+	// ...sending an email to the customer
+}
+43. Extending the Application
+// bootstrap/app.php
+// replace this:
+$app = new \Illuminate\Foundation\Application( realpath(__DIR__.'/../'));
+
+// with this:
+$app = new \Fantabulous\Application( realpath(__DIR__.'/../'));
+
+// and add
+<?php namespace Fantabulous;
+
+class Application extends \Illuminate\Foundation\Application
+{
+	public function storagePath()
+	{
+		return $this->basePath.'/FantabulousStorage';
+	}
+}
+44. Simple Caching Microservice
+class fakeApiCaller
+{
+	public function getResultsForPath($path)
+	{
+		return [
+			'status' => 200,
+			'body' => json_encode([
+				'title' => "Results for path [$path]"
+			]),
+			'headers' => [
+				"Content-Type" => "application/json",
+			]
+		];
+	}
+}
+
+$app->get('{path?}', function($path)
+{
+	$result = Cache::remember($path, 60, function() use ($path)
+	{
+		return (new fakeApiCaller)->getResultsForPath($path);
+	});
+
+	return response($result['body'], $result['status'], array_only(
+		$result['headers'], ['Content-Type', 'X-Pagination']
+	));
+})->where('path', '.*');
+45. Use Bleeding Edge Version
+$ composer create-project laravel/laravel your-project-name dev-develop
+
+// composer.json
+{
+	"require": {
+		"php": ">=5.5.9",
+		"laravel/framework": "5.2.*"
+	},
+	"minimum-stability": "dev"
+}
+46. Capture Queries
+Event::listen('illuminate.query', function($query)
+{
+	var_dump($query);
+});
+
+\DB::listen(function($query, $bindings, $time)
+{
+	var_dump( $query, $bindings, $time);
+
+});
+47. Authorization Without Models
+// app/Policies/AdminPolicy.php
+class AdminPolicy
+{
+	public function managePages($user)
+	{
+		return $user->hasRole(['Administrator', 'Content Editor']);
+	}
+}
+
+// app/Providers/AuthServiceProvider.php
+public function boot( \Illuminate\Contracts\Auth\Access\GateContract $gate)
+{
+	foreach (get_class_methods(new \App\Policies\AdminPolicy) as $method) {
+		$gate->define($method, \App\Policies\AdminPolicy::class . "@{$method}");
+	}
+	$this->registerPolicies($gate);
+}
+
+$this->authorize('managePages'); // in Controllers
+@can('managePages') // in Blade
+$user->can('managePages'); // via Eloquent
+48. Efficient File Transfers with Streams
+$disk = Storage::disk('s3');
+$disk->put($targetFile, file_get_contents($sourceFile));
+
+$disk = Storage::disk('s3');
+$disk->put($targetFile, fopen($sourceFile, 'r+'));
+
+$disk = Storage::disk('s3');
+$stream = $disk->getDriver()->readStream($sourceFileOnS3);
+file_put_contents($targetFile, stream_get_contents($stream), FILE_APPEND);
+
+$stream = Storage::disk('s3')->getDriver()->readStream($sourceFile);
+Storage::disk('sftp')->put($targetFile, $stream);
+49. Avoid Overflowing Log Files
+$schedule->call(function()
+{
+	Storage::delete($logfile);
+})->weekly();
+50. Pipeline
+$result = (new \Illuminate\Pipeline\Pipeline($container))
+	->send($something)
+	->through('ClassOne', 'ClassTwo', 'ClassThree')
+	->then(function ($something)
+	{
+		return 'foo';
+	});
+ @amouillard
+amouillard commented on Nov 8, 2016 • 
+Hey,
+
+18. First/Last Array Element
+
+Inside of @ loops you can now access the $loop variable which has 'first' and 'last' attributes
+
+// hide all but the first item
+@foreach ($menu as $item)
+    <div @if ($loop->first) class="hidden" @endif>
+        <h2>{{ $item->title }}</h2>
+    </div>
+@endforeach
+
+// apply CSS to last item only
+@foreach ($menu as $item)
+    <div @if ($loop->last) class="no_margin" @endif>
+        <h2>{{ $item->title }}</h2>
+    </div>
+@endforeach
+19. Arrays as Collections
+
+You can now use the collect() helper
+
+$devs = [
+    ['name' => 'Anouar Abdessalam', 'email' => 'dtekind@gmail.com'],
+    ['name' => 'Bilal Ararou', 'email' => 'have@noIdea.com'],
+];
+
+$devs = collect($devs);
+
+
+-----------------
+Laravel Tips full
+https://speakerdeck.com/willroth/50-laravel-tricks-in-50-minutes
+https://www.reddit.com/r/laravel/comments/3to60i/50_laravel_tricks/
+--------------------------------
+
+Elgon and Stores
+-------------------
+Creating Views in Laravel 5.1
+Access all tutorials in sprocket icon.
+
+August 18, 2015 from author Bill Keck.
+
+Creating Views in Laravel 5.1
+
+Please note that this tutorial builds on previously tutorials, which, if you want to follow along exactly, you should read first:
+
+install Laravel 5.1
+Database Setup
+Creating a Model
+Creating a Model Factory
+Creating a Route Resource
+Creating a Restful Controller
+Creating a Master Page
+Also note that your actual workflow may differ from the tutorials, it is not necessary to adopt a workflow that creates a model first for example. I only did it this way to make it easy for me to demonstrate. Different developers have their own approaches, so you will have to determine that for yourself.
+
+So from our Restful Controller Tutorial, we have a WidgetController with 8 methods:
+
+index
+create
+store
+show
+edit
+update
+destroy
+search
+I added the 8th method, search, so that is not a standard method that you get when you create a controller using artisan. Of the methods that come out-of-the-box, the following would have corresponding views:
+
+index
+show
+create
+edit
+The destroy method is more of an action, it doesn’t require a dedicated view, so it is not on the list.
+
+Typically, an index view is used to show a list of results. The show view is often used to show the details of an individual record. The create method typically shows a form for creating a new record, and edit shows a form for updating a specific record.
+
+Now if you are building an application with multiple models, as most applications will have, then you need to create a folder within the views folder with the name of the model you are building views for. In our case, this will be the widget folder, so go ahead and create that now.
+
+If we didn’t have a folder for our views within the views folder, we would only be able to use the filename index once, which is not what we want. Obviously, we are following a pattern, and we want to be able to use this pattern for all models.
+
+You probably know by now that views use the blade template engine. Blade is a fantastic templating engine that provides us with easy to use syntax, allowing us to mix php and html much more easily than we could without it. We will see this in action in a minute.
+
+Another benefit to Blade is that it compiles the files into standard PHP, so you don’t incur server overhead by using it. This is just awesome.
+
+The Blade file names follow this convention:
+
+
+
+index.blade.php
+show.blade.php
+
+Anyway, you get the idea. Without further ado, create a widget folder in the views folder. Then you need to create an index.blade.php file within that folder. Then change the index.blade.php file to:
+
+
+
+@extends('layouts.master')
+
+@section('title')
+
+    <title>The Widget Page </title>
+
+   @endsection
+
+@section('content')
+
+   {!! Breadcrumb::withLinks(['Home' => '/', 'Widgets' => '/widget']) !!}
+
+   @include('widget.noresults')
+
+    <br>
+
+   @include('widget.searchform')
+
+   @if(isset($results))
+
+       @include('widget.searchresults')
+
+       @else
+
+       @include('widget.allrecords')
+
+       @endif
+
+@endsection
+
+@section('scripts')
+    <script>
+
+       function ConfirmDelete()
+       {
+           var x = confirm("Are you sure you want to delete?");
+           if (x)
+               return true;
+           else
+               return false;
+       }
+
+    </script>
+
+@endsection
+
+Let’s just knock this down one line at a time. We start with:
+
+
+
+@extends('layouts.master')
+
+The @extends allows us to inject the pieces of our view into a master page. In this case, we are telling it we want to extend layouts.master. The layouts folder is inside the views folder if you have followed the tutorial on creating a Master page. And the actual master page is master.blade.php.
+
+For more information on creating a Master page, please see my tutorial on Master pages.
+
+Next we add an @section tag, which let’s us insert a section into the Master page:
+
+
+
+@section('title')
+
+    <title>The Widget Page </title>
+
+   @endsection
+
+So in the Master page, there is an @yield(‘title) tag, and this is where this section is injected. In this case, we want the <title> </title> for this page.
+
+Next we have an opening @section(‘content’) tag. Everything that falls between @section(‘content’) and @endsection(‘content’) will be injected into @yield(‘content’) in the master page.
+
+After the opening @section(‘content’), we have:
+
+
+
+   {!! Breadcrumb::withLinks(['Home' => '/', 'Widgets' => '/widget']) !!}
+
+If you have the Laravel Bootstrapper package installed, this prints a beautiful Bootstrap breadcrumb to the view. If you don’t have it, you can get the installation instructions from my top 10 Laravel packages tutorial. If you don’t want to use it, just chop it out.
+
+Next we have:
+
+
+
+  @include('widget.noresults')
+
+    <br>
+
+Here we are including a view partial. This include statement is calling noresults.blade.php inside of the widget folder, which is inside the view folder.
+
+Since that doesn’t exist, let’s create it now. Place the following in noresults.blade.php:
+
+
+
+ @if (Session::has('noResults'))
+
+    <div class="alert alert-error" role"alert">{{ Session::get('noResults') }} </div>
+
+   {{  session()->forget('noResults') }}
+
+@endif
+
+Ok, this walks us right into a control structure using Blade. Referencing the WidgetController index method:
+
+
+
+public function index()
+{
+
+  $widgets = Widget::paginate(10);
+
+   $count =  DB::table('widgets')->count();
+
+  if (session()->has('message')){
+
+      Session::flash('noResults', 'Sorry, we found 0 results');
+   }
+
+   return view('widget.index', compact('widgets', 'count'));
+}
+
+You can see we are passing noResults via session. The point is that if noResults is present in the session, we show an alert:
+
+
+
+  <div class="alert alert-error" role"alert">{{ Session::get('noResults') }} </div>
+
+That is Bootstrap alert with Blade syntax echoing the Session value of ‘noResults.’ Everything between the {{ }} is an echo statement for php. You can see how clean and readable that is.
+
+When you need to echo without escaping html, use {!! !!}. We will see an example of that soon.
+
+The last thing we do in the if statement is unset the session:
+
+
+
+{{  session()->forget('noResults') }}
+
+The purpose of the noresults.blade.php view partial is to produce the ‘Sorry, we found 0 results’ message when there are no results from a search query.
+
+Just to keep it clear, let’s look at the partial again:
+
+
+
+ @if (Session::has('noResults'))
+
+    <div class="alert alert-error" role"alert">{{ Session::get('noResults') }} </div>
+
+   {{  session()->forget('noResults') }}
+
+@endif
+
+The reason why we extracted this is to keep our code in index.blade.php as clean as possible. It also allows for reuse of code. If we had several models that used a session to return a no results message, we could put the view partial in a folder named partials, then reuse it for multiple views. This cuts down on code duplication and is ultimately much easier to maintain.
+
+Ok, back on index.blade.php, our next line is:
+
+
+
+@include('widget.searchform')
+
+So what we have here is a view partial for the search form. Since we don’t have that file yet, let’s go ahead and create searchform.blade.php now:
+
+
+
+ <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"> </span> Search
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+                <h1> Search For a Widget </h1>
+
+                <hr/>
+
+               @include('errors.errors')
+
+                <form class="form-horizontal" role="form" method="POST" action="/widget/search">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Enter Widget Name </label>
+                        <div class="col-md-6">
+                      <input type="text" class="form-control" name="widget_name" value="" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                           <button type="submit" class="btn btn-primary">
+                               Search
+                            </button>
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+ </div>
+
+ <br>
+
+Most of this is straight Bootstrap. I added a glyphicon to the label on the panel. Keep in mind when you see all this put together, that frontend development is not a core strength for me. I’ve tried to keep it as simple as possible.
+
+Please note that in order for this to work, your master page will have to reference Bootstrap’s dependencies. You can check out my Master Page Tutorial for details on that.
+
+So we added the form within the panel-body tag. You can see we are calling a partial errors.errors. If you don’t have that, let’s make the errors folder within the views directory now. Then within that, place the errors.blade.php with the following contents:
+
+
+
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <strong>Whoops! </strong> There were some problems with your input. <br> <br>
+        <ul>
+           @foreach ($errors->all() as $error)
+                <li>{{ $error }} </li>
+           @endforeach
+        </ul>
+    </div>
+@endif
+
+So here we have another if statement. The $errors object is always available to the view. So in this case, we are checking if the count is greater than 0, and if so, we display the message and iterate through the errors, using blade’s foreach syntax.
+
+Interspersed php and html can be a real mess. Blade’s intuitive syntax just makes it incredibly easy to read and a pleasure to work with.
+
+Ok, so that’s the errors.errors view partial, which we can use whenever we have a form that can possibly return errors, such as invalid input or empty fields that need to be required.
+
+You can see that we are nesting partials, and just how effective and focused this code is. Separating the code like this makes it way easier to work on and maintain in the long run.
+
+Getting back to the searchform.blade.php partial, we open the form:
+
+
+
+  <form class="form-horizontal" role="form" method="POST" action="/widget/search">
+
+In the action, we are listing the url that matches a route that we created for widget/search. Next:
+
+
+
+   <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+You can see that we included csrf_token via the blade syntax:
+
+
+
+{{ csrf_token() }}
+
+We only have one input for our form, I kept it simple. Most forms will have more than one field.
+
+
+
+ <div class="form-group">
+          <label class="col-md-4 control-label">Enter Widget Name </label>
+          <div class="col-md-6">
+          <input type="text" class="form-control" name="widget_name" value="" required>
+          </div>
+  </div>
+
+This is Bootstrap form syntax. You can see I added the name of the attribute, widget_name and placed required at the end of the tag. This will force it to have a value before being submitted.
+
+The last thing of note is the submit button:
+
+
+
+ <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+        <button type="submit" class="btn btn-primary">
+          Search
+        </button>
+
+ </div>
+ </div
+
+And that’s pretty much all there is to it. You can see again how having this extracted to a view partial keeps view code from being overwhelmed with spaghetti.
+
+Ok, let’s go back to index.blade.php, the next line is:
+
+
+
+@if(isset($results))
+
+       @include('widget.searchresults')
+
+       @else
+
+       @include('widget.allrecords')
+
+       @endif
+
+So this is a if statement that checks to see if there are results from a search query. If $results, then we get the widget.searchresults partial, if we don’t have results from a search, we show the widget.allrecords partial instead.
+
+I liked doing it this way because it is so readable and clean. The heavy, messy html has been extracted out to 2 different files. Let’s create searchresults.blade.php with the following:
+
+
+
+ <div>
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">{{ $count }} Widgets Found </div>
+        <div class="panel-body">
+            <a href="/widget/create">
+                <button type="button" class="btn btn-lg btn-success">
+                   Create New
+                </button>
+            </a>
+        </div>
+
+        <!-- Table -->
+        <table class="table">
+            <tr>
+
+                <th>Id </th>
+                <th>Name </th>
+                <th>Edit </th>
+                <th>Delete </th>
+
+            </tr>
+
+           @foreach($results as $result )
+
+                <tr>
+                    <td>{{ $result->id }}  </td>
+                    <td> <a href="/widget/{{ $result->id }}">{{ $result->widget_name }} </a> </td>
+
+                    <td> <a href="/widget/{{ $result->id }}/edit">
+                            <button type="button" class="btn btn-default">Edit </button>
+                        </a> </td>
+                    <td>{!! Form::model($result, ['route' => ['widget.destroy', $result->id],
+                       'method' => 'DELETE'
+                       ]) !!}
+                        <div class="form-group">
+
+                           {!! Form::submit('Delete', array('class'=>'btn btn-danger', 'Onclick' => 'return
+                           ConfirmDelete();')) !!}
+
+                        </div>
+                       {!! Form::close() !!}
+                    </td>
+                </tr>
+           @endforeach
+
+        </table>
+
+        <div>
+
+        </div>
+    </div>
+ </div>
+
+This is a basic Bootstrap panel with a table popped inside. You can see in the panel-heading that we echo a $count variable sent from the controller to let us know how many results we have.
+
+Then we have a create button:
+
+
+
+ <a href="/widget/create">
+                <button type="button" class="btn btn-lg btn-success">
+                   Create New
+                </button>
+            </a>
+
+This route has already been provided by the Route Resource from our previous Route Resource tutorial.
+
+Next we get the table heading:
+
+
+
+ <!-- Table -->
+        <table class="table">
+            <tr>
+
+                <th>Id </th>
+                <th>Name </th>
+                <th>Edit </th>
+                <th>Delete </th>
+
+            </tr>
+
+You can see we are going to have an id column, a name column, an edit column, and a delete column.
+
+Next we have the main part of the table:
+
+
+
+@foreach($results as $result )
+
+                <tr>
+                    <td>{{ $result->id }}  </td>
+                    <td> <a href="/widget/{{ $result->id }}">{{ $result->widget_name }} </a> </td>
+
+                    <td> <a href="/widget/{{ $result->id }}/edit">
+                            <button type="button" class="btn btn-default">Edit </button>
+                        </a> </td>
+                    <td>{!! Form::model($result, ['route' => ['widget.destroy', $result->id],
+                       'method' => 'DELETE'
+                       ]) !!}
+                        <div class="form-group">
+
+                           {!! Form::submit('Delete', array('class'=>'btn btn-danger', 'Onclick' => 'return
+                           ConfirmDelete();')) !!}
+
+                        </div>
+                       {!! Form::close() !!}
+                    </td>
+                </tr>
+           @endforeach
+
+        </table>
+
+Obviously, each pass of the foreach loop creates the table rows. You can see the Blade syntax in the td tags. For the delete button, we actually have a form because for security purposes, delete has to come via post, not a get request.
+
+Also note, the @foreach loop is using the $results object that is returned from our search method in the WidgetController.
+
+So that is the interesting part of that view partial.
+
+Next we go back to index.blade.php to the call to include allresults.blade.php. Since we have not made that partial, let’s do that now. Create allresults.blade.php with the following:
+
+
+
+ <div>
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">{{ $count }} Widgets </div>
+        <div class="panel-body">
+            <a href="/widget/create"> <button type="button" class="btn btn-lg btn-success">
+                   Create New </button> </a>
+        </div>
+
+        <!-- Table -->
+        <table class="table">
+            <tr>
+
+                <th>Id </th>
+                <th>Name </th>
+                <th>Edit </th>
+                <th>Delete </th>
+
+            </tr>
+           @foreach($widgets as $widget )
+
+                <tr>
+                    <td>{{ $widget->id }}  </td>
+                    <td> <a href="/widget/{{ $widget->id }}">{{ $widget->widget_name }} </a> </td>
+
+                    <td>  <a href="/widget/{{ $widget->id }}/edit">
+                            <button type="button" class="btn btn-default">Edit </button> </a> </td>
+                    <td>{!! Form::model($widget, ['route' => ['widget.destroy', $widget->id],
+                       'method' => 'DELETE'
+                       ]) !!}
+                        <div class="form-group">
+
+                           {!! Form::submit('Delete', array('class'=>'btn btn-danger', 'Onclick' => 'return ConfirmDelete();')) !!}
+
+                        </div>
+                       {!! Form::close() !!} </td>
+                </tr>
+           @endforeach
+        </table>
+        <div>
+
+           {!! $widgets->render() !!}
+
+        </div>
+    </div>
+ </div>
+
+This is very similar to the searchresults partial, except we are using a $widgets object instead of $results. The other difference is that we include:
+
+
+
+  {!! $widgets->render() !!}
+
+This for the pagination method that returns the results in groups of 10 records per page. Since we now have the allresults.blade.php separated out as a partial, we can refine it how we wish.
+
+Ok, let’s go back to index.blade.php. For easy reference, let’s look at the content section:
+
+
+
+@section('content')
+
+   {!! Breadcrumb::withLinks(['Home' => '/', 'Widgets' => '/widget']) !!}
+
+   @include('widget.noresults')
+
+    <br>
+
+   @include('widget.searchform')
+
+   @if(isset($results))
+
+       @include('widget.searchresults')
+
+       @else
+
+       @include('widget.allrecords')
+
+       @endif
+
+@endsection
+
+Ok, we wrap it up by using the @endif tag and then the @endsection tag.
+
+The last part of index.blade.php is a little piece of javascript that we use to put an alert on the delete button, so that users don’t accidentally delete records by clicking the button:
+
+
+
+@section('scripts')
+    <script>
+
+       function ConfirmDelete()
+       {
+           var x = confirm("Are you sure you want to delete?");
+           if (x)
+               return true;
+           else
+               return false;
+       }
+
+    </script>
+
+@endsection
+
+You can see we are using the scripts section, which will get injected into @yield(‘scripts’) in the Master page. You don’t have to put the actual script in here, it could easily be a call to public/js folder, if that is the name and path of where you keep your javascript files.
+
+Anyway, that wraps up our index.blade.php and related view partials. All we have left is create.blade.php, show.blade.php, and edit.blade.php.
+
+Let’s start with create.blade.php:
+
+
+
+@extends('layouts.master')
+
+@section('title')
+    <title>Create a Widget </title>
+   @endsection
+
+   @section('content')
+
+       {!! Breadcrumb::withLinks(['Home' => '/', 'Widgets' => '/widget', 'Create']) !!}
+
+        <h1>Create a New Widget </h1>
+
+
+        <hr/>
+
+       @include('errors.errors')
+
+
+       {!! Form::open(array('url' => '/widget', 'class' => 'form')) !!}
+
+        <!-- widget_name Form Input -->
+        <div class="form-group">
+           {!! Form::label('widget_name', 'Widget Name') !!}
+           {!! Form::text('widget_name', null, ['class' => 'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+
+           {!! Form::submit('Create Widget', array('class'=>'btn btn-primary')) !!}
+
+        </div>
+
+       {!! Form::close() !!}
+
+
+
+       @endsection
+
+So this is a very simple form with one input. We are using Bootstrapper’s form helper to open the form:
+
+
+
+{!! Form::open(array('url' => '/widget', 'class' => 'form')) !!}
+
+Note that we’re using the {!! !!} which doesn’t escape HTML because we want it to print the form html. It’s all incredibly easy to understand.
+
+Next is the edit.blade.php file, which we need to make now:
+
+
+
+@extends('layouts.master')
+
+@section('title')
+    <title>Edit a Widget </title>
+   @endsection
+
+   @section('content')
+
+       {!! Breadcrumb::withLinks(['Home' => '/', 'Widgets' => '/widget', $widget->widget_name]) !!}
+
+        <h1>Update {{ $widget->widget_name }} </h1>
+
+
+        <hr/>
+
+       @include('errors.errors')
+
+
+       {!! Form::model($widget, ['route' => ['widget.update', $widget->id],
+       'method' => 'PATCH',
+       'class' => 'form',
+       ]) !!}
+
+        <!-- widget_name Form Input -->
+        <div class="form-group">
+           {!! Form::label('widget_name', 'Widget Name') !!}
+           {!! Form::text('widget_name', null, ['class' => 'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+
+           {!! Form::submit('Update Widget', array('class'=>'btn btn-primary')) !!}
+
+        </div>
+
+       {!! Form::close() !!}
+
+       @endsection
+
+This is almost the same as the create.blade.php partial, but we use the Bootstrapper form helper to do a form model binding:
+
+
+
+{!! Form::model($widget, ['route' => ['widget.update', $widget->id],
+       'method' => 'PATCH',
+       'class' => 'form',
+       ]) !!}
+
+So this will put the old value of widget_name in the form for reference. Also note, the method is set to PATCH, which is not supported by HTML, but Laravel makes the conversion for us.
+
+The first parameter of the model method is the model, in this case $widget. Then we get the route, along with the model id, in this case $widget->id.
+
+And now to finish up our Views tutorial, we will create the show view:
+
+
+
+@extends('layouts.master')
+
+@section('title')
+    <title>{{ $widget->widget_name }} </title>
+   @endsection
+
+@section('content')
+   {!! Breadcrumb::withLinks(['Home' => '/', 'Widgets' => '/widget', $widget->widget_name => $widget->id]) !!}
+    <br>
+    <div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">{{ $widget->widget_name }} Widget </div>
+            <div class="panel-body">
+                <a href="/widget/create"> <button type="button" class="btn btn-lg btn-success">
+                       Create New </button> </a>
+            </div>
+
+            <!-- Table -->
+            <table class="table">
+                <tr>
+
+                    <th>Id </th>
+                    <th>Name </th>
+                    <th>Edit </th>
+                    <th>Delete </th>
+
+                </tr>
+
+
+                    <tr>
+                        <td>{{ $widget->id }}  </td>
+                        <td>{{ $widget->widget_name }} </td>
+
+                        <td>  <a href="/widget/{{ $widget->id }}/edit">
+                                <button type="button" class="btn btn-default">Edit </button> </a> </td>
+                        <td>{!! Form::model($widget, ['route' => ['widget.destroy', $widget->id],
+                           'method' => 'DELETE'
+                           ]) !!}
+                            <div class="form-group">
+
+                               {!! Form::submit('Delete', array('class'=>'btn btn-danger', 'Onclick' => 'return ConfirmDelete();')) !!}
+
+                            </div>
+                           {!! Form::close() !!} </td>
+                    </tr>
+
+            </table>
+
+        </div>
+    </div>
+
+@endsection
+@section('scripts')
+    <script>
+
+       function ConfirmDelete()
+       {
+           var x = confirm("Are you sure you want to delete?");
+           if (x)
+               return true;
+           else
+               return false;
+       }
+
+    </script>
+
+@endsection
+
+You can see that we are again using the small piece of javascript as an alert. You should probably extract that out to separate file to avoid duplication. I will leave that for you to implement.
+
+This is pretty much like our allresults.blade.php file, except we don’t have a foreach loop because there is only going to be one row of results.
+
+The $widget object holds the correct model instance from the show method in the WidgetController.
+
+I hope you have enjoyed this tutorial and found it useful. Click on the sprocket icon at the top of the page to see all tutorials.
+
+Please comment, share, and like if you can, thanks!
+
+I don’t have a donate button, but If you would like to support my work, you can do so by buying one of my 99¢ books, I really appreciate it.
+
+
+ 

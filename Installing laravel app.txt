@@ -1,0 +1,578 @@
+morgyken@DESKTOP-190CLNN MINGW64 ~/AppData/Roaming/Microsoft/Windows/Network Sho                               rtcuts/Jan 2018
+$ root@159.89.179.65
+bash: root@159.89.179.65: command not found
+
+morgyken@DESKTOP-190CLNN MINGW64 ~/AppData/Roaming/Microsoft/Windows/Network Sho                               rtcuts/Jan 2018
+$ login root@159.89.179.65
+bash: login: command not found
+
+morgyken@DESKTOP-190CLNN MINGW64 ~/AppData/Roaming/Microsoft/Windows/Network Sho                               rtcuts/Jan 2018
+$ ssh root@159.89.179.65
+root@159.89.179.65's password:rwuewgfyueggvwdyfgqqug
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-112-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+34 packages can be updated.
+10 updates are security updates.
+
+
+Last login: Thu Feb 15 07:38:01 2018 from 41.212.107.19
+root@home-assignment:~#
+root@home-assignment:~# sudo apt-get update
+Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+Hit:1 http://nyc2.mirrors.digitalocean.com/ubuntu xenial InRelease
+Hit:3 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates InRelease
+Hit:4 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports InRelease
+Fetched 102 kB in 1s (96.1 kB/s)
+Reading package lists... Done
+root@home-assignment:~# sudo apt-get install nginx
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  grub-pc-bin
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0
+  libjpeg-turbo8 libjpeg8 libtiff5 libvpx3 libxpm4 libxslt1.1 nginx-common
+  nginx-core
+Suggested packages:
+  libgd-tools fcgiwrap nginx-doc ssl-cert
+The following NEW packages will be installed:
+  fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0
+  libjpeg-turbo8 libjpeg8 libtiff5 libvpx3 libxpm4 libxslt1.1 nginx
+  nginx-common nginx-core
+0 upgraded, 14 newly installed, 0 to remove and 42 not upgraded.
+Need to get 3,000 kB of archives.
+After this operation, 9,783 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libjpeg-turb                               o8 amd64 1.4.2-0ubuntu3 [111 kB]
+Get:2 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libjbig0 amd                               64 2.1-3.1 [26.6 kB]
+Get:3 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 fonts-dejavu                               -core all 2.35-1 [1,039 kB]
+Get:4 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 font                               config-config all 2.11.94-0ubuntu1.1 [49.9 kB]
+Get:5 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 libf                               ontconfig1 amd64 2.11.94-0ubuntu1.1 [131 kB]
+Get:6 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libjpeg8 amd                               64 8c-2ubuntu8 [2,194 B]
+Get:7 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 libt                               iff5 amd64 4.0.6-1ubuntu0.2 [146 kB]
+Get:8 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libvpx3 amd6                               4 1.5.0-2ubuntu1 [732 kB]
+Get:9 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 libx                               pm4 amd64 1:3.5.11-1ubuntu0.16.04.1 [33.8 kB]
+Get:10 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 lib                               gd3 amd64 2.1.1-4ubuntu0.16.04.8 [126 kB]
+Get:11 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 lib                               xslt1.1 amd64 1.1.28-2.1ubuntu0.1 [145 kB]
+Get:12 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 ngi                               nx-common all 1.10.3-0ubuntu0.16.04.2 [26.6 kB]
+Get:13 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 ngi                               nx-core amd64 1.10.3-0ubuntu0.16.04.2 [428 kB]
+Get:14 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 ngi                               nx all 1.10.3-0ubuntu0.16.04.2 [3,490 B]
+Fetched 3,000 kB in 1s (2,445 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package libjpeg-turbo8:amd64.
+(Reading database ... 54291 files and directories currently installed.)
+Preparing to unpack .../libjpeg-turbo8_1.4.2-0ubuntu3_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (1.4.2-0ubuntu3) ...
+Selecting previously unselected package libjbig0:amd64.
+Preparing to unpack .../libjbig0_2.1-3.1_amd64.deb ...
+Unpacking libjbig0:amd64 (2.1-3.1) ...
+Selecting previously unselected package fonts-dejavu-core.
+Preparing to unpack .../fonts-dejavu-core_2.35-1_all.deb ...
+Unpacking fonts-dejavu-core (2.35-1) ...
+Selecting previously unselected package fontconfig-config.
+Preparing to unpack .../fontconfig-config_2.11.94-0ubuntu1.1_all.deb ...
+Unpacking fontconfig-config (2.11.94-0ubuntu1.1) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../libfontconfig1_2.11.94-0ubuntu1.1_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.11.94-0ubuntu1.1) ...
+Selecting previously unselected package libjpeg8:amd64.
+Preparing to unpack .../libjpeg8_8c-2ubuntu8_amd64.deb ...
+Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
+Selecting previously unselected package libtiff5:amd64.
+Preparing to unpack .../libtiff5_4.0.6-1ubuntu0.2_amd64.deb ...
+Unpacking libtiff5:amd64 (4.0.6-1ubuntu0.2) ...
+Selecting previously unselected package libvpx3:amd64.
+Preparing to unpack .../libvpx3_1.5.0-2ubuntu1_amd64.deb ...
+Unpacking libvpx3:amd64 (1.5.0-2ubuntu1) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../libxpm4_1%3a3.5.11-1ubuntu0.16.04.1_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.11-1ubuntu0.16.04.1) ...
+Selecting previously unselected package libgd3:amd64.
+Preparing to unpack .../libgd3_2.1.1-4ubuntu0.16.04.8_amd64.deb ...
+Unpacking libgd3:amd64 (2.1.1-4ubuntu0.16.04.8) ...
+Selecting previously unselected package libxslt1.1:amd64.
+Preparing to unpack .../libxslt1.1_1.1.28-2.1ubuntu0.1_amd64.deb ...
+Unpacking libxslt1.1:amd64 (1.1.28-2.1ubuntu0.1) ...
+Selecting previously unselected package nginx-common.
+Preparing to unpack .../nginx-common_1.10.3-0ubuntu0.16.04.2_all.deb ...
+Unpacking nginx-common (1.10.3-0ubuntu0.16.04.2) ...
+Selecting previously unselected package nginx-core.
+Preparing to unpack .../nginx-core_1.10.3-0ubuntu0.16.04.2_amd64.deb ...
+Unpacking nginx-core (1.10.3-0ubuntu0.16.04.2) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../nginx_1.10.3-0ubuntu0.16.04.2_all.deb ...
+Unpacking nginx (1.10.3-0ubuntu0.16.04.2) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for ufw (0.35-0ubuntu2) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Setting up libjpeg-turbo8:amd64 (1.4.2-0ubuntu3) ...
+Setting up libjbig0:amd64 (2.1-3.1) ...
+Setting up fonts-dejavu-core (2.35-1) ...
+Setting up fontconfig-config (2.11.94-0ubuntu1.1) ...
+Setting up libfontconfig1:amd64 (2.11.94-0ubuntu1.1) ...
+Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
+Setting up libtiff5:amd64 (4.0.6-1ubuntu0.2) ...
+Setting up libvpx3:amd64 (1.5.0-2ubuntu1) ...
+Setting up libxpm4:amd64 (1:3.5.11-1ubuntu0.16.04.1) ...
+Setting up libgd3:amd64 (2.1.1-4ubuntu0.16.04.8) ...
+Setting up libxslt1.1:amd64 (1.1.28-2.1ubuntu0.1) ...
+Setting up nginx-common (1.10.3-0ubuntu0.16.04.2) ...
+Setting up nginx-core (1.10.3-0ubuntu0.16.04.2) ...
+Setting up nginx (1.10.3-0ubuntu0.16.04.2) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for ufw (0.35-0ubuntu2) ...
+root@home-assignment:~# sudo apt-get install mysql-server
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  grub-pc-bin
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  libaio1 libcgi-fast-perl libcgi-pm-perl libencode-locale-perl
+  libevent-core-2.0-5 libfcgi-perl libhtml-parser-perl libhtml-tagset-perl
+  libhtml-template-perl libhttp-date-perl libhttp-message-perl libio-html-perl
+  liblwp-mediatypes-perl libtimedate-perl liburi-perl mysql-client-5.7
+  mysql-client-core-5.7 mysql-common mysql-server-5.7 mysql-server-core-5.7
+Suggested packages:
+  libdata-dump-perl libipc-sharedcache-perl libwww-perl mailx tinyca
+The following NEW packages will be installed:
+  libaio1 libcgi-fast-perl libcgi-pm-perl libencode-locale-perl
+  libevent-core-2.0-5 libfcgi-perl libhtml-parser-perl libhtml-tagset-perl
+  libhtml-template-perl libhttp-date-perl libhttp-message-perl libio-html-perl
+  liblwp-mediatypes-perl libtimedate-perl liburi-perl mysql-client-5.7
+  mysql-client-core-5.7 mysql-common mysql-server mysql-server-5.7
+  mysql-server-core-5.7
+0 upgraded, 21 newly installed, 0 to remove and 42 not upgraded.
+Need to get 19.3 MB of archives.
+After this operation, 163 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysq                               l-common all 5.7.21-0ubuntu0.16.04.1 [15.7 kB]
+Get:2 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libaio1 amd6                               4 0.3.110-2 [6,356 B]
+Get:3 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysq                               l-client-core-5.7 amd64 5.7.21-0ubuntu0.16.04.1 [6,363 kB]
+Get:4 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysq                               l-client-5.7 amd64 5.7.21-0ubuntu0.16.04.1 [1,676 kB]
+Get:5 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysq                               l-server-core-5.7 amd64 5.7.21-0ubuntu0.16.04.1 [7,809 kB]
+Get:6 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 libe                               vent-core-2.0-5 amd64 2.0.21-stable-2ubuntu0.16.04.1 [70.6 kB]
+Get:7 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysq                               l-server-5.7 amd64 5.7.21-0ubuntu0.16.04.1 [2,724 kB]
+Get:8 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libhtml-tags                               et-perl all 3.20-2 [13.5 kB]
+Get:9 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 liburi-perl                                all 1.71-1 [76.9 kB]
+Get:10 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libhtml-par                               ser-perl amd64 3.72-1 [86.1 kB]
+Get:11 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libcgi-pm-p                               erl all 4.26-1 [185 kB]
+Get:12 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libfcgi-per                               l amd64 0.77-1build1 [32.3 kB]
+Get:13 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libcgi-fast                               -perl all 1:2.10-1 [10.2 kB]
+Get:14 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libencode-l                               ocale-perl all 1.05-1 [12.3 kB]
+Get:15 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libhtml-tem                               plate-perl all 2.95-2 [60.4 kB]
+Get:16 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libtimedate                               -perl all 2.3000-2 [37.5 kB]
+Get:17 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libhttp-dat                               e-perl all 6.02-1 [10.4 kB]
+Get:18 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libio-html-                               perl all 1.001-1 [14.9 kB]
+Get:19 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 liblwp-medi                               atypes-perl all 6.02-1 [21.7 kB]
+Get:20 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libhttp-mes                               sage-perl all 6.11-1 [74.3 kB]
+Get:21 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mys                               ql-server all 5.7.21-0ubuntu0.16.04.1 [10.2 kB]
+Fetched 19.3 MB in 1s (11.8 MB/s)
+Preconfiguring packages ...
+Selecting previously unselected package mysql-common.
+(Reading database ... 54510 files and directories currently installed.)
+Preparing to unpack .../mysql-common_5.7.21-0ubuntu0.16.04.1_all.deb ...
+Unpacking mysql-common (5.7.21-0ubuntu0.16.04.1) ...
+Selecting previously unselected package libaio1:amd64.
+Preparing to unpack .../libaio1_0.3.110-2_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.110-2) ...
+Selecting previously unselected package mysql-client-core-5.7.
+Preparing to unpack .../mysql-client-core-5.7_5.7.21-0ubuntu0.16.04.1_amd64.deb                                ...
+Unpacking mysql-client-core-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Selecting previously unselected package mysql-client-5.7.
+Preparing to unpack .../mysql-client-5.7_5.7.21-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking mysql-client-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Selecting previously unselected package mysql-server-core-5.7.
+Preparing to unpack .../mysql-server-core-5.7_5.7.21-0ubuntu0.16.04.1_amd64.deb                                ...
+Unpacking mysql-server-core-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Selecting previously unselected package libevent-core-2.0-5:amd64.
+Preparing to unpack .../libevent-core-2.0-5_2.0.21-stable-2ubuntu0.16.04.1_amd64                               .deb ...
+Unpacking libevent-core-2.0-5:amd64 (2.0.21-stable-2ubuntu0.16.04.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up mysql-common (5.7.21-0ubuntu0.16.04.1) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.c                               nf (my.cnf) in auto mode
+Selecting previously unselected package mysql-server-5.7.
+(Reading database ... 54678 files and directories currently installed.)
+Preparing to unpack .../mysql-server-5.7_5.7.21-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking mysql-server-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Selecting previously unselected package libhtml-tagset-perl.
+Preparing to unpack .../libhtml-tagset-perl_3.20-2_all.deb ...
+Unpacking libhtml-tagset-perl (3.20-2) ...
+Selecting previously unselected package liburi-perl.
+Preparing to unpack .../liburi-perl_1.71-1_all.deb ...
+Unpacking liburi-perl (1.71-1) ...
+Selecting previously unselected package libhtml-parser-perl.
+Preparing to unpack .../libhtml-parser-perl_3.72-1_amd64.deb ...
+Unpacking libhtml-parser-perl (3.72-1) ...
+Selecting previously unselected package libcgi-pm-perl.
+Preparing to unpack .../libcgi-pm-perl_4.26-1_all.deb ...
+Unpacking libcgi-pm-perl (4.26-1) ...
+Selecting previously unselected package libfcgi-perl.
+Preparing to unpack .../libfcgi-perl_0.77-1build1_amd64.deb ...
+Unpacking libfcgi-perl (0.77-1build1) ...
+Selecting previously unselected package libcgi-fast-perl.
+Preparing to unpack .../libcgi-fast-perl_1%3a2.10-1_all.deb ...
+Unpacking libcgi-fast-perl (1:2.10-1) ...
+Selecting previously unselected package libencode-locale-perl.
+Preparing to unpack .../libencode-locale-perl_1.05-1_all.deb ...
+Unpacking libencode-locale-perl (1.05-1) ...
+Selecting previously unselected package libhtml-template-perl.
+Preparing to unpack .../libhtml-template-perl_2.95-2_all.deb ...
+Unpacking libhtml-template-perl (2.95-2) ...
+Selecting previously unselected package libtimedate-perl.
+Preparing to unpack .../libtimedate-perl_2.3000-2_all.deb ...
+Unpacking libtimedate-perl (2.3000-2) ...
+Selecting previously unselected package libhttp-date-perl.
+Preparing to unpack .../libhttp-date-perl_6.02-1_all.deb ...
+Unpacking libhttp-date-perl (6.02-1) ...
+Selecting previously unselected package libio-html-perl.
+Preparing to unpack .../libio-html-perl_1.001-1_all.deb ...
+Unpacking libio-html-perl (1.001-1) ...
+Selecting previously unselected package liblwp-mediatypes-perl.
+Preparing to unpack .../liblwp-mediatypes-perl_6.02-1_all.deb ...
+Unpacking liblwp-mediatypes-perl (6.02-1) ...
+Selecting previously unselected package libhttp-message-perl.
+Preparing to unpack .../libhttp-message-perl_6.11-1_all.deb ...
+Unpacking libhttp-message-perl (6.11-1) ...
+Selecting previously unselected package mysql-server.
+Preparing to unpack .../mysql-server_5.7.21-0ubuntu0.16.04.1_all.deb ...
+Unpacking mysql-server (5.7.21-0ubuntu0.16.04.1) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up libaio1:amd64 (0.3.110-2) ...
+Setting up mysql-client-core-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Setting up mysql-client-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Setting up mysql-server-core-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Setting up libevent-core-2.0-5:amd64 (2.0.21-stable-2ubuntu0.16.04.1) ...
+Setting up mysql-server-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my                               .cnf) in auto mode
+Renaming removed key_buffer and myisam-recover options (if present)
+Setting up libhtml-tagset-perl (3.20-2) ...
+Setting up liburi-perl (1.71-1) ...
+Setting up libhtml-parser-perl (3.72-1) ...
+Setting up libcgi-pm-perl (4.26-1) ...
+Setting up libfcgi-perl (0.77-1build1) ...
+Setting up libcgi-fast-perl (1:2.10-1) ...
+Setting up libencode-locale-perl (1.05-1) ...
+Setting up libhtml-template-perl (2.95-2) ...
+Setting up libtimedate-perl (2.3000-2) ...
+Setting up libhttp-date-perl (6.02-1) ...
+Setting up libio-html-perl (1.001-1) ...
+Setting up liblwp-mediatypes-perl (6.02-1) ...
+Setting up libhttp-message-perl (6.11-1) ...
+Setting up mysql-server (5.7.21-0ubuntu0.16.04.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+root@home-assignment:~# sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+
+VALIDATE PASSWORD PLUGIN can be used to test passwords
+and improve security. It checks the strength of password
+and allows the users to set only those passwords which are
+secure enough. Would you like to setup VALIDATE PASSWORD plugin?
+
+Press y|Y for Yes, any other key for No: y
+
+There are three levels of password validation policy:
+
+LOW    Length >= 8
+MEDIUM Length >= 8, numeric, mixed case, and special characters
+STRONG Length >= 8, numeric, mixed case, special characters and dictionary                                                 file
+
+Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: 2
+Using existing password for root.
+
+Estimated strength of the password: 50
+Change the password for root ? ((Press y|Y for Yes, any other key for No) : t
+
+ ... skipping.
+By default, a MySQL installation has an anonymous user,
+allowing anyone to log into MySQL without having to have
+a user account created for them. This is intended only for
+testing, and to make the installation go a bit smoother.
+You should remove them before moving into a production
+environment.
+
+Remove anonymous users? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+
+Normally, root should only be allowed to connect from
+'localhost'. This ensures that someone cannot guess at
+the root password from the network.
+
+Disallow root login remotely? (Press y|Y for Yes, any other key for No) : k
+
+ ... skipping.
+By default, MySQL comes with a database named 'test' that
+anyone can access. This is also intended only for testing,
+and should be removed before moving into a production
+environment.
+
+
+Remove test database and access to it? (Press y|Y for Yes, any other key for No)                                : i
+
+ ... skipping.
+Reloading the privilege tables will ensure that all changes
+made so far will take effect immediately.
+
+Reload privilege tables now? (Press y|Y for Yes, any other key for No) : i
+
+ ... skipping.
+All done!
+root@home-assignment:~# sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+The 'validate_password' plugin is installed on the server.
+The subsequent steps will run with the existing configuration
+of the plugin.
+Using existing password for root.
+
+Estimated strength of the password: 50
+Change the password for root ? ((Press y|Y for Yes, any other key for No) : n
+
+ ... skipping.
+By default, a MySQL installation has an anonymous user,
+allowing anyone to log into MySQL without having to have
+a user account created for them. This is intended only for
+testing, and to make the installation go a bit smoother.
+You should remove them before moving into a production
+environment.
+
+Remove anonymous users? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+
+Normally, root should only be allowed to connect from
+'localhost'. This ensures that someone cannot guess at
+the root password from the network.
+
+Disallow root login remotely? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+By default, MySQL comes with a database named 'test' that
+anyone can access. This is also intended only for testing,
+and should be removed before moving into a production
+environment.
+
+
+Remove test database and access to it? (Press y|Y for Yes, any other key for No)                                : y
+ - Dropping test database...
+Success.
+
+ - Removing privileges on test database...
+Success.
+
+Reloading the privilege tables will ensure that all changes
+made so far will take effect immediately.
+
+Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+All done!
+root@home-assignment:~# sudo apt-get install php-fm php-mysql php-mbstring
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package php-fm
+root@home-assignment:~# sudo apt-get install php-fpm php-mysql php-mbstring
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  grub-pc-bin
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  php-common php7.0-cli php7.0-common php7.0-fpm php7.0-json php7.0-mbstring php7.0-mysql php7.0-opcache
+  php7.0-readline
+Suggested packages:
+  php-pear
+The following NEW packages will be installed:
+  php-common php-fpm php-mbstring php-mysql php7.0-cli php7.0-common php7.0-fpm php7.0-json php7.0-mbstring
+  php7.0-mysql php7.0-opcache php7.0-readline
+0 upgraded, 12 newly installed, 0 to remove and 42 not upgraded.
+Need to get 4,136 kB of archives.
+After this operation, 16.2 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://mirrors.digitalocean.com/ubuntu xenial/main amd64 php-common all 1:35ubuntu6 [10.8 kB]
+Get:2 http://mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-common amd64 7.0.25-0ubuntu0.16.04.1 [840 kB]
+Get:3 http://mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-json amd64 7.0.25-0ubuntu0.16.04.1 [16.8 kB]
+Get:4 http://mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-opcache amd64 7.0.25-0ubuntu0.16.04.1 [77.0 kB]
+Get:5 http://mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-readline amd64 7.0.25-0ubuntu0.16.04.1 [12.8 kB]
+Get:6 http://mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-cli amd64 7.0.25-0ubuntu0.16.04.1 [1,287 kB]
+Get:7 http://mirrors.digitalocean.com/ubuntu xenial-updates/universe amd64 php7.0-fpm amd64 7.0.25-0ubuntu0.16.04.1 [1,295 kB]
+Get:8 http://mirrors.digitalocean.com/ubuntu xenial/universe amd64 php-fpm all 1:7.0+35ubuntu6 [2,926 B]
+Get:9 http://mirrors.digitalocean.com/ubuntu xenial-updates/universe amd64 php7.0-mbstring amd64 7.0.25-0ubuntu0.16.04.1 [466 kB]
+Get:10 http://mirrors.digitalocean.com/ubuntu xenial/universe amd64 php-mbstring all 1:7.0+35ubuntu6 [1,940 B]
+Get:11 http://mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-mysql amd64 7.0.25-0ubuntu0.16.04.1 [124 kB]
+Get:12 http://mirrors.digitalocean.com/ubuntu xenial/main amd64 php-mysql all 1:7.0+35ubuntu6 [1,936 B]
+Fetched 4,136 kB in 1s (2,583 kB/s)
+Selecting previously unselected package php-common.
+(Reading database ... 55038 files and directories currently installed.)
+Preparing to unpack .../php-common_1%3a35ubuntu6_all.deb ...
+Unpacking php-common (1:35ubuntu6) ...
+Selecting previously unselected package php7.0-common.
+Preparing to unpack .../php7.0-common_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-common (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php7.0-json.
+Preparing to unpack .../php7.0-json_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-json (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php7.0-opcache.
+Preparing to unpack .../php7.0-opcache_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-opcache (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php7.0-readline.
+Preparing to unpack .../php7.0-readline_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-readline (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php7.0-cli.
+Preparing to unpack .../php7.0-cli_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-cli (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php7.0-fpm.
+Preparing to unpack .../php7.0-fpm_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-fpm (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php-fpm.
+Preparing to unpack .../php-fpm_1%3a7.0+35ubuntu6_all.deb ...
+Unpacking php-fpm (1:7.0+35ubuntu6) ...
+Selecting previously unselected package php7.0-mbstring.
+Preparing to unpack .../php7.0-mbstring_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-mbstring (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php-mbstring.
+Preparing to unpack .../php-mbstring_1%3a7.0+35ubuntu6_all.deb ...
+Unpacking php-mbstring (1:7.0+35ubuntu6) ...
+Selecting previously unselected package php7.0-mysql.
+Preparing to unpack .../php7.0-mysql_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-mysql (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php-mysql.
+Preparing to unpack .../php-mysql_1%3a7.0+35ubuntu6_all.deb ...
+Unpacking php-mysql (1:7.0+35ubuntu6) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Setting up php-common (1:35ubuntu6) ...
+Setting up php7.0-common (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/calendar.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/ctype.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/exif.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/fileinfo.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/ftp.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/gettext.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/iconv.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/pdo.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/phar.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/posix.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/shmop.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sockets.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvmsg.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvsem.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvshm.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/tokenizer.ini with new version
+Setting up php7.0-json (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/json.ini with new version
+Setting up php7.0-opcache (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/opcache.ini with new version
+Setting up php7.0-readline (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/readline.ini with new version
+Setting up php7.0-cli (7.0.25-0ubuntu0.16.04.1) ...
+update-alternatives: using /usr/bin/php7.0 to provide /usr/bin/php (php) in auto mode
+update-alternatives: using /usr/bin/phar7.0 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: using /usr/bin/phar.phar7.0 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+
+Creating config file /etc/php/7.0/cli/php.ini with new version
+Setting up php7.0-fpm (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/fpm/php.ini with new version
+Setting up php-fpm (1:7.0+35ubuntu6) ...
+Setting up php7.0-mbstring (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/mbstring.ini with new version
+Setting up php-mbstring (1:7.0+35ubuntu6) ...
+Setting up php7.0-mysql (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/mysqlnd.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/mysqli.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/pdo_mysql.ini with new version
+Setting up php-mysql (1:7.0+35ubuntu6) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for php7.0-fpm (7.0.25-0ubuntu0.16.04.1) ...
+root@home-assignment:~# sudo nano /etc/php/7.0/fpm/php.ini
+root@home-assignment:~# sudo nano /etc/php/7.0/fpm/php.ini
+root@home-assignment:~# sudo systemctl restart php 7.0-fpm
+Failed to restart php.service: Unit php.service not found.
+Failed to restart 7.0-fpm.service: Unit 7.0-fpm.service not found.
+root@home-assignment:~# sudo systemctl restart php7.0-fpm
+root@home-assignment:~# sudo nano /etc/nginx/sites-available/default
+Use "fg" to return to nano.
+
+[1]+  Stopped                 sudo nano /etc/nginx/sites-available/default
+root@home-assignment:~# sudo nano /etc/nginx/sites-available/default
+root@home-assignment:~#
+root@home-assignment:~# sudo nginx-t
+sudo: nginx-t: command not found
+root@home-assignment:~#
+root@home-assignment:~# sudo nginx -t
+nginx: [emerg] "fastcgi_pass" directive is not allowed here in /etc/nginx/sites-enabled/default:57
+nginx: configuration file /etc/nginx/nginx.conf test failed
+root@home-assignment:~# sudo nano /etc/nginx/sites-available/default
+root@home-assignment:~# sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+root@home-assignment:~# sudo systemctl reload nginx
+root@home-assignment:~# sudo makdir -p /var/www/homeassign
+sudo: makdir: command not found
+root@home-assignment:~# sudo mkdir -p /var/www/homeassign
+root@home-assignment:~# sudo nano /etc/nginx/sites-available/default
+root@home-assignment:~# sudo service nginx restart
+root@home-assignment:~# cd /var/www/laravel
+-bash: cd: /var/www/laravel: No such file or directory
+root@home-assignment:~# cd /var/www/homeassign
+root@home-assignment:/var/www/homeassign# ls
+root@home-assignment:/var/www/homeassign# sudo fallocate -l 1G /swapfile
+root@home-assignment:/var/www/homeassign# sudo mkswap /swapfile
+Setting up swapspace version 1, size = 1024 MiB (1073737728 bytes)
+no label, UUID=6e2cfe51-50a2-4d00-8a84-d2f894476e55
+root@home-assignment:/var/www/homeassign# sudo swapon /swapfile
+swapon: /swapfile: insecure permissions 0644, 0600 suggested.
+root@home-assignment:/var/www/homeassign#

@@ -1,0 +1,56 @@
+1. To grant unlimited table space for user:
+
+	SQL> alter user tuser quota unlimited on tts;
+
+2. GRANT CREATE SESSION  GRANT SELECT, INSERT,  UPDATE, DELETE ON schema.books TO books_admin;
+
+ 
+3. Sample function to create policies 
+
+
+	SA_POLICY_ADMIN.APPLY_TABLE_POLICY('library.admin',
+
+	'chema.library','books_table','delete', 'update', 'insert', 'select');
+
+
+	SA_POLICY_ADMIN.APPLY_TABLE_POLICY('library.user1',
+
+	'chema.library','libray','delete', 'update', 'insert');
+
+
+	SA_POLICY_ADMIN.APPLY_TABLE_POLICY('library.user',
+
+	'chema.library','books_table','delete', 'update', 'select');
+
+
+	SA_POLICY_ADMIN.APPLY_TABLE_POLICY('library.user2',
+
+	'chema.library','libray', 'update', 'insert', 'select');
+
+
+	SA_POLICY_ADMIN.APPLY_TABLE_POLICY('library.user3',
+
+	'chema.library','books_table','select');
+
+4.  
+
+SQL> create user user3 identified by x default tablespace library;
+User created.
+
+SQL> delete from books_table where id= 12;
+ORA-01950: no privileges on tablespace 'books_table'
+
+SQL>create user user identified by x default tablespace library;
+User created.
+
+SQL> Select * from library ;
+
+//select successful
+
+
+SQL>create user user identified by x default tablespace library;
+User created.
+
+SQL> Delete from library where libID = 12   ;
+
+//item deleted

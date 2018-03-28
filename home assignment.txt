@@ -1,0 +1,97 @@
+Home assignment to do
+1:Customer dashboardnot complete
+--View my questions
+--Assign a tutor question directly
+--All orders with status
+
+2.Tutor side not half complete:
+-- check on auto tutor payment
+-- payment cab be scheduled or requested
+-- requested payment is done daily, paid after 24 hrs 
+-- scheduled pay is weekly on friday, pay the orders done upto previous 8 days
+
+3 Assign qustions automatically
+--there is precedence in assingning questions
+---1. Student can assign tutor directly
+---2. Admin can assgn tutor diectly
+---3. on both occassion, the question is Assigned to 
+	the tutor.
+---4.how do you suggest questions to tutors?
+---5 on bidding assign tutors upto 4..8...12...16 questions at a time depending on the level of tutors
+---6.new tutors must do 4 questions for free before they start earning 
+---7 the question is to be assigned after 10 minutes after all the bids
+---9 the system is to select the best bidder:
+----1. the best tutor by total points earned
+----2. the best tutor by current ratings
+----3. assign maximum of 4...8...12...16 orders...max 25 for admin1 unlimited for admin 150 for admin
+--10. Clustering should be done( MAny minor admins)
+---- minor admins to have 16 orders
+---- they must admin atleast 3 people
+---- three people submit orders and he approves the orders. 
+---- admin maximum of 12 people
+---- the more you admin the more questions you can answer upto a max of 25.
+---- admin get bonuses on the answers given by the people he admins. 
+---- colege ends when someone does 55 orders 
+---- when college ends a tutor can take 12 orders
+---- The levels are as follows: Probation, Junior, College, Pro Tutor
+---- Tutor entry points will be as follows: 
+---- Self: Probation--Junior---College---Pro-tutor
+-----Introduced: Junior ---College ---- pro-tutor
+--11. Tutor benefits
+---Probation: Tutor on probation has two takes, and a maximum of 4 orders. 
+---- Probation tutors can only handle high school and first year work only.
+---- Probation tutors will handle relatively easy jobs and will earn a maximum of 249.90
+---- tutors stop being Probation after answering 5 free questions 
+---Junior: from question 6-30. 
+---- Tutor has answerd 6-45 questions successfully, with ratings of above 3.
+---- if not count the last 45 questions done in the last two months
+---- The tutors in this category earn a maximum of 300
+---- take second year orders only
+---- take max of 8 orders
+---- Earn 38%
+---College: Over 45-99 questions 
+---- earn a maximum of 450 
+---- Take advanced orders
+---- Take a max 12 orders
+---- success rate is 80%
+---- Earn 45%
+---- Can be admin 1
+---- If admin take 25
+---Pro Tutor
+---- Can take upto 50 orders at a time 
+---- Has done over 150 questions 
+---- account no close  
+---- Never closed account
+---- can be Admin 1
+---- earn 57%
+
+---Senior Tutor
+---- Has done 200 questions 
+---- Account no close
+---- Take 120 quaetions 
+---- Earn 70%
+---- can be manager 1
+---Tutor Payment:
+---- **Tutor can request payment**
+---Payment done 7 days after the job was done
+--- Add category and topic 
+
+add more ...
+
+--- User profile needs rework
+--- Make the flow mush better
+
+today... make students be tutors 
+ ----pricing how to price an order..
+---- route protection..
+---- site navigations 
+ login---tutor--> tutor home page
+ log ---in customer-->customer home page
+ log ---in admin---> admin home page 
+ log in gen ---gen home page ---> 
+
+That’s your Primary Aim.
+
+
+
+

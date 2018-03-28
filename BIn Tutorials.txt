@@ -1,0 +1,146 @@
+First we can talk about the card number.It is the number embossed on the credit/debit card.If you didn't know the card number is the primary account number and contains lot of information about the bank that issued the card,which type of card it is and some costumer info.Lets take down here an example of credit card number.Say 4862362667787439
+
+486236 266778743 9
+( BIN) (Account) (Check digit)
+The first 6 digits, written up with red color are the IIN or BIN,and stands IIN-Issuer Identification Number and BIN Bank Identification Number.This IIN/BIN will give you all the information about the bank that issued the card,the type of card (Visa ,Mastercard,Discover,Diner's Club and so on),which founding is related with the card (mean if is a debit or a credit card).With some available site you can check the BIN's and know lot of information about the card.I use www.all-nettools.com/toolbox/bin-search.php to check my Visa or Mastercard cards.This site is FREE and works only for Visa Or Mastercard but I recomand you to use only Visa and MasterCard if you are a beginner in carding as their security system is not so strong and they almost always give good work.When I typed the BIN on the search box from the site the full Issuer info came.For this example we toke the site say that
+BIN 486236 is a Visa Card
+Issued by Capital One Bank
+Issuer phone number is 800-903-3637 or 804-934-2001
+Issuer country is United States
+Founding type(credit/debit/prepaid) is CREDIT
+Card type(classic/gold/etc) is PLATINUM
+The next 9 digits,written up with blue color are the Individual Account Identifier and are related with your private account.
+
+The last digit of the card number written up with black is the check digit,it is calculated with Luhn Algorithm.
+When you are carding ,to know this general info about card numbers is important.If a seller provide you with a cvv or dump you can check the BIN with the site i gave up .I mean this http://www.all-nettools.com/toolbox/bin-search.php and know which bank issued that card.
+
+The first digits from the card number also will tell you which kind of card you have.Here are the first digits and the type of card they stand for
+34,37 are for American Express cards.The length of card number is 15 digits
+300-3005 are for Diner's Club Carte Blanche.The length of card number is 14 digits
+36 for Diner's Club International.The length of card number is 14 digits
+54,55 for Diner's Club US and Canada.The length of card number 16 digits
+6011,622126-622925,644-649,65 for Discover Card.Length of card number 16 digits
+35018,5020,5038,6304,6759,6761-676 for Maestro.Length of card number 12-19 digits
+51-55 for Mastercard.The length of card number is 16 digits
+4 is for Visa.The length of card is 16 digits
+!4026,417500,4508,4844,4913,4197 for Visa Electron and length of card number 16 digits
+
+Basically this is what the card number (the number embossed on the card tells you).
+
+Now about CVV!In fact the CVV is the Code Verification Value .
+You can find the CVV of a Visa or Mastercard card by looking on the back of the card.The CVV are the last three printed or embossed digits from the signature strip in the back of the card.For the American Express cards,Card Security Code or CSC is printed on front of the card and is the last four digits.I toke for example a pictures that i don't own from google images.
+
+The Card Verification Code is sometime called different but is the same code .Here you have some short form for the verification codes 
+
+CSC -Card Security Code 
+CVV/CV2 -Card Verification Value
+CVVC -Card Veridication Value Code
+CVC -Card Verification Code
+V-Code -Verification Code
+CCV -Card Code Verification
+
+
+This verification codes are made for the secure "card NOT present" transaction.It is necessary for carders which use online system as shopping or in any other kind of transaction via mail,fax or telephone. 
+
+
+To be honest I considerate this security method a lose of time ! 
+Now,when a vendor offer to sell you a CVV he not mean that is selling the 3 (4 for Amex) digits from the back (front for Amex) of the card but a complete information that is required for use a credit card online.A CVV that you can buy from a vendor should look like this (sample not real,don't try to work it!)
+
+
+
+
+
+
+4862362667787439 | 693 | 07/12 | samuel thomas | 10566 parkington lane | 
+highlands ranch | Colorado | United States | 80126 | 7203140318 |
+4862362667787439 is the 16 digit Credit Card Number
+693 is CVV
+07/12 is Expire Date
+Samuel Thomas is the name on card
+10566 Parkington lane is the address
+Highlands Ranch is the city
+Colorado is the state
+United States is the country
+80126 is the Zip
+
+
+7203140318 is the phone number but this and also the e-mail address is not always included in the CVV.
+
+
+For know if the CVV that you will buy have the phone number and mail address you must ask you provider. 
+
+
+The fullz or full info are also available to buy and they include other important information about the real card holder that some sites may require as social number,mother middle name,birth day of card real holder. 
+
+
+
+
+READ ABOUT MSR :
+
+
+
+
+Who ever want to work dumps with or without pin must first get an msr.
+The msr is a magnetic reader and writer machine which will allow you to read the data from a credit/debit card or to write some data on a magnetic strip card.
+A msr price is between $300 to $1000 but even a cheap msr will work just fine.
+Once you buy the msr you must run the software program in your computer.When you had installed the program you can start to test the machine.
+First you can play with any card and see what is going on.
+Before you start to write the valid dumps you will need to practice writing because the small mistakes will make the card to not work.
+Personal i use a msr206,as you can see is not an expansive machine but i can tell you that it is good enough for write any kind of dump on a card.
+Msr has a read function and a write function.
+You can start buy write some invalid dumps on card and then read them to verify if your dumps was written on the card.
+The msr have 3 tracks which you have to fill correct so you will get a working card.
+Lets us take an invalid dump and try to fill up the track 
+Dump sample
+4539781954300875=13022010550000001001 pin9946 .Guys this is not a valid dump so don't try to became rich by using it!
+
+
+
+
+Now let's go back to our msr.Here is the msr206 
+
+
+
+
+After you got your msr software installed and you machine ready to work you will open a window like this
+
+Fill track 1 with
+B4539781954300875^name/lastname^13022010550000001001
+You can put any name but try to put the name from the fake id and card.For better understanding check the www.youtube.com site.
+Fill track 2 with 
+
+4539781954300875=13022010550000001001 
+
+Then click write.Once the led of the msr is on you have to sweep the card ..The message "writing done" will came in message space. Then verify if your card was written.Click read on the msr window and then when the machine led is on sweep the card.You will see that the track1 and 2 will be filled with the dump data.I'll try to make a video if you will request it.
+I recommend you to buy dumpz with original track1/track2,they are much more easy to work.I'll make a post to teach you how to generate track 1 from track 2 also.
+Practice,practice,practice!
+Good luck and be safe!
+
+cashout method   
+
+
+The dumps are not difficult to work but there is necessary to pay attention on how to use them so you can get money.For work a dump you will need
+1.valid dump with a BIN code which work in your country
+2.computer
+3.msr.
+4.pre-printed card with the logo of visa/mastercard/amex
+5.fake id
+6.embossing machine (for a professional work)
+Few information about this stuff you can find on my 
+
+You must know that is a long way until you will get real cash from a dump and it is necessary to spend time and money to get in this business.You will need first to provide all the stuff up listed then you can start working.
+Follow this steps
+1.Write the dump in your pre-printed card.If you will work proffesional you have to embosse the cards first.
+The name from you fake id and the name from the plastic(card) must be same!Punch the card number on the plastic.Now that you card is ready all you have to do is to write the dump on it.Use your msr ,in "write" function.I made a special page for show you how to do this
+2.Take a new wallet and put in the card and the id.Never take your original id and you original cards with you.
+3.Dress yourself clean and decent and try to have a serious atitude.
+4.Go to a mall and start shopping.Not try to buy to expansive stuff.Start with cloths,cheap phone,mp3.
+5.Go the the counter and give him the stuff you toke.Tell him that you pay it with credit card but give him the id only if he request it.
+Once you card passed take your stuff,the card and request for a costumer copy of the sweep ticket.Walk out normal!!!This is very important!
+6.There is a possibility that the card reader give an error,expired card,call costumer center,call the bank,pickup card message.
+Try to act normal and tell the shopkeeper to try another card.Never let him to talk with the bank.
+If the second card also not work tell that you will got to take cash and came back to take your stuff.
+Not run,not get panic!Walk normal and not do nothing to attract the other people attention.
+7.If your card worked and you got your stuff you can try other shopping.
+8.Then you will need a place to sell the good you got.You can post via internet on sites like ebay but don't wait to get a full price.8o% from the real price will be a good deal.
+Good luck and be safe!

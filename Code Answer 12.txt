@@ -1,0 +1,31 @@
+#the program begins here 
+.data
+
+arg:	.word   10
+
+.text
+
+.globl 	main
+main:
+
+#2-To check if the two arguments are equal and prform required action:
+
+la      $t0, 	arg
+la      $t1, 	arg1
+
+#3- Do something when the two arguments are not equal.
+
+beq 	same,	0($t0), 	0($t1)
+
+
+lw	$t2, 	0($t3) 
+lw	$t3, 	0($t3)
+addi	$t1, 	$zero, 		0
+beqz	$t2, 	fin
+fori:
+add	$t1, 	$t1, 		$t2
+addi	$t3, 	$t3, 		-1
+bnez$t3, fori
+fin:
+li	$v0, 	10
+syscall

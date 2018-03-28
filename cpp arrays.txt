@@ -1,0 +1,27 @@
+
+
+#include<iostream>
+using namespace std;
+
+int addarrays(int a, int b){
+   
+   int sum =0;
+
+   for ( int c = 0 ; c < 5 ; c++ ){
+
+      a[c]=first[c] + b[c];
+      sum +=a[c];
+     }
+   return a;
+}
+ 
+main()
+{
+   cout << "Sum of elements of two arrays " << endl;
+   int first[5] = {1,2,3,4,5};
+   int second[5] = {1,2,3,4,5}
+   cout << addarrays(first, second) << endl;
+
+
+     return 0;
+}

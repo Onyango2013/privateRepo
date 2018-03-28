@@ -1,0 +1,1745 @@
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh root@159.89.179.65
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:FlJuYobDws2Dh2+jCL6XX9szuRSs/xgngGNjHCeVyJM.
+Please contact your system administrator.
+Add correct host key in /c/Users/morgyken/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /c/Users/morgyken/.ssh/known_hosts:4
+ECDSA host key for 159.89.179.65 has changed and you have requested strict checking.
+Host key verification failed.
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ^C
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ^C
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh-keygen -R 192.168.3.10
+Host 192.168.3.10 not found in /c/Users/morgyken/.ssh/known_hosts
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh root@159.89.179.65
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:FlJuYobDws2Dh2+jCL6XX9szuRSs/xgngGNjHCeVyJM.
+Please contact your system administrator.
+Add correct host key in /c/Users/morgyken/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /c/Users/morgyken/.ssh/known_hosts:4
+ECDSA host key for 159.89.179.65 has changed and you have requested strict checking.
+Host key verification failed.
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh-keygen -R 159.89.179.65
+# Host 159.89.179.65 found: line 4
+/c/Users/morgyken/.ssh/known_hosts updated.
+Original contents retained as /c/Users/morgyken/.ssh/known_hosts.old
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh root@159.89.179.65
+The authenticity of host '159.89.179.65 (159.89.179.65)' can't be established.
+ECDSA key fingerprint is SHA256:FlJuYobDws2Dh2+jCL6XX9szuRSs/xgngGNjHCeVyJM.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': y
+Please type 'yes' or 'no': yes
+Warning: Permanently added '159.89.179.65' (ECDSA) to the list of known hosts.
+root@159.89.179.65's password:
+Permission denied, please try again.
+root@159.89.179.65's password:
+Permission denied, please try again.
+root@159.89.179.65's password:
+Connection closed by 159.89.179.65 port 22
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh root@159.89.179.65
+root@159.89.179.65's password:
+You are required to change your password immediately (root enforced)
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-109-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+-------------------------------------------------------------------------------
+
+Thank you for using DigitalOcean's LEMP Application.
+
+Your web root is located at /var/www/html and can be seen from
+    http://159.89.179.65
+
+The details of your PHP installation can be seen at
+    http://159.89.179.65/info.php
+
+The "ufw" firewall is enabled. All ports except for 22, 80, and 443 are BLOCKED
+
+You are encouraged to run mysql_secure_installation to ready your server for
+production. The passwords for MySQL have been saved to:
+    /root/.digitalocean_password
+
+Let's Encrypt has been pre-installed for you. If you have a domain name, and
+you will be using it with this 1-Click app, please see: http://do.co/le-nginx
+
+-------------------------------------------------------------------------------
+
+You can learn more about using this image here: http://do.co/lemp
+
+-------------------------------------------------------------------------------
+To delete this message of the day: rm -rf /etc/update-motd.d/99-one-click
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Changing password for root.
+(current) UNIX password:
+Enter new UNIX password:
+Retype new UNIX password:
+root@home-assignment:~# cd /var
+root@home-assignment:/var# ls
+backups  cache  crash  lib  local  lock  log  mail  opt  run  snap  spool  tmp  www
+root@home-assignment:/var# cd www
+root@home-assignment:/var/www# ls
+html
+root@home-assignment:/var/www# cd ..
+root@home-assignment:/var# ls
+backups  cache  crash  lib  local  lock  log  mail  opt  run  snap  spool  tmp  www
+root@home-assignment:/var# cd ..
+root@home-assignment:/# sudo apt-get update
+Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+Hit:1 http://nyc2.mirrors.digitalocean.com/ubuntu xenial InRelease
+Get:3 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates InRelease [102 kB]
+Get:4 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports InRelease [102 kB]
+Get:5 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main Sources [868 kB]
+Get:6 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/restricted Sources [4,808 B]
+Get:7 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/universe Sources [7,728 kB]
+Get:8 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/multiverse Sources [179 kB]
+Get:9 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main Sources [296 kB]
+Get:10 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/restricted Sources [2,524 B]
+Get:11 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/universe Sources [191 kB]
+Get:12 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/multiverse Sources [7,968 B]
+Get:13 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 Packages [724 kB]
+Get:14 http://security.ubuntu.com/ubuntu xenial-security/main Sources [110 kB]
+Get:15 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main Translation-en [301 kB]
+Get:16 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/restricted amd64 Packages [7,560 B]
+Get:17 http://security.ubuntu.com/ubuntu xenial-security/restricted Sources [2,116 B]
+Get:18 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/restricted Translation-en [2,272 B]
+Get:19 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [50.4 kB]
+Get:20 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/universe amd64 Packages [588 kB]
+Get:21 http://security.ubuntu.com/ubuntu xenial-security/multiverse Sources [1,516 B]
+Get:22 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [442 kB]
+Get:23 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/universe Translation-en [238 kB]
+Get:24 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/multiverse amd64 Packages [16.2 kB]
+Get:25 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports/main Sources [3,432 B]
+Get:26 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [193 kB]
+Get:27 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports/universe Sources [4,904 B]
+Get:28 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [205 kB]
+Get:29 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports/main amd64 Packages [4,836 B]
+Get:30 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports/universe amd64 Packages [6,628 B]
+Get:31 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [105 kB]
+Get:32 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3,208 B]
+Fetched 12.6 MB in 3s (3,701 kB/s)
+Reading package lists... Done
+root@home-assignment:/# sudo apt-get install nginx
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+nginx is already the newest version (1.10.3-0ubuntu0.16.04.2).
+0 upgraded, 0 newly installed, 0 to remove and 97 not upgraded.
+root@home-assignment:/# sudo apt-get install mysql-server
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following packages will be upgraded:
+  mysql-server
+1 upgraded, 0 newly installed, 0 to remove and 96 not upgraded.
+Need to get 10.2 kB of archives.
+After this operation, 16.4 kB of additional disk space will be used.
+Get:1 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysql-server all 5.7.21-0ubuntu0.16.04.1 [10.2 kB]
+Fetched 10.2 kB in 0s (57.6 kB/s)
+(Reading database ... 56862 files and directories currently installed.)
+Preparing to unpack .../mysql-server_5.7.21-0ubuntu0.16.04.1_all.deb ...
+Unpacking mysql-server (5.7.21-0ubuntu0.16.04.1) over (5.7.20-0ubuntu0.16.04.1) ...
+Setting up mysql-server (5.7.21-0ubuntu0.16.04.1) ...
+root@home-assignment:/# sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+Error: Access denied for user 'root'@'localhost' (using password: NO)
+root@home-assignment:/# Connection reset by 159.89.179.65 port 22
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh root@159.89.179.65
+root@159.89.179.65's password:
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-109-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+99 packages can be updated.
+43 updates are security updates.
+
+
+-------------------------------------------------------------------------------
+
+Thank you for using DigitalOcean's LEMP Application.
+
+Your web root is located at /var/www/html and can be seen from
+    http://159.89.179.65
+
+The details of your PHP installation can be seen at
+    http://159.89.179.65/info.php
+
+The "ufw" firewall is enabled. All ports except for 22, 80, and 443 are BLOCKED
+
+You are encouraged to run mysql_secure_installation to ready your server for
+production. The passwords for MySQL have been saved to:
+    /root/.digitalocean_password
+
+Let's Encrypt has been pre-installed for you. If you have a domain name, and
+you will be using it with this 1-Click app, please see: http://do.co/le-nginx
+
+-------------------------------------------------------------------------------
+
+You can learn more about using this image here: http://do.co/lemp
+
+-------------------------------------------------------------------------------
+To delete this message of the day: rm -rf /etc/update-motd.d/99-one-click
+root@home-assignment:~# sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+Error: Access denied for user 'root'@'localhost' (using password: YES)
+root@home-assignment:~# cd etc
+-bash: cd: etc: No such file or directory
+root@home-assignment:~# cd /etc
+root@home-assignment:/etc# ls
+acpi                    insserv.conf.d           profile
+adduser.conf            iproute2                 profile.d
+alternatives            iscsi                    protocols
+apache2                 issue                    python
+apm                     issue.net                python2.7
+apparmor                kbd                      python3
+apparmor.d              kernel                   python3.5
+apport                  kernel-img.conf          rc0.d
+apt                     ldap                     rc1.d
+at.deny                 ld.so.cache              rc2.d
+bash.bashrc             ld.so.conf               rc3.d
+bash_completion         ld.so.conf.d             rc4.d
+bash_completion.d       legal                    rc5.d
+bindresvport.blacklist  libaudit.conf            rc6.d
+binfmt.d                locale.alias             rc.local
+byobu                   locale.gen               rcS.d
+ca-certificates         localtime                resolvconf
+ca-certificates.conf    logcheck                 resolv.conf
+calendar                login.defs               rmt
+cloud                   logrotate.conf           rpc
+console-setup           logrotate.d              rsyslog.conf
+cron.d                  lsb-release              rsyslog.d
+cron.daily              ltrace.conf              screenrc
+cron.hourly             lvm                      securetty
+cron.monthly            machine-id               security
+crontab                 magic                    selinux
+cron.weekly             magic.mime               services
+crypttab                mailcap                  sgml
+dbus-1                  mailcap.order            shadow
+debconf.conf            manpath.config           shells
+debian_version          mdadm                    skel
+default                 mime.types               sos.conf
+deluser.conf            mke2fs.conf              ssh
+depmod.d                modprobe.d               ssl
+dhcp                    modules                  subgid
+dpkg                    modules-load.d           subuid
+ec2_version             mtab                     sudoers
+environment             mysql                    sudoers.d
+fonts                   nanorc                   sysctl.conf
+fstab                   network                  sysctl.d
+fuse.conf               NetworkManager           systemd
+gai.conf                networks                 terminfo
+groff                   newt                     timezone
+group                   nginx                    tmpfiles.d
+grub.d                  nsswitch.conf            ucf.conf
+gshadow                 opt                      udev
+gss                     os-release               ufw
+hdparm.conf             overlayroot.conf         updatedb.conf
+host.conf               overlayroot.local.conf   update-manager
+hostname                pam.conf                 update-motd.d
+hosts                   pam.d                    update-notifier
+hosts.allow             passwd                   vim
+hosts.deny              perl                     vmware-tools
+init                    php                      vtrgb
+init.d                  pm                       wgetrc
+initramfs-tools         polkit-1                 X11
+inputrc                 pollinate                xdg
+insserv                 popularity-contest.conf  xml
+insserv.conf            ppp                      zsh_command_not_found
+root@home-assignment:/etc# sudo nano motd.tail
+root@home-assignment:/etc# cat/root/.my.cnf
+-bash: cat/root/.my.cnf: No such file or directory
+root@home-assignment:/etc# cd ..
+root@home-assignment:/# .my.cnf
+.my.cnf: command not found
+root@home-assignment:/# cd root
+root@home-assignment:~# ls
+root@home-assignment:~# cd /var
+root@home-assignment:/var# nano
+root@home-assignment:/var# cd ..
+root@home-assignment:/# nano .You are encouraged to run mysql_secure_installatio                                                                                                                n to ready your server for
+    /root/.digitalocean_password
+root@home-assignment:/# ^C
+root@home-assignment:/# ^C
+root@home-assignment:/# sudo mysql_secure_insstallation
+sudo: mysql_secure_insstallation: command not found
+root@home-assignment:/# sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+Error: Access denied for user 'root'@'localhost' (using password: YES)
+root@home-assignment:/# sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+Error: Access denied for user 'root'@'localhost' (using password: YES)
+root@home-assignment:/# cd /etc
+root@home-assignment:/etc# cd root
+-bash: cd: root: No such file or directory
+root@home-assignment:/etc# Connection reset by 159.89.179.65 port 22
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh root@159.89.159.65
+The authenticity of host '159.89.159.65 (159.89.159.65)' can't be established.
+ECDSA key fingerprint is SHA256:jq/hVi6M++s85hxdHr2XGi85M508JYvVfn1o/uYEN8w.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added '159.89.159.65' (ECDSA) to the list of known hosts.
+root@159.89.159.65's password:
+Permission denied, please try again.
+root@159.89.159.65's password:
+Permission denied, please try again.
+root@159.89.159.65's password:
+root@159.89.159.65: Permission denied (publickey,password).
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh root@159.89.179.65
+root@159.89.179.65's password:
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-109-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+99 packages can be updated.
+43 updates are security updates.
+
+
+-------------------------------------------------------------------------------
+
+Thank you for using DigitalOcean's LEMP Application.
+
+Your web root is located at /var/www/html and can be seen from
+    http://159.89.179.65
+
+The details of your PHP installation can be seen at
+    http://159.89.179.65/info.php
+
+The "ufw" firewall is enabled. All ports except for 22, 80, and 443 are BLOCKED
+
+You are encouraged to run mysql_secure_installation to ready your server for
+production. The passwords for MySQL have been saved to:
+    /root/.digitalocean_password
+
+Let's Encrypt has been pre-installed for you. If you have a domain name, and
+you will be using it with this 1-Click app, please see: http://do.co/le-nginx
+
+-------------------------------------------------------------------------------
+
+You can learn more about using this image here: http://do.co/lemp
+
+-------------------------------------------------------------------------------
+To delete this message of the day: rm -rf /etc/update-motd.d/99-one-click
+root@home-assignment:~# sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+Error: Access denied for user 'root'@'localhost' (using password: YES)
+root@home-assignment:~# sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+Error: Access denied for user 'root'@'localhost' (using password: YES)
+root@home-assignment:~# sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+Error: Access denied for user 'root'@'localhost' (using password: YES)
+root@home-assignment:~# sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+Error: Access denied for user 'root'@'localhost' (using password: YES)
+root@home-assignment:~# Connection reset by 159.89.179.65 port 22
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh-keygen -R 159.89.179.65
+# Host 159.89.179.65 found: line 4
+/c/Users/morgyken/.ssh/known_hosts updated.
+Original contents retained as /c/Users/morgyken/.ssh/known_hosts.old
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh root@159.89.179.65
+The authenticity of host '159.89.179.65 (159.89.179.65)' can't be established.
+ECDSA key fingerprint is SHA256:+0cHWlkquNbbnLKEjOYuUDelgG8sDc+ZLUVRRs9dqek.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added '159.89.179.65' (ECDSA) to the list of known hosts.
+root@159.89.179.65's password:
+You are required to change your password immediately (root enforced)
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-109-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+-------------------------------------------------------------------------------
+
+Thank you for using DigitalOcean's LEMP Application.
+
+Your web root is located at /var/www/html and can be seen from
+    http://159.89.179.65
+
+The details of your PHP installation can be seen at
+    http://159.89.179.65/info.php
+
+The "ufw" firewall is enabled. All ports except for 22, 80, and 443 are BLOCKED
+
+You are encouraged to run mysql_secure_installation to ready your server for
+production. The passwords for MySQL have been saved to:
+    /root/.digitalocean_password
+
+Let's Encrypt has been pre-installed for you. If you have a domain name, and
+you will be using it with this 1-Click app, please see: http://do.co/le-nginx
+
+-------------------------------------------------------------------------------
+
+You can learn more about using this image here: http://do.co/lemp
+
+-------------------------------------------------------------------------------
+To delete this message of the day: rm -rf /etc/update-motd.d/99-one-click
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Changing password for root.
+(current) UNIX password:
+Enter new UNIX password:
+Retype new UNIX password:
+root@home-assignment:~# sudo ^C
+root@home-assignment:~# stop mysql
+The program 'stop' is currently not installed. You can install it by typing:
+apt install upstart
+root@home-assignment:~# cd /ect
+-bash: cd: /ect: No such file or directory
+root@home-assignment:~# cd /etc
+root@home-assignment:/etc# ls
+acpi                    calendar        ec2_version  init.d           libaudit.conf   mime.types              pam.conf                 rc1.d         services     ucf.conf
+adduser.conf            cloud           environment  initramfs-tools  locale.alias    mke2fs.conf             pam.d                    rc2.d         sgml         udev
+alternatives            console-setup   fonts        inputrc          locale.gen      modprobe.d              passwd                   rc3.d         shadow       ufw
+apache2                 cron.d          fstab        insserv          localtime       modules                 perl                     rc4.d         shells       updatedb.conf
+apm                     cron.daily      fuse.conf    insserv.conf     logcheck        modules-load.d          php                      rc5.d         skel         update-manager
+apparmor                cron.hourly     gai.conf     insserv.conf.d   login.defs      mtab                    pm                       rc6.d         sos.conf     update-motd.d
+apparmor.d              cron.monthly    groff        iproute2         logrotate.conf  mysql                   polkit-1                 rc.local      ssh          update-notifier
+apport                  crontab         group        iscsi            logrotate.d     nanorc                  pollinate                rcS.d         ssl          vim
+apt                     cron.weekly     grub.d       issue            lsb-release     network                 popularity-contest.conf  resolvconf    subgid       vmware-tools
+at.deny                 crypttab        gshadow      issue.net        ltrace.conf     NetworkManager          ppp                      resolv.conf   subuid       vtrgb
+bash.bashrc             dbus-1          gss          kbd              lvm             networks                profile                  rmt           sudoers      wgetrc
+bash_completion         debconf.conf    hdparm.conf  kernel           machine-id      newt                    profile.d                rpc           sudoers.d    X11
+bash_completion.d       debian_version  host.conf    kernel-img.conf  magic           nginx                   protocols                rsyslog.conf  sysctl.conf  xdg
+bindresvport.blacklist  default         hostname     ldap             magic.mime      nsswitch.conf           python                   rsyslog.d     sysctl.d     xml
+binfmt.d                deluser.conf    hosts        ld.so.cache      mailcap         opt                     python2.7                screenrc      systemd      zsh_command_not_found
+byobu                   depmod.d        hosts.allow  ld.so.conf       mailcap.order   os-release              python3                  securetty     terminfo
+ca-certificates         dhcp            hosts.deny   ld.so.conf.d     manpath.config  overlayroot.conf        python3.5                security      timezone
+ca-certificates.conf    dpkg            init         legal            mdadm           overlayroot.local.conf  rc0.d                    selinux       tmpfiles.d
+root@home-assignment:/etc# cd init.d
+root@home-assignment:/etc/init.d# mysql stop
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+root@home-assignment:/etc/init.d# mysqld_safe --skip-grant-tables &
+[1] 1987
+root@home-assignment:/etc/init.d# 2018-02-17T09:52:35.654042Z mysqld_safe Loggin                                                                                                                g to syslog.
+2018-02-17T09:52:35.657401Z mysqld_safe Logging to '/var/log/mysql/error.log'.
+2018-02-17T09:52:35.674275Z mysqld_safe A mysqld process already exists
+
+[1]+  Exit 1                  mysqld_safe --skip-grant-tables
+root@home-assignment:/etc/init.d#
+root@home-assignment:/etc/init.d#
+root@home-assignment:/etc/init.d# mysql -u root
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: N                                                                                                                O)
+root@home-assignment:/etc/init.d# mysql -u root
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: N                                                                                                                O)
+root@home-assignment:/etc/init.d# mysql -u root /root/.digitalocean_password
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: N                                                                                                                O)
+root@home-assignment:/etc/init.d# cd ..
+root@home-assignment:/etc# cd ..
+root@home-assignment:/# cd /var
+root@home-assignment:/var# cd www
+root@home-assignment:/var/www# cd cat
+-bash: cd: cat: No such file or directory
+root@home-assignment:/var/www# cd /cat
+-bash: cd: /cat: No such file or directory
+root@home-assignment:/var/www# ls
+html
+root@home-assignment:/var/www# cd ..
+root@home-assignment:/var# ls
+backups  crash  local  log   opt  snap   tmp
+cache    lib    lock   mail  run  spool  www
+root@home-assignment:/var# cd ..
+root@home-assignment:/# cd /etc
+root@home-assignment:/etc# ls
+acpi                    insserv.conf.d           profile
+adduser.conf            iproute2                 profile.d
+alternatives            iscsi                    protocols
+apache2                 issue                    python
+apm                     issue.net                python2.7
+apparmor                kbd                      python3
+apparmor.d              kernel                   python3.5
+apport                  kernel-img.conf          rc0.d
+apt                     ldap                     rc1.d
+at.deny                 ld.so.cache              rc2.d
+bash.bashrc             ld.so.conf               rc3.d
+bash_completion         ld.so.conf.d             rc4.d
+bash_completion.d       legal                    rc5.d
+bindresvport.blacklist  libaudit.conf            rc6.d
+binfmt.d                locale.alias             rc.local
+byobu                   locale.gen               rcS.d
+ca-certificates         localtime                resolvconf
+ca-certificates.conf    logcheck                 resolv.conf
+calendar                login.defs               rmt
+cloud                   logrotate.conf           rpc
+console-setup           logrotate.d              rsyslog.conf
+cron.d                  lsb-release              rsyslog.d
+cron.daily              ltrace.conf              screenrc
+cron.hourly             lvm                      securetty
+cron.monthly            machine-id               security
+crontab                 magic                    selinux
+cron.weekly             magic.mime               services
+crypttab                mailcap                  sgml
+dbus-1                  mailcap.order            shadow
+debconf.conf            manpath.config           shells
+debian_version          mdadm                    skel
+default                 mime.types               sos.conf
+deluser.conf            mke2fs.conf              ssh
+depmod.d                modprobe.d               ssl
+dhcp                    modules                  subgid
+dpkg                    modules-load.d           subuid
+ec2_version             mtab                     sudoers
+environment             mysql                    sudoers.d
+fonts                   nanorc                   sysctl.conf
+fstab                   network                  sysctl.d
+fuse.conf               NetworkManager           systemd
+gai.conf                networks                 terminfo
+groff                   newt                     timezone
+group                   nginx                    tmpfiles.d
+grub.d                  nsswitch.conf            ucf.conf
+gshadow                 opt                      udev
+gss                     os-release               ufw
+hdparm.conf             overlayroot.conf         updatedb.conf
+host.conf               overlayroot.local.conf   update-manager
+hostname                pam.conf                 update-motd.d
+hosts                   pam.d                    update-notifier
+hosts.allow             passwd                   vim
+hosts.deny              perl                     vmware-tools
+init                    php                      vtrgb
+init.d                  pm                       wgetrc
+initramfs-tools         polkit-1                 X11
+inputrc                 pollinate                xdg
+insserv                 popularity-contest.conf  xml
+insserv.conf            ppp                      zsh_command_not_found
+root@home-assignment:/etc# cd /cat
+-bash: cd: /cat: No such file or directory
+root@home-assignment:/etc# cd ..
+root@home-assignment:/# cd/var
+-bash: cd/var: No such file or directory
+root@home-assignment:/# cd /var/
+root@home-assignment:/var# cd www/html
+root@home-assignment:/var/www/html# ls
+index.html  info.php
+root@home-assignment:/var/www/html# nano info.php
+root@home-assignment:/var/www/html# cd ..
+root@home-assignment:/var/www# cd~
+No command 'cd~' found, did you mean:
+ Command 'cdv' from package 'codeville' (universe)
+ Command 'cdo' from package 'cdo' (universe)
+ Command 'cde' from package 'cde' (universe)
+ Command 'cdw' from package 'cdw' (universe)
+ Command 'cdi' from package 'cdo' (universe)
+ Command 'cdb' from package 'tinycdb' (main)
+ Command 'cdp' from package 'irpas' (multiverse)
+ Command 'cd5' from package 'cd5' (universe)
+cd~: command not found
+root@home-assignment:/var/www# cd ~
+root@home-assignment:~# service mysql stop
+root@home-assignment:~# echo "UPDATE mysql.user SET Password = PASSWORD('mypassw                                                                                                                ord') WHERE User = 'root';" > ~/mysql-reset.sql echo "FLUSH PRIVILEGES;" >> ~/my                                                                                                                sql-reset.sql chown mysql:mysql ~/mysql-reset.sql mysqld_safe --init-file=~/mysq                                                                                                                l-reset.sql & rm ~/mysql-reset.sql # confirm it works mysql --user=root --passwo                                                                                                                rd=mypassword > quit; service mysql stop service mysql start
+[1] 2379
+rm: cannot remove '/root/mysql-reset.sql': No such file or directory
+[1]+  Done                    echo "UPDATE mysql.user SET Password = PASSWORD('m                                                                                                                ypassword') WHERE User = 'root';" echo "FLUSH PRIVILEGES;" chown mysql:mysql ~/m                                                                                                                ysql-reset.sql mysqld_safe --init-file=~/mysql-reset.sql > ~/mysql-reset.sql >>                                                                                                                 ~/mysql-reset.sql
+root@home-assignment:~# mysqld_safe --skip-grant-tables &
+[1] 2381
+root@home-assignment:~# 2018-02-17T10:01:35.594124Z mysqld_safe Logging to syslo                                                                                                                g.
+2018-02-17T10:01:35.597262Z mysqld_safe Logging to '/var/log/mysql/error.log'.
+2018-02-17T10:01:35.600181Z mysqld_safe Directory '/var/run/mysqld' for UNIX soc                                                                                                                ket file don't exists.
+
+[1]+  Exit 1                  mysqld_safe --skip-grant-tables
+root@home-assignment:~# mysql -u root
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+root@home-assignment:~# echo "UPDATE mysql.user SET Password = PASSWORD('mypassword') WHERE User = 'root                                                                                        ';" > ~/mysql-reset.sql
+root@home-assignment:~# echo "FLUSH PRIVILEGES;" >> ~/mysql-reset.sql
+root@home-assignment:~# chown mysql:mysql ~/mysql-reset.sql
+root@home-assignment:~# mysqld_safe --init-file=~/mysql-reset.sql & rm ~/mysql-reset.sql
+[1] 2718
+root@home-assignment:~# 2018-02-17T10:04:16.467771Z mysqld_safe Logging to syslog.
+2018-02-17T10:04:16.470884Z mysqld_safe Logging to '/var/log/mysql/error.log'.
+2018-02-17T10:04:16.473854Z mysqld_safe Directory '/var/run/mysqld' for UNIX socket file don't exists.
+
+[1]+  Exit 1                  mysqld_safe --init-file=~/mysql-reset.sql
+root@home-assignment:~# mysql --user=root --password=mypassword
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+root@home-assignment:~# sudo find / -type s
+/var/lib/lxd/unix.socket
+/run/dbus/system_bus_socket
+/run/acpid.socket
+/run/uuidd/request
+/run/snapd-snap.socket
+/run/snapd.socket
+/run/php/php7.0-fpm.sock
+/run/lvm/lvmpolld.socket
+/run/lvm/lvmetad.socket
+/run/systemd/journal/dev-log
+/run/systemd/journal/syslog
+/run/systemd/journal/socket
+/run/systemd/journal/stdout
+/run/systemd/private
+/run/systemd/notify
+/run/udev/control
+root@home-assignment:~# sudo insall mysql-server
+sudo: insall: command not found
+root@home-assignment:~# sudo install mysql-server
+install: missing destination file operand after 'mysql-server'
+Try 'install --help' for more information.
+root@home-assignment:~# sudo apt-get instll mysql-server
+E: Invalid operation instll
+root@home-assignment:~# sudo apt-get install mysql-server
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+mysql-server is already the newest version (5.7.20-0ubuntu0.16.04.1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+root@home-assignment:~# sudo find / -type s
+/var/lib/lxd/unix.socket
+/run/dbus/system_bus_socket
+/run/acpid.socket
+/run/uuidd/request
+/run/snapd-snap.socket
+/run/snapd.socket
+/run/php/php7.0-fpm.sock
+/run/lvm/lvmpolld.socket
+/run/lvm/lvmetad.socket
+/run/systemd/journal/dev-log
+/run/systemd/journal/syslog
+/run/systemd/journal/socket
+/run/systemd/journal/stdout
+/run/systemd/private
+/run/systemd/notify
+/run/udev/control
+root@home-assignment:~# mysqladmin -u root -p shutdown
+Enter password:
+mysqladmin: connect to server at 'localhost' failed
+error: 'Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)'
+Check that mysqld is running and that the socket: '/var/run/mysqld/mysqld.sock' exists!
+root@home-assignment:~# service mysqld stop
+Failed to stop mysqld.service: Unit mysqld.service not loaded.
+root@home-assignment:~# sudo pkill mysql
+root@home-assignment:~# mysql --user=root --password=mypassword
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+root@home-assignment:~# Connection reset by 159.89.179.65 port 22
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh-keygen -R 159.89.179.65
+# Host 159.89.179.65 found: line 5
+/c/Users/morgyken/.ssh/known_hosts updated.
+Original contents retained as /c/Users/morgyken/.ssh/known_hosts.old
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh root@159.89.179.65
+The authenticity of host '159.89.179.65 (159.89.179.65)' can't be established.
+ECDSA key fingerprint is SHA256:nR5/QGK2nwFh4stl65MJ6WjL9PKw9P4bsU5E7xD9Ykw.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '159.89.179.65' (ECDSA) to the list of known hosts.
+root@159.89.179.65's password:
+You are required to change your password immediately (root enforced)
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-112-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Changing password for root.
+(current) UNIX password:
+Enter new UNIX password:
+Retype new UNIX password:
+root@home-assignment:~# cd /var
+root@home-assignment:/var# ls
+backups  cache  crash  lib  local  lock  log  mail  opt  run  snap  spool  tmp
+root@home-assignment:/var# cd www
+-bash: cd: www: No such file or directory
+root@home-assignment:/var# cd ..
+root@home-assignment:/# sudo apt-get update
+Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+Hit:1 http://nyc2.mirrors.digitalocean.com/ubuntu xenial InRelease
+Get:3 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates InRelease [102 kB]
+Get:4 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports InRelease [102 kB]
+Get:5 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main Sources [868 kB]
+Get:6 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/restricted Sources [4,808 B]
+Get:7 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/universe Sources [7,728 kB]
+Get:10 http://security.ubuntu.com/ubuntu xenial-security/main Sources [110 kB]
+Get:8 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/multiverse Sources [179 kB]
+Get:9 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/universe amd64 Packages [7,532 kB]
+Get:13 http://security.ubuntu.com/ubuntu xenial-security/restricted Sources [2,116 B]
+Get:15 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [50.4 kB]
+Get:11 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/universe Translation-en [4,354 kB]
+Get:18 http://security.ubuntu.com/ubuntu xenial-security/multiverse Sources [1,516 B]
+Get:12 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/multiverse amd64 Packages [144 kB]
+Get:14 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/multiverse Translation-en [106 kB]
+Get:16 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main Sources [296 kB]
+Get:20 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [442 kB]
+Get:17 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/restricted Sources [2,524 B]
+Get:19 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/universe Sources [191 kB]
+Get:21 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/multiverse Sources [7,968 B]
+Get:22 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 Packages [724 kB]
+Get:23 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [193 kB]
+Get:25 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [205 kB]
+Get:24 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main Translation-en [301 kB]
+Get:26 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/universe amd64 Packages [588 kB]
+Get:27 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [105 kB]
+Get:28 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/universe Translation-en [238 kB]
+Get:29 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3,208 B]
+Get:30 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/multiverse amd64 Packages [16.2 kB]
+Get:31 http://security.ubuntu.com/ubuntu xenial-security/multiverse Translation-en [1,408 B]
+Get:32 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/multiverse Translation-en [8,052 B]
+Get:33 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports/main Sources [3,432 B]
+Get:34 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports/universe Sources [4,904 B]
+Get:35 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports/main amd64 Packages [4,836 B]
+Get:36 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports/main Translation-en [3,220 B]
+Get:37 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports/universe amd64 Packages [6,628 B]
+Get:38 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-backports/universe Translation-en [3,768 B]
+Fetched 24.7 MB in 4s (5,025 kB/s)
+Reading package lists... Done
+root@home-assignment:/# sudo apt-get install inginx
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package inginx
+root@home-assignment:/# sudo apt-get installinginx
+E: Invalid operation installinginx
+root@home-assignment:/# sudo apt-get install nginx
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  grub-pc-bin
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libtiff5 libvpx3 libxpm4 libxslt1.1 nginx-common nginx-core
+Suggested packages:
+  libgd-tools fcgiwrap nginx-doc ssl-cert
+The following NEW packages will be installed:
+  fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libtiff5 libvpx3 libxpm4 libxslt1.1 nginx nginx-common nginx-core
+0 upgraded, 14 newly installed, 0 to remove and 42 not upgraded.
+Need to get 3,000 kB of archives.
+After this operation, 9,783 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libjpeg-turbo8 amd64 1.4.2-0ubuntu3 [111 kB]
+Get:2 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libjbig0 amd64 2.1-3.1 [26.6 kB]
+Get:3 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 fonts-dejavu-core all 2.35-1 [1,039 kB]
+Get:4 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 fontconfig-config all 2.11.94-0ubuntu1.1 [49.9 kB]
+Get:5 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 libfontconfig1 amd64 2.11.94-0ubuntu1.1 [131 kB]
+Get:6 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libjpeg8 amd64 8c-2ubuntu8 [2,194 B]
+Get:7 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 libtiff5 amd64 4.0.6-1ubuntu0.2 [146 kB]
+Get:8 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libvpx3 amd64 1.5.0-2ubuntu1 [732 kB]
+Get:9 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 libxpm4 amd64 1:3.5.11-1ubuntu0.16.04.1 [33.8 kB]
+Get:10 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 libgd3 amd64 2.1.1-4ubuntu0.16.04.8 [126 kB]
+Get:11 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 libxslt1.1 amd64 1.1.28-2.1ubuntu0.1 [145 kB]
+Get:12 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 nginx-common all 1.10.3-0ubuntu0.16.04.2 [26.6 kB]
+Get:13 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 nginx-core amd64 1.10.3-0ubuntu0.16.04.2 [428 kB]
+Get:14 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 nginx all 1.10.3-0ubuntu0.16.04.2 [3,490 B]
+Fetched 3,000 kB in 3s (794 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package libjpeg-turbo8:amd64.
+(Reading database ... 54291 files and directories currently installed.)
+Preparing to unpack .../libjpeg-turbo8_1.4.2-0ubuntu3_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (1.4.2-0ubuntu3) ...
+Selecting previously unselected package libjbig0:amd64.
+Preparing to unpack .../libjbig0_2.1-3.1_amd64.deb ...
+Unpacking libjbig0:amd64 (2.1-3.1) ...
+Selecting previously unselected package fonts-dejavu-core.
+Preparing to unpack .../fonts-dejavu-core_2.35-1_all.deb ...
+Unpacking fonts-dejavu-core (2.35-1) ...
+Selecting previously unselected package fontconfig-config.
+Preparing to unpack .../fontconfig-config_2.11.94-0ubuntu1.1_all.deb ...
+Unpacking fontconfig-config (2.11.94-0ubuntu1.1) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../libfontconfig1_2.11.94-0ubuntu1.1_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.11.94-0ubuntu1.1) ...
+Selecting previously unselected package libjpeg8:amd64.
+Preparing to unpack .../libjpeg8_8c-2ubuntu8_amd64.deb ...
+Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
+Selecting previously unselected package libtiff5:amd64.
+Preparing to unpack .../libtiff5_4.0.6-1ubuntu0.2_amd64.deb ...
+Unpacking libtiff5:amd64 (4.0.6-1ubuntu0.2) ...
+Selecting previously unselected package libvpx3:amd64.
+Preparing to unpack .../libvpx3_1.5.0-2ubuntu1_amd64.deb ...
+Unpacking libvpx3:amd64 (1.5.0-2ubuntu1) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../libxpm4_1%3a3.5.11-1ubuntu0.16.04.1_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.11-1ubuntu0.16.04.1) ...
+Selecting previously unselected package libgd3:amd64.
+Preparing to unpack .../libgd3_2.1.1-4ubuntu0.16.04.8_amd64.deb ...
+Unpacking libgd3:amd64 (2.1.1-4ubuntu0.16.04.8) ...
+Selecting previously unselected package libxslt1.1:amd64.
+Preparing to unpack .../libxslt1.1_1.1.28-2.1ubuntu0.1_amd64.deb ...
+Unpacking libxslt1.1:amd64 (1.1.28-2.1ubuntu0.1) ...
+Selecting previously unselected package nginx-common.
+Preparing to unpack .../nginx-common_1.10.3-0ubuntu0.16.04.2_all.deb ...
+Unpacking nginx-common (1.10.3-0ubuntu0.16.04.2) ...
+Selecting previously unselected package nginx-core.
+Preparing to unpack .../nginx-core_1.10.3-0ubuntu0.16.04.2_amd64.deb ...
+Unpacking nginx-core (1.10.3-0ubuntu0.16.04.2) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../nginx_1.10.3-0ubuntu0.16.04.2_all.deb ...
+Unpacking nginx (1.10.3-0ubuntu0.16.04.2) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for ufw (0.35-0ubuntu2) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Setting up libjpeg-turbo8:amd64 (1.4.2-0ubuntu3) ...
+Setting up libjbig0:amd64 (2.1-3.1) ...
+Setting up fonts-dejavu-core (2.35-1) ...
+Setting up fontconfig-config (2.11.94-0ubuntu1.1) ...
+Setting up libfontconfig1:amd64 (2.11.94-0ubuntu1.1) ...
+Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
+Setting up libtiff5:amd64 (4.0.6-1ubuntu0.2) ...
+Setting up libvpx3:amd64 (1.5.0-2ubuntu1) ...
+Setting up libxpm4:amd64 (1:3.5.11-1ubuntu0.16.04.1) ...
+Setting up libgd3:amd64 (2.1.1-4ubuntu0.16.04.8) ...
+Setting up libxslt1.1:amd64 (1.1.28-2.1ubuntu0.1) ...
+Setting up nginx-common (1.10.3-0ubuntu0.16.04.2) ...
+Setting up nginx-core (1.10.3-0ubuntu0.16.04.2) ...
+Setting up nginx (1.10.3-0ubuntu0.16.04.2) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for ufw (0.35-0ubuntu2) ...
+root@home-assignment:/# sudo apt-get install mysql-server
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  grub-pc-bin
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  libaio1 libcgi-fast-perl libcgi-pm-perl libencode-locale-perl libevent-core-2.0-5 libfcgi-perl libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl libhttp-date-perl
+  libhttp-message-perl libio-html-perl liblwp-mediatypes-perl libtimedate-perl liburi-perl mysql-client-5.7 mysql-client-core-5.7 mysql-common mysql-server-5.7 mysql-server-core-5.7
+Suggested packages:
+  libdata-dump-perl libipc-sharedcache-perl libwww-perl mailx tinyca
+The following NEW packages will be installed:
+  libaio1 libcgi-fast-perl libcgi-pm-perl libencode-locale-perl libevent-core-2.0-5 libfcgi-perl libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl libhttp-date-perl
+  libhttp-message-perl libio-html-perl liblwp-mediatypes-perl libtimedate-perl liburi-perl mysql-client-5.7 mysql-client-core-5.7 mysql-common mysql-server mysql-server-5.7
+  mysql-server-core-5.7
+0 upgraded, 21 newly installed, 0 to remove and 42 not upgraded.
+Need to get 19.3 MB of archives.
+After this operation, 163 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysql-common all 5.7.21-0ubuntu0.16.04.1 [15.7 kB]
+Get:2 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libaio1 amd64 0.3.110-2 [6,356 B]
+Get:3 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysql-client-core-5.7 amd64 5.7.21-0ubuntu0.16.04.1 [6,363 kB]
+Get:4 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysql-client-5.7 amd64 5.7.21-0ubuntu0.16.04.1 [1,676 kB]
+Get:5 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysql-server-core-5.7 amd64 5.7.21-0ubuntu0.16.04.1 [7,809 kB]
+Get:6 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 libevent-core-2.0-5 amd64 2.0.21-stable-2ubuntu0.16.04.1 [70.6 kB]
+Get:7 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysql-server-5.7 amd64 5.7.21-0ubuntu0.16.04.1 [2,724 kB]
+Get:8 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libhtml-tagset-perl all 3.20-2 [13.5 kB]
+Get:9 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 liburi-perl all 1.71-1 [76.9 kB]
+Get:10 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libhtml-parser-perl amd64 3.72-1 [86.1 kB]
+Get:11 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libcgi-pm-perl all 4.26-1 [185 kB]
+Get:12 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libfcgi-perl amd64 0.77-1build1 [32.3 kB]
+Get:13 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libcgi-fast-perl all 1:2.10-1 [10.2 kB]
+Get:14 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libencode-locale-perl all 1.05-1 [12.3 kB]
+Get:15 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libhtml-template-perl all 2.95-2 [60.4 kB]
+Get:16 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libtimedate-perl all 2.3000-2 [37.5 kB]
+Get:17 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libhttp-date-perl all 6.02-1 [10.4 kB]
+Get:18 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libio-html-perl all 1.001-1 [14.9 kB]
+Get:19 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 liblwp-mediatypes-perl all 6.02-1 [21.7 kB]
+Get:20 http://nyc2.mirrors.digitalocean.com/ubuntu xenial/main amd64 libhttp-message-perl all 6.11-1 [74.3 kB]
+Get:21 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 mysql-server all 5.7.21-0ubuntu0.16.04.1 [10.2 kB]
+Fetched 19.3 MB in 5s (3,451 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package mysql-common.
+(Reading database ... 54510 files and directories currently installed.)
+Preparing to unpack .../mysql-common_5.7.21-0ubuntu0.16.04.1_all.deb ...
+Unpacking mysql-common (5.7.21-0ubuntu0.16.04.1) ...
+Selecting previously unselected package libaio1:amd64.
+Preparing to unpack .../libaio1_0.3.110-2_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.110-2) ...
+Selecting previously unselected package mysql-client-core-5.7.
+Preparing to unpack .../mysql-client-core-5.7_5.7.21-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking mysql-client-core-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Selecting previously unselected package mysql-client-5.7.
+Preparing to unpack .../mysql-client-5.7_5.7.21-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking mysql-client-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+
+Selecting previously unselected package mysql-server-core-5.7.
+Preparing to unpack .../mysql-server-core-5.7_5.7.21-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking mysql-server-core-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Selecting previously unselected package libevent-core-2.0-5:amd64.
+Preparing to unpack .../libevent-core-2.0-5_2.0.21-stable-2ubuntu0.16.04.1_amd64.deb ...
+Unpacking libevent-core-2.0-5:amd64 (2.0.21-stable-2ubuntu0.16.04.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up mysql-common (5.7.21-0ubuntu0.16.04.1) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Selecting previously unselected package mysql-server-5.7.
+(Reading database ... 54678 files and directories currently installed.)
+Preparing to unpack .../mysql-server-5.7_5.7.21-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking mysql-server-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Selecting previously unselected package libhtml-tagset-perl.
+Preparing to unpack .../libhtml-tagset-perl_3.20-2_all.deb ...
+Unpacking libhtml-tagset-perl (3.20-2) ...
+Selecting previously unselected package liburi-perl.
+Preparing to unpack .../liburi-perl_1.71-1_all.deb ...
+Unpacking liburi-perl (1.71-1) ...
+Selecting previously unselected package libhtml-parser-perl.
+Preparing to unpack .../libhtml-parser-perl_3.72-1_amd64.deb ...
+Unpacking libhtml-parser-perl (3.72-1) ...
+Selecting previously unselected package libcgi-pm-perl.
+Preparing to unpack .../libcgi-pm-perl_4.26-1_all.deb ...
+Unpacking libcgi-pm-perl (4.26-1) ...
+Selecting previously unselected package libfcgi-perl.
+Preparing to unpack .../libfcgi-perl_0.77-1build1_amd64.deb ...
+Unpacking libfcgi-perl (0.77-1build1) ...
+Selecting previously unselected package libcgi-fast-perl.
+Preparing to unpack .../libcgi-fast-perl_1%3a2.10-1_all.deb ...
+Unpacking libcgi-fast-perl (1:2.10-1) ...
+Selecting previously unselected package libencode-locale-perl.
+Preparing to unpack .../libencode-locale-perl_1.05-1_all.deb ...
+Unpacking libencode-locale-perl (1.05-1) ...
+Selecting previously unselected package libhtml-template-perl.
+Preparing to unpack .../libhtml-template-perl_2.95-2_all.deb ...
+Unpacking libhtml-template-perl (2.95-2) ...
+Selecting previously unselected package libtimedate-perl.
+Preparing to unpack .../libtimedate-perl_2.3000-2_all.deb ...
+Unpacking libtimedate-perl (2.3000-2) ...
+Selecting previously unselected package libhttp-date-perl.
+Preparing to unpack .../libhttp-date-perl_6.02-1_all.deb ...
+Unpacking libhttp-date-perl (6.02-1) ...
+Selecting previously unselected package libio-html-perl.
+Preparing to unpack .../libio-html-perl_1.001-1_all.deb ...
+Unpacking libio-html-perl (1.001-1) ...
+Selecting previously unselected package liblwp-mediatypes-perl.
+Preparing to unpack .../liblwp-mediatypes-perl_6.02-1_all.deb ...
+Unpacking liblwp-mediatypes-perl (6.02-1) ...
+Selecting previously unselected package libhttp-message-perl.
+Preparing to unpack .../libhttp-message-perl_6.11-1_all.deb ...
+Unpacking libhttp-message-perl (6.11-1) ...
+Selecting previously unselected package mysql-server.
+Preparing to unpack .../mysql-server_5.7.21-0ubuntu0.16.04.1_all.deb ...
+Unpacking mysql-server (5.7.21-0ubuntu0.16.04.1) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up libaio1:amd64 (0.3.110-2) ...
+Setting up mysql-client-core-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Setting up mysql-client-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Setting up mysql-server-core-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+Setting up libevent-core-2.0-5:amd64 (2.0.21-stable-2ubuntu0.16.04.1) ...
+Setting up mysql-server-5.7 (5.7.21-0ubuntu0.16.04.1) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Renaming removed key_buffer and myisam-recover options (if present)
+Setting up libhtml-tagset-perl (3.20-2) ...
+Setting up liburi-perl (1.71-1) ...
+Setting up libhtml-parser-perl (3.72-1) ...
+Setting up libcgi-pm-perl (4.26-1) ...
+Setting up libfcgi-perl (0.77-1build1) ...
+Setting up libcgi-fast-perl (1:2.10-1) ...
+Setting up libencode-locale-perl (1.05-1) ...
+Setting up libhtml-template-perl (2.95-2) ...
+Setting up libtimedate-perl (2.3000-2) ...
+Setting up libhttp-date-perl (6.02-1) ...
+Setting up libio-html-perl (1.001-1) ...
+Setting up liblwp-mediatypes-perl (6.02-1) ...
+Setting up libhttp-message-perl (6.11-1) ...
+Setting up mysql-server (5.7.21-0ubuntu0.16.04.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+root@home-assignment:/# audo mysql_secure_installation
+No command 'audo' found, did you mean:
+ Command 'aldo' from package 'aldo' (universe)
+ Command 'udo' from package 'udo' (universe)
+ Command 'sudo' from package 'sudo-ldap' (universe)
+ Command 'sudo' from package 'sudo' (main)
+audo: command not found
+root@home-assignment:/# sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+
+VALIDATE PASSWORD PLUGIN can be used to test passwords
+and improve security. It checks the strength of password
+and allows the users to set only those passwords which are
+secure enough. Would you like to setup VALIDATE PASSWORD plugin?
+
+Press y|Y for Yes, any other key for No: n
+Using existing password for root.
+Change the password for root ? ((Press y|Y for Yes, any other key for No) : n
+
+ ... skipping.
+By default, a MySQL installation has an anonymous user,
+allowing anyone to log into MySQL without having to have
+a user account created for them. This is intended only for
+testing, and to make the installation go a bit smoother.
+You should remove them before moving into a production
+environment.
+
+Remove anonymous users? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+
+Normally, root should only be allowed to connect from
+'localhost'. This ensures that someone cannot guess at
+the root password from the network.
+
+Disallow root login remotely? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+By default, MySQL comes with a database named 'test' that
+anyone can access. This is also intended only for testing,
+and should be removed before moving into a production
+environment.
+
+
+Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y
+ - Dropping test database...
+Success.
+
+ - Removing privileges on test database...
+Success.
+
+Reloading the privilege tables will ensure that all changes
+made so far will take effect immediately.
+
+Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+All done!
+root@home-assignment:/# sudo apt-get install php-fpm php-mysql php-curl php-mbstring
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  grub-pc-bin
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  libcurl3 php-common php7.0-cli php7.0-common php7.0-curl php7.0-fpm php7.0-json php7.0-mbstring php7.0-mysql php7.0-opcache php7.0-readline
+Suggested packages:
+  php-pear
+The following NEW packages will be installed:
+  libcurl3 php-common php-curl php-fpm php-mbstring php-mysql php7.0-cli php7.0-common php7.0-curl php7.0-fpm php7.0-json php7.0-mbstring php7.0-mysql php7.0-opcache php7.0-readline
+0 upgraded, 15 newly installed, 0 to remove and 42 not upgraded.
+Need to get 4,352 kB of archives.
+After this operation, 16.9 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 libcurl3 amd64 7.47.0-1ubuntu2.6 [187 kB]
+Get:2 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php-common all 1:35ubuntu6.1 [10.8 kB]
+Get:3 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-common amd64 7.0.25-0ubuntu0.16.04.1 [840 kB]
+Get:4 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-curl amd64 7.0.25-0ubuntu0.16.04.1 [27.4 kB]
+Get:5 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php-curl all 1:7.0+35ubuntu6.1 [1,928 B]
+Get:6 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-json amd64 7.0.25-0ubuntu0.16.04.1 [16.8 kB]
+Get:7 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-opcache amd64 7.0.25-0ubuntu0.16.04.1 [77.0 kB]
+Get:8 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-readline amd64 7.0.25-0ubuntu0.16.04.1 [12.8 kB]
+Get:9 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-cli amd64 7.0.25-0ubuntu0.16.04.1 [1,287 kB]
+Get:10 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/universe amd64 php7.0-fpm amd64 7.0.25-0ubuntu0.16.04.1 [1,295 kB]
+Get:11 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/universe amd64 php-fpm all 1:7.0+35ubuntu6.1 [2,952 B]
+Get:12 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/universe amd64 php7.0-mbstring amd64 7.0.25-0ubuntu0.16.04.1 [466 kB]
+Get:13 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/universe amd64 php-mbstring all 1:7.0+35ubuntu6.1 [1,940 B]
+Get:14 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php7.0-mysql amd64 7.0.25-0ubuntu0.16.04.1 [124 kB]
+Get:15 http://nyc2.mirrors.digitalocean.com/ubuntu xenial-updates/main amd64 php-mysql all 1:7.0+35ubuntu6.1 [1,928 B]
+Fetched 4,352 kB in 3s (1,114 kB/s)
+Selecting previously unselected package libcurl3:amd64.
+(Reading database ... 55038 files and directories currently installed.)
+Preparing to unpack .../libcurl3_7.47.0-1ubuntu2.6_amd64.deb ...
+Unpacking libcurl3:amd64 (7.47.0-1ubuntu2.6) ...
+Selecting previously unselected package php-common.
+Preparing to unpack .../php-common_1%3a35ubuntu6.1_all.deb ...
+Unpacking php-common (1:35ubuntu6.1) ...
+Selecting previously unselected package php7.0-common.
+Preparing to unpack .../php7.0-common_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-common (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php7.0-curl.
+Preparing to unpack .../php7.0-curl_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-curl (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php-curl.
+Preparing to unpack .../php-curl_1%3a7.0+35ubuntu6.1_all.deb ...
+Unpacking php-curl (1:7.0+35ubuntu6.1) ...
+Selecting previously unselected package php7.0-json.
+Preparing to unpack .../php7.0-json_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-json (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php7.0-opcache.
+Preparing to unpack .../php7.0-opcache_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-opcache (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php7.0-readline.
+Preparing to unpack .../php7.0-readline_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-readline (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php7.0-cli.
+Preparing to unpack .../php7.0-cli_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-cli (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php7.0-fpm.
+Preparing to unpack .../php7.0-fpm_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-fpm (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php-fpm.
+Preparing to unpack .../php-fpm_1%3a7.0+35ubuntu6.1_all.deb ...
+Unpacking php-fpm (1:7.0+35ubuntu6.1) ...
+Selecting previously unselected package php7.0-mbstring.
+Preparing to unpack .../php7.0-mbstring_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-mbstring (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php-mbstring.
+Preparing to unpack .../php-mbstring_1%3a7.0+35ubuntu6.1_all.deb ...
+Unpacking php-mbstring (1:7.0+35ubuntu6.1) ...
+Selecting previously unselected package php7.0-mysql.
+Preparing to unpack .../php7.0-mysql_7.0.25-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking php7.0-mysql (7.0.25-0ubuntu0.16.04.1) ...
+Selecting previously unselected package php-mysql.
+Preparing to unpack .../php-mysql_1%3a7.0+35ubuntu6.1_all.deb ...
+Unpacking php-mysql (1:7.0+35ubuntu6.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Setting up libcurl3:amd64 (7.47.0-1ubuntu2.6) ...
+Setting up php-common (1:35ubuntu6.1) ...
+Setting up php7.0-common (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/calendar.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/ctype.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/exif.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/fileinfo.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/ftp.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/gettext.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/iconv.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/pdo.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/phar.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/posix.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/shmop.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sockets.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvmsg.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvsem.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvshm.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/tokenizer.ini with new version
+Setting up php7.0-curl (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/curl.ini with new version
+Setting up php-curl (1:7.0+35ubuntu6.1) ...
+Setting up php7.0-json (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/json.ini with new version
+Setting up php7.0-opcache (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/opcache.ini with new version
+Setting up php7.0-readline (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/readline.ini with new version
+Setting up php7.0-cli (7.0.25-0ubuntu0.16.04.1) ...
+update-alternatives: using /usr/bin/php7.0 to provide /usr/bin/php (php) in auto mode
+update-alternatives: using /usr/bin/phar7.0 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: using /usr/bin/phar.phar7.0 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+
+Creating config file /etc/php/7.0/cli/php.ini with new version
+Setting up php7.0-fpm (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/fpm/php.ini with new version
+Setting up php-fpm (1:7.0+35ubuntu6.1) ...
+Setting up php7.0-mbstring (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/mbstring.ini with new version
+Setting up php-mbstring (1:7.0+35ubuntu6.1) ...
+Setting up php7.0-mysql (7.0.25-0ubuntu0.16.04.1) ...
+
+Creating config file /etc/php/7.0/mods-available/mysqlnd.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/mysqli.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/pdo_mysql.ini with new version
+Setting up php-mysql (1:7.0+35ubuntu6.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for systemd (229-4ubuntu21) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for php7.0-fpm (7.0.25-0ubuntu0.16.04.1) ...
+root@home-assignment:/# cd /etc
+root@home-assignment:/etc# cd php
+root@home-assignment:/etc/php# ls
+7.0
+root@home-assignment:/etc/php# cd fpm
+-bash: cd: fpm: No such file or directory
+root@home-assignment:/etc/php# nano php.ini
+root@home-assignment:/etc/php# ls
+7.0
+root@home-assignment:/etc/php# cd 7.0
+root@home-assignment:/etc/php/7.0# ls
+cli  fpm  mods-available
+root@home-assignment:/etc/php/7.0# cd fpm
+root@home-assignment:/etc/php/7.0/fpm# ls
+conf.d  php-fpm.conf  php.ini  pool.d
+root@home-assignment:/etc/php/7.0/fpm# nano php.ini
+root@home-assignment:/etc/php/7.0/fpm# sudo systemctl restart php7.0-fpm
+root@home-assignment:/etc/php/7.0/fpm# cd ..etc
+-bash: cd: ..etc: No such file or directory
+root@home-assignment:/etc/php/7.0/fpm# cd ..
+root@home-assignment:/etc/php/7.0# cd ..
+root@home-assignment:/etc/php# cd ..
+root@home-assignment:/etc# cd /nginx/sites-available/default
+-bash: cd: /nginx/sites-available/default: No such file or directory
+root@home-assignment:/etc# cd /nginx/sites-available/
+-bash: cd: /nginx/sites-available/: No such file or directory
+root@home-assignment:/etc# cd nginx/sites-available/
+root@home-assignment:/etc/nginx/sites-available# ls
+default
+root@home-assignment:/etc/nginx/sites-available# cd default
+-bash: cd: default: Not a directory
+root@home-assignment:/etc/nginx/sites-available# cd default
+-bash: cd: default: Not a directory
+root@home-assignment:/etc/nginx/sites-available# nano default
+root@home-assignment:/etc/nginx/sites-available# nano default
+root@home-assignment:/etc/nginx/sites-available# sudo reload nginx
+sudo: reload: command not found
+root@home-assignment:/etc/nginx/sites-available# sudo systemctl relaod nginx
+Unknown operation relaod.
+root@home-assignment:/etc/nginx/sites-available# sudo systemctl reload nginx
+Job for nginx.service failed because the control process exited with error code. See "systemctl status nginx.service" and "journalctl -xe" for details.
+root@home-assignment:/etc/nginx/sites-available# Connection reset by 159.89.179.65 port 22
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ ssh root@159.89.179.65
+root@159.89.179.65's password:
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-112-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+42 packages can be updated.
+10 updates are security updates.
+
+
+Last login: Sat Feb 17 10:12:22 2018 from 41.212.107.19
+root@home-assignment:~# sudo systemctl reload nginx
+Job for nginx.service failed because the control process exited with error code. See "systemctl status nginx.service" and "journalctl -xe" for details.
+root@home-assignment:~# nginx -t -c /etc/nginx/nginx.conf
+nginx: [emerg] "fastcgi_pass" directive is not allowed here in /etc/nginx/sites-enabled/default:57
+nginx: configuration file /etc/nginx/nginx.conf test failed
+root@home-assignment:~# sudo /usr/local/nginx/sbin/nginx -t
+sudo: /usr/local/nginx/sbin/nginx: command not found
+root@home-assignment:~# sudo /usr/local/nginx/sbin/nginx -t
+sudo: /usr/local/nginx/sbin/nginx: command not found
+root@home-assignment:~# sudo systemctl status nginx.service
+? nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) (Result: exit-code) since Sat 2018-02-17 10:14:29 UTC; 21min ago
+  Process: 11817 ExecReload=/usr/sbin/nginx -g daemon on; master_process on; -s reload (code=exited, status=1/FAILURE)
+ Main PID: 2323 (nginx)
+    Tasks: 2
+   Memory: 3.9M
+      CPU: 34ms
+   CGroup: /system.slice/nginx.service
+           +-2323 nginx: master process /usr/sbin/nginx -g daemon on; master_process on
+           +-2324 nginx: worker process
+
+Feb 17 10:14:29 home-assignment systemd[1]: Starting A high performance web server and a reverse proxy server...
+Feb 17 10:14:29 home-assignment systemd[1]: Started A high performance web server and a reverse proxy server.
+Feb 17 10:29:27 home-assignment systemd[1]: Reloading A high performance web server and a reverse proxy server.
+Feb 17 10:29:27 home-assignment nginx[11763]: nginx: [emerg] "fastcgi_pass" directive is not allowed here in /etc/nginx/sites-enabled/default:57
+Feb 17 10:29:27 home-assignment systemd[1]: nginx.service: Control process exited, code=exited status=1
+Feb 17 10:29:27 home-assignment systemd[1]: Reload failed for A high performance web server and a reverse proxy server.
+Feb 17 10:32:16 home-assignment systemd[1]: Reloading A high performance web server and a reverse proxy server.
+Feb 17 10:32:16 home-assignment nginx[11817]: nginx: [emerg] "fastcgi_pass" directive is not allowed here in /etc/nginx/sites-enabled/default:57
+Feb 17 10:32:16 home-assignment systemd[1]: nginx.service: Control process exited, code=exited status=1
+Feb 17 10:32:16 home-assignment systemd[1]: Reload failed for A high performance web server and a reverse proxy server.
+root@home-assignment:~# sudo systemctl reload nginx.service
+Job for nginx.service failed because the control process exited with error code. See "systemctl status nginx.service" and "journalctl -xe" for details.
+root@home-assignment:~# sudo nginx -t
+nginx: [emerg] "fastcgi_pass" directive is not allowed here in /etc/nginx/sites-enabled/default:57
+nginx: configuration file /etc/nginx/nginx.conf test failed
+root@home-assignment:~# cd  /etc
+root@home-assignment:/etc# cd nginx
+root@home-assignment:/etc/nginx# cd sites-allowed
+-bash: cd: sites-allowed: No such file or directory
+root@home-assignment:/etc/nginx# cd sites-enabled
+root@home-assignment:/etc/nginx/sites-enabled# nano default
+root@home-assignment:/etc/nginx/sites-enabled# sudo nginx -t
+nginx: [emerg] invalid number of arguments in "root" directive in /etc/nginx/sites-enabled/default:39
+nginx: configuration file /etc/nginx/nginx.conf test failed
+root@home-assignment:/etc/nginx/sites-enabled# nano default
+root@home-assignment:/etc/nginx/sites-enabled# nano default
+root@home-assignment:/etc/nginx/sites-enabled# sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+root@home-assignment:/etc/nginx/sites-enabled# sudo systemctl reload nginx
+root@home-assignment:/etc/nginx/sites-enabled# cd ~
+root@home-assignment:~# sudo mkdir -p /var/www/laravel
+root@home-assignment:~# cd etc
+-bash: cd: etc: No such file or directory
+root@home-assignment:~# cd /ect/nginx/sites-enabled/nano default
+-bash: cd: /ect/nginx/sites-enabled/nano: No such file or directory
+root@home-assignment:~# cd etc
+-bash: cd: etc: No such file or directory
+root@home-assignment:~# cd /etc
+root@home-assignment:/etc# cd nginx
+root@home-assignment:/etc/nginx# cd sites-enabled
+root@home-assignment:/etc/nginx/sites-enabled# nano default
+root@home-assignment:/etc/nginx/sites-enabled# cd ..
+root@home-assignment:/etc/nginx# ls
+conf.d  fastcgi.conf  fastcgi_params  koi-utf  koi-win  mime.types  nginx.conf  proxy_params  scgi_params  sites-available  sites-enabled  snippets  uwsgi_params  win-utf
+root@home-assignment:/etc/nginx# cd sites-available
+root@home-assignment:/etc/nginx/sites-available# ls
+default
+root@home-assignment:/etc/nginx/sites-available# default
+No command 'default' found, did you mean:
+ Command 'defaults' from package 'gnustep-base-runtime' (universe)
+default: command not found
+root@home-assignment:/etc/nginx/sites-available# nano default
+root@home-assignment:/etc/nginx/sites-available# cd ..
+root@home-assignment:/etc/nginx# cd sites-enabled
+root@home-assignment:/etc/nginx/sites-enabled# nano default
+root@home-assignment:/etc/nginx/sites-enabled# sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+root@home-assignment:/etc/nginx/sites-enabled# sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+root@home-assignment:/etc/nginx/sites-enabled# nano default
+root@home-assignment:/etc/nginx/sites-enabled# cd
+root@home-assignment:~# sudo fallocate -l 1G /swapfile
+root@home-assignment:~# sudo mkswap /swapfile
+Setting up swapspace version 1, size = 1024 MiB (1073737728 bytes)
+no label, UUID=fb3bc634-8577-45ab-81bf-9788a7b94243
+root@home-assignment:~# sudo swapon /swapfile
+swapon: /swapfile: insecure permissions 0644, 0600 suggested.
+root@home-assignment:~# cd /var/www/laravel
+root@home-assignment:/var/www/laravel# composer install
+The program 'composer' is currently not installed. You can install it by typing:
+apt install composer
+root@home-assignment:/var/www/laravel# sudo apt-get composer
+E: Invalid operation composer
+root@home-assignment:/var/www/laravel# sudo apt-get composer install
+E: Invalid operation composer
+root@home-assignment:/var/www/laravel# curl -sS https://getcomposer.org/installer | php
+All settings correct for using Composer
+Downloading...
+
+Composer (version 1.6.3) successfully installed to: /var/www/laravel/composer.phar
+Use it: php composer.phar
+
+root@home-assignment:/var/www/laravel# sudo mv composer.phar /usr/local/bin/composer
+root@home-assignment:/var/www/laravel# composer
+Do not run Composer as root/super user! See https://getcomposer.org/root for details
+   ______
+  / ____/___  ____ ___  ____  ____  ________  _____
+ / /   / __ \/ __ `__ \/ __ \/ __ \/ ___/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ (__  )  __/ /
+\____/\____/_/ /_/ /_/ .___/\____/____/\___/_/
+                    /_/
+Composer version 1.6.3 2018-01-31 16:28:17
+
+Usage:
+  command [options] [arguments]
+
+Options:
+  -h, --help                     Display this help message
+  -q, --quiet                    Do not output any message
+  -V, --version                  Display this application version
+      --ansi                     Force ANSI output
+      --no-ansi                  Disable ANSI output
+  -n, --no-interaction           Do not ask any interactive question
+      --profile                  Display timing and memory usage information
+      --no-plugins               Whether to disable plugins.
+  -d, --working-dir=WORKING-DIR  If specified, use the given directory as working directory.
+  -v|vv|vvv, --verbose           Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Available commands:
+  about                Shows the short information about Composer.
+  archive              Creates an archive of this composer package.
+  browse               Opens the package's repository URL or homepage in your browser.
+  check-platform-reqs  Check that platform requirements are satisfied.
+  clear-cache          Clears composer's internal package cache.
+  clearcache           Clears composer's internal package cache.
+  config               Sets config options.
+  create-project       Creates new project from a package into given directory.
+  depends              Shows which packages cause the given package to be installed.
+  diagnose             Diagnoses the system to identify common errors.
+  dump-autoload        Dumps the autoloader.
+  dumpautoload         Dumps the autoloader.
+  exec                 Executes a vendored binary/script.
+  global               Allows running commands in the global composer dir ($COMPOSER_HOME).
+  help                 Displays help for a command
+  home                 Opens the package's repository URL or homepage in your browser.
+  info                 Shows information about packages.
+  init                 Creates a basic composer.json file in current directory.
+  install              Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.
+  licenses             Shows information about licenses of dependencies.
+  list                 Lists commands
+  outdated             Shows a list of installed packages that have updates available, including their latest version.
+  prohibits            Shows which packages prevent the given package from being installed.
+  remove               Removes a package from the require or require-dev.
+  require              Adds required packages to your composer.json and installs them.
+  run-script           Runs the scripts defined in composer.json.
+  search               Searches for packages.
+  self-update          Updates composer.phar to the latest version.
+  selfupdate           Updates composer.phar to the latest version.
+  show                 Shows information about packages.
+  status               Shows a list of locally modified packages.
+  suggests             Shows package suggestions.
+  update               Upgrades your dependencies to the latest version according to composer.json, and updates the composer.lock file.
+  upgrade              Upgrades your dependencies to the latest version according to composer.json, and updates the composer.lock file.
+  validate             Validates a composer.json and composer.lock.
+  why                  Shows which packages cause the given package to be installed.
+  why-not              Shows which packages prevent the given package from being installed.
+root@home-assignment:/var/www/laravel# cd ~
+root@home-assignment:~# cd /var
+root@home-assignment:/var# mkdir repo && cd repo
+root@home-assignment:/var/repo# mkdir site.git && cd site.git
+root@home-assignment:/var/repo/site.git# git init --bare
+Initialized empty Git repository in /var/repo/site.git/
+root@home-assignment:/var/repo/site.git# sudo nano post-receive
+root@home-assignment:/var/repo/site.git# sudo nano post-receive
+root@home-assignment:/var/repo/site.git#
+root@home-assignment:/var/repo/site.git# sudo chmod +x post-receive
+root@home-assignment:/var/repo/site.git# exit
+logout
+Connection to 159.89.179.65 closed.
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ git remote -v
+fortrabbit      laravel-48bi.exrrjge8poa6zffs@deploy.us1.frbit.com:laravel-48bi.git (fetch)
+fortrabbit      laravel-48bi.exrrjge8poa6zffs@deploy.us1.frbit.com:laravel-48bi.git (push)
+origin  https://github.com/morgyken/tutorsboard.git (fetch)
+origin  https://github.com/morgyken/tutorsboard.git (push)
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards/tutorsboard79 (Tutorsboard-v-1.23|MERGING)
+$ cd ..
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboards
+$ cd ..
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs
+$ cd tutorsboard
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ git remote -v
+backup1 https://github.com/morgyken/tutorsboard.git (fetch)
+backup1 https://github.com/morgyken/tutorsboard.git (push)
+origin  https://github.com/morgyken/tutorsboard.git (fetch)
+origin  https://github.com/morgyken/tutorsboard.git (push)
+upload-master   https://github.com/morgyken/homeassign-up.git (fetch)
+upload-master   https://github.com/morgyken/homeassign-up.git (push)
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ git push backup1 master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/morgyken/tutorsboard.git'
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ git pull backup1
+From https://github.com/morgyken/tutorsboard
+ * [new branch]      Home-Assignment-v-1.23 -> backup1/Home-Assignment-v-1.23
+ * [new branch]      Tutorsboard-Release-1.001 -> backup1/Tutorsboard-Release-1.001
+ * [new branch]      Tutorsboard-Release-1.002 -> backup1/Tutorsboard-Release-1.002
+ * [new branch]      Tutorsboard-v-1.20     -> backup1/Tutorsboard-v-1.20
+ * [new branch]      assignment124          -> backup1/assignment124
+ * [new branch]      assignment125          -> backup1/assignment125
+ * [new branch]      assignment126          -> backup1/assignment126
+ * [new branch]      master                 -> backup1/master
+ * [new branch]      tutorsboard-v-1.21     -> backup1/tutorsboard-v-1.21
+ * [new branch]      tutorsboard-v-1.22     -> backup1/tutorsboard-v-1.22
+You asked to pull from the remote 'backup1', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ git pull backup1 assignment125
+From https://github.com/morgyken/tutorsboard
+ * branch            assignment125 -> FETCH_HEAD
+Already up to date.
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ git push backup1 assignment124
+Everything up-to-date
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ ssh root@159.89.159.65
+root@159.89.159.65's password:
+Permission denied, please try again.
+root@159.89.159.65's password:
+Permission denied, please try again.
+root@159.89.159.65's password:
+root@159.89.159.65: Permission denied (publickey,password).
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ ssh root@159.89.179.65
+root@159.89.179.65's password:
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-112-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+42 packages can be updated.
+10 updates are security updates.
+
+
+Last login: Sat Feb 17 10:31:35 2018 from 41.212.107.19
+root@home-assignment:~# cd /var
+root@home-assignment:/var# cd repo
+root@home-assignment:/var/repo# ls
+site.git
+root@home-assignment:/var/repo# cd site.git
+root@home-assignment:/var/repo/site.git# ls
+branches  config  description  HEAD  hooks  info  objects  post-receive  refs
+root@home-assignment:/var/repo/site.git# cp post-receive /hooks/post-receuve
+cp: cannot create regular file '/hooks/post-receuve': No such file or directory
+root@home-assignment:/var/repo/site.git# cp post-receive /var/repo/site.git/hooks/post-receive
+root@home-assignment:/var/repo/site.git# cd hooks
+root@home-assignment:/var/repo/site.git/hooks# ls
+applypatch-msg.sample  post-update.sample     prepare-commit-msg.sample  update.sample
+commit-msg.sample      pre-applypatch.sample  pre-push.sample
+post-receive           pre-commit.sample      pre-rebase.sample
+root@home-assignment:/var/repo/site.git/hooks# nano post-receive
+root@home-assignment:/var/repo/site.git/hooks# sudo chmod +x post-receive
+root@home-assignment:/var/repo/site.git/hooks# Connection reset by 159.89.179.65 port 22
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ ssh root@159.89.179.65
+root@159.89.179.65's password:
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-112-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+42 packages can be updated.
+10 updates are security updates.
+
+
+Last login: Sat Feb 17 11:07:27 2018 from 41.212.107.19
+root@home-assignment:~# c /var/www/laravel
+c: command not found
+root@home-assignment:~# cd /var/www/laravel
+root@home-assignment:/var/www/laravel# composer install --no-dev
+Do not run Composer as root/super user! See https://getcomposer.org/root for details
+Composer could not find a composer.json file in /var/www/laravel
+To initialize a project, please create a composer.json file as described in the https://getcomposer.org/                                                                                         "Getting Started" section
+root@home-assignment:/var/www/laravel# git init
+Initialized empty Git repository in /var/www/laravel/.git/
+root@home-assignment:/var/www/laravel# exit
+logout
+Connection to 159.89.179.65 closed.
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ git remote add production ssh://root@159.89.179.65/var/repo/site.git
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ git push production assignment126
+root@159.89.179.65's password:
+Counting objects: 2579, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (1276/1276), done.
+Writing objects: 100% (2579/2579), 29.91 MiB | 40.00 KiB/s, done.
+Total 2579 (delta 1236), reused 2469 (delta 1171)
+remote: fatal: You are on a branch yet to be born
+To ssh://159.89.179.65/var/repo/site.git
+ * [new branch]      assignment126 -> assignment126
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ ssh root@159.89.179.65
+root@159.89.179.65's password:
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-112-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+42 packages can be updated.
+10 updates are security updates.
+
+
+Last login: Sat Feb 17 11:12:23 2018 from 41.212.107.19
+root@home-assignment:~# cd /var/www/laravel
+root@home-assignment:/var/www/laravel# ls
+root@home-assignment:/var/www/laravel# git init
+Reinitialized existing Git repository in /var/www/laravel/.git/
+root@home-assignment:/var/www/laravel#
+root@home-assignment:/var/www/laravel# Connection reset by 159.89.179.65 port 22
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ ssh root@159.89.179.65
+root@159.89.179.65's password:
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-112-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+42 packages can be updated.
+10 updates are security updates.
+
+
+Last login: Sat Feb 17 11:29:14 2018 from 41.212.107.19
+root@home-assignment:~# Connection reset by 159.89.179.65 port 22
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ git log -g -2 HEAD
+commit 77c124a4d1dc5f99e385b8db3c55a6470322f391 (HEAD -> assignment126, upload-master/assignment126, pro                                                                                        duction/assignment126, production/assignment125, origin/tutorsboard-v-1.22, origin/assignment126, origin                                                                                        /assignment125, origin/assignment124, origin/Home-Assignment-v-1.23, origin/HEAD, backup1/tutorsboard-v-                                                                                        1.22, backup1/assignment126, backup1/assignment125, backup1/assignment124, backup1/Home-Assignment-v-1.2                                                                                        3, tutorsboard-v-1.22, assignment125, assignment124)
+Reflog: HEAD@{0} (morgyken <morgyken@gmail.com>)
+Reflog message: checkout: moving from assignment125 to assignment126
+Author: morgyken <morgyken@gmail.com>
+Date:   Mon Feb 12 15:57:04 2018 +0300
+
+    FInalised the customer Gui and version 1 of the project
+
+commit 77c124a4d1dc5f99e385b8db3c55a6470322f391 (HEAD -> assignment126, upload-master/assignment126, pro                                                                                        duction/assignment126, production/assignment125, origin/tutorsboard-v-1.22, origin/assignment126, origin                                                                                        /assignment125, origin/assignment124, origin/Home-Assignment-v-1.23, origin/HEAD, backup1/tutorsboard-v-                                                                                        1.22, backup1/assignment126, backup1/assignment125, backup1/assignment124, backup1/Home-Assignment-v-1.2                                                                                        3, tutorsboard-v-1.22, assignment125, assignment124)
+Reflog: HEAD@{1} (morgyken <morgyken@gmail.com>)
+Reflog message: checkout: moving from assignment124 to assignment125
+Author: morgyken <morgyken@gmail.com>
+Date:   Mon Feb 12 15:57:04 2018 +0300
+
+    FInalised the customer Gui and version 1 of the project
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ git push production assignment126:master
+root@159.89.179.65's password:
+Permission denied, please try again.
+root@159.89.179.65's password:
+Total 0 (delta 0), reused 0 (delta 0)
+To ssh://159.89.179.65/var/repo/site.git
+ * [new branch]      assignment126 -> master
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ git branch -v
+  assignment124      77c124a FInalised the customer Gui and version 1 of the project
+  assignment125      77c124a FInalised the customer Gui and version 1 of the project
+* assignment126      77c124a FInalised the customer Gui and version 1 of the project
+  tutorsboard-v-1.22 77c124a FInalised the customer Gui and version 1 of the project
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$ git remote -v
+backup1 https://github.com/morgyken/tutorsboard.git (fetch)
+backup1 https://github.com/morgyken/tutorsboard.git (push)
+origin  https://github.com/morgyken/tutorsboard.git (fetch)
+origin  https://github.com/morgyken/tutorsboard.git (push)
+production      ssh://root@159.89.179.65/var/repo/site.git (fetch)
+production      ssh://root@159.89.179.65/var/repo/site.git (push)
+upload-master   https://github.com/morgyken/homeassign-up.git (fetch)
+upload-master   https://github.com/morgyken/homeassign-up.git (push)
+
+morgyken@DESKTOP-190CLNN MINGW64 /c/xamp2/htdocs/tutorsboard (assignment126)
+$
